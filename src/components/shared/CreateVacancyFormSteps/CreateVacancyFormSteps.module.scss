@@ -1,0 +1,14 @@
+.button{
+  border-radius: 6px;
+  background-color: #B5B5B7;
+  font-size: 16px;
+  line-height: 20px;
+  color: red;
+}
+
+.button:focus{
+  background-color: #1D6BF3;
+}
+.button:hover{
+  background-color: #B5B5B7;
+}
