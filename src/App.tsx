@@ -1,8 +1,13 @@
-// import { Route, Routes } from 'react-router-dom';
-//
-// function App() {
-//   return (
-//   );
-// }
-//
-// export default App;
+import React from 'react';
+import { Register } from './components/Register/Register';
+
+function App() {
+  return (
+    <>
+      <p>Hello, World!</p>
+      <Register/>
+    </>
+  );
+}
+
+export default App;
