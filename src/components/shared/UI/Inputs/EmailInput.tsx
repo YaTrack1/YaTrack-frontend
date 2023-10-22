@@ -3,6 +3,8 @@ import React from 'react';
 import './Input.scss';
 import { InputProps } from './types';
 
+const EMAIL_REGEX: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+
 export const EmailInput = ({
   title,
   label,
@@ -26,10 +28,10 @@ export const EmailInput = ({
             value: 40,
             message: 'Электронная почта должна содержать не более 40 символов',
           },
-          // pattern: {
-          //   value: EMAIL_REGEX,
-          //   message: INVALID_EMAIL_MESSAGE,
-          // },
+          pattern: {
+            value: EMAIL_REGEX,
+            message: 'Введите адрес почты вида Ivan@mail.ru',
+          },
         })}
         id={`${title}-input`}
         type='email'
