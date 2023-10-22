@@ -1,4 +1,4 @@
-import { CreateVacancyFormSteps } from '../shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
+import { CreateVacancyFormSteps } from '../CreateVacancyFormSteps/CreateVacancyFormSteps';
 import Typography from '@mui/material/Typography';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { FC, ReactNode, useEffect } from 'react';
@@ -19,10 +19,9 @@ export const CreateVacancyForm: FC<IVacancyForm> = ({children}) => {
   const onSubmit: SubmitHandler<ISignForm> = (data) => console.log(data);
   return(
     <>
-  <Typography variant='h2'>Создание вакансии</Typography>
-      <Typography variant='h3'>Шаг 1</Typography>
+      <Typography variant='h2'>Создание вакансии</Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
-          {children}
+        {children}
       </form>
     </>
 
