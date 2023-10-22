@@ -1,1 +1,1 @@
-declare module '*module.scss'
+declare declare module '*.module.scss';
