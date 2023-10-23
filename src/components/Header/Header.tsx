@@ -1,0 +1,30 @@
+import styles from './Header.scss';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
+import SvgIcon from '@mui/material/SvgIcon';
+import  { ReactComponent as logo}  from '../../images/logo.svg';
+import { useState } from 'react';
+
+export const Header: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  return (
+    <Box sx={{ flexGrow: 1, mb: '62px' }}>
+      <AppBar  position='fixed'  sx={{ backgroundColor:'#1A1B22' }}>
+        <Toolbar>
+          {isLoggedIn===true ? (<><SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon>
+            <Typography variant='h6' component='div' sx={{ flexGrow: 1}}>
+           Иванова Анна
+            </Typography>
+            <IconButton sx={{mr: 2}} color='inherit'><NotificationsActiveOutlinedIcon/></IconButton></>) : (<SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon>)}
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
