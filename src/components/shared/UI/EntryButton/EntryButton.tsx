@@ -30,7 +30,7 @@ export default function EntryButton() {
 
   return (
     <Stack spacing={2} direction='row'>
-      <BootstrapButton variant='contained'>Вход</BootstrapButton>qw
+      <BootstrapButton variant='contained'>Вход</BootstrapButton>
     </Stack>
   );
 }

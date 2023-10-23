@@ -4,6 +4,8 @@ import Popup from './components/shared/Popup/Popup';
 import {Header} from './components/Header/Header';
 import { MuiLoginForm } from './components/MuiLoginForm/MuiLoginForm';
 import { AuthorizationWrapper } from './components/shared/AuthorizationWrapper/AuthorizationWrapper';
+import { MainMenu } from './components/MainMenu/MainMenu';
+import {MainPage} from './components/MainPage/MainPage';
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
       <CreateVacancyFormSteps />
       <MuiLoginForm />
       <AuthorizationWrapper header='Авторизация'/>
+      <MainPage />
+      {/* <MainMenu /> */}
+      {/* <CreateVacancyFormSteps />
+      <Popup /> */}
     </>
   );
 }
