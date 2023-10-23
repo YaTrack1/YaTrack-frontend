@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Card.module.scss';
 // заглушки
 import photo from '../../../vendor/images/candidate_photo_sample.png';
-import stats from '../../../vendor/images/data_sample.svg';
+import stats from '../../../vendor/images/data_sample2.svg';
 //--------------------------------------------------------------------
 
 export const Card = () => {
@@ -17,11 +17,12 @@ export const Card = () => {
     <section className={styles.container}>
       <div className={styles.header}>
         <p className={styles.header_title}>{name}</p>
-        <div className={styles.header_img_wrapper}>
+        <div>
           <img className={styles.header_img} src={photo} alt='Фото кандидата'/>
         </div>
       </div>
       <div className={styles.data}>
+        <span className={styles.data_results}>80%</span>
         <img src={stats} alt='Статистика' />
       </div>
       <div className={styles.footer}>
