@@ -1,7 +1,5 @@
 @import '../../../styles/abstract/constants';
 
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -11,7 +9,8 @@
   box-shadow: 0px 4px 6px 0px $blue-light;
   padding: 20px;
   gap: 8px;
-  
+  cursor: pointer;
+
   //  заглушка шрифтов
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
