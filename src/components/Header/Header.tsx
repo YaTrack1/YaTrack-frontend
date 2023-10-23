@@ -13,9 +13,9 @@ import  { ReactComponent as logo}  from '../../images/logo.svg';
 import { useState } from 'react';
 
 export const Header: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
-    <Box sx={{ flexGrow: 1, mb: '62px' }}>
+    <Box  sx={{ flexGrow: 0, mb: '62px', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <AppBar  position='fixed'  sx={{ backgroundColor:'#1A1B22' }}>
         <Toolbar>
           {isLoggedIn===true ? (<><SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon>
