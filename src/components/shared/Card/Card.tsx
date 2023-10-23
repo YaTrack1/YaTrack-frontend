@@ -11,6 +11,7 @@ export const Card = () => {
   const name = 'Сидорова Наталья';
   const title = 'Junior';
   const activity = 'Была(а) 1 час назад';
+  const statsResults = '90';
   //--------------------------------------------------------------------
 
   return (
@@ -22,7 +23,7 @@ export const Card = () => {
         </div>
       </div>
       <div className={styles.data}>
-        <span className={styles.data_results}>80%</span>
+        <span className={styles.data_results}>{`${statsResults}%`}</span>
         <img src={stats} alt='Статистика' />
       </div>
       <div className={styles.footer}>
