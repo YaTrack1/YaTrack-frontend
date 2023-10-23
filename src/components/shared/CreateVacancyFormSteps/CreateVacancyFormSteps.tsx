@@ -5,7 +5,7 @@ import { Button, Typography } from '@mui/material';
 import { CreateVacancyForm } from '../CreateVacancyForm/CreateVacancyForm';
 import TextField from '@mui/material/TextField';
 import  styles from './CreateVacancyFormSteps.module.scss';
-
+import { styled, alpha } from '@mui/material/styles';
 interface ISignForm {
   jobtitle: string;
   specialization?: string;
@@ -15,15 +15,19 @@ interface ISignForm {
   conditions?: string;
   selectionssteps?: string;
 }
-
+const StyledButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  fontSize: 40,
+})
 export const CreateVacancyFormSteps: React.FC = () => {
   const {control} = useForm<ISignForm>();
   const [step, setStep] = useState<number>(2);
   const formTitle = (
-    <Typography variant='h3'>Шаг {step}</Typography>
+    <Typography className={styles['create']} variant='h3'>Шаг {step}</Typography>
 	 );
   const formButton = (
-    <Button type='submit' variant='contained' disableElevation={true}  disableRipple className={styles['button']} onClick={() => {step===1?setStep(step + 1):setStep(2)}}>{step===1? 'Далее': 'Создать вакансию'}</Button>
+    <StyledButton type='submit' variant='contained' disableElevation={true}  disableRipple  onClick={() => {step===1?setStep(step + 1):setStep(2)}}>{step===1? 'Далее': 'Создать вакансию'}</StyledButton>
   );
   return (
     <>
