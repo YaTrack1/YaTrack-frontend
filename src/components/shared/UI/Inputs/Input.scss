@@ -1,53 +1,9 @@
-.label {
-	color: #A0A0A0;
-	font-size: 10px;
-}
-
-.input-wrap {
-	display: flex;
-	flex-direction: row-reverse;
-	align-items: center;
-}
-
 .input {
 	width: 100%;
-	background-color: #c0bdbd;
-	color: white;
-	padding: 15px;
-	font-size: 13px;
-	font-weight: 400;
-	height: 46px;
-	border: 0;
-	box-sizing: border-box;
-	border-radius: 8px;
-	outline: none;
-	position: relative;
+  background-color: gainsboro;
 }
 
-.input::placeholder {
-  font-size: 13px;
-  color: black;
-}
-
-.error-message {
+.input__error-message {
 	font-size: 12px;
-	line-height: 12px;
-	color: red;
-	display: none;
-}
-
-.error-message_active {
-	display: inline;
-}
-
-#password-input.input {
-	color: black;
-}
-
-.show-password-button {
-	position: absolute;
-	background-color: inherit;
-	border: 0;
-	cursor: pointer;
-	margin: 15px;
+  margin: 0;
 }

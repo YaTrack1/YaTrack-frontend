@@ -3,10 +3,7 @@ import { Register } from './components/Register/Register';
 
 function App() {
   return (
-    <>
-      <p>Hello, World!</p>
-      <Register/>
-    </>
+    <Register/>
   );
 }
 

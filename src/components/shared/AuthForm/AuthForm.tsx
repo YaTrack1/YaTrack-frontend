@@ -1,42 +1,67 @@
 import React from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
 
+import { FormSet } from '../FormSet/FormSet';
 import './AuthForm.scss';
-import AuthFormProps from './types';
+import { Input } from '../UI/Inputs/Input';
+import { useForm } from 'react-hook-form';
+import { validationSchema } from '../../../utils/validationSchema';
+import { NavLink } from 'react-router-dom';
+import { AuthFormProps } from './types';
 
 export const AuthForm = ({
+  formId,
   title,
-  buttonText,
   question,
-  isValid,
-  children,
-  onSubmit,
+  navLinkTitle,
+  ariaLabel,
+  navLinkPath,
 }: AuthFormProps) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({resolver: yupResolver(validationSchema)});
 
   return (
-    <div className='auth-form'>
-      <div className='auth-form__container'>
-        <div>
-          <div className='auth-form__header'>
-            <h2 className='auth-form__title'>{title}</h2>
-          </div>
-          <form className='auth-form__form' id='form__auth' onSubmit={onSubmit}>
-            {children}
-          </form>
-        </div>
-        <div>
-          <button
-            className={`auth-form__button ${!isValid && 'auth-form__button_inactive'}`}
-            type='submit'
-            form='form__auth'
-            disabled={!isValid}
+    <section className='auth-form'>
+      <div className='auth-form__wrapper'>
+        <h2>{title}</h2>
+        <FormSet formId={formId} handleSubmit={handleSubmit} reset={reset}>
+          <Input
+            placeholder='Введите эл.почту'
+            inputName='email'
+            register={register}
+            errors={errors}
+          />
+          <Input
+            placeholder='ФИО'
+            inputName='fullName'
+            register={register}
+            errors={errors}
+          />
+          <Input
+            placeholder='Пароль'
+            inputName='password'
+            register={register}
+            errors={errors}
+          />
+        </FormSet>
+        <button style={{width: '50%'}} form={formId} type='submit'>
+          здесь будет норм кнопка {/* !!! нужно заменить кнопку */}
+        </button>
+        <p className='auth-form__question'>
+          {question }
+          <NavLink
+            className='auth-form__link'
+            aria-label={ariaLabel}
+            to={navLinkPath}
           >
-            {buttonText}
-          </button>
-          <p className='auth-form__question'>
-            {question}
-          </p>
-        </div>
+            {navLinkTitle}
+          </NavLink>
+        </p>
       </div>
-    </div>
+    </section>
   );
 };

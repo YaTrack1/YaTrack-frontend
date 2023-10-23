@@ -1,11 +1,8 @@
-import { UseFormRegister, FieldValues, DeepMap, FieldError } from 'react-hook-form';
+import { FieldValues, DeepMap, FieldError } from 'react-hook-form';
 
 export interface InputProps {
-  title: string;
-  register: UseFormRegister<FieldValues>;
-  errors: DeepMap<FieldValues, FieldError>;
-  label?: string;
+  register: any;
+  errors?: DeepMap<FieldValues, FieldError>;
+  inputName?: string;
   placeholder?: string;
-  defaultValue?: string;
-  autoComplete?: string;
 }
