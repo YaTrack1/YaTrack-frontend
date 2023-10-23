@@ -1,0 +1,12 @@
+@use '../../../styles/abstract/constants';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 204px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px black;
+  padding: 20px;
+  gap: 8px;
+}
