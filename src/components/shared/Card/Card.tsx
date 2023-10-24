@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import styles from './Card.module.scss';
 
 // заглушки. эти данные будут приходит динамически с сервера позже
-import photo from '../../../vendor/images/candidate_photo_sample.png';
-import stats from '../../../vendor/images/data_sample2.svg';
+import photo from '../../../images/samples/candidate_photo_sample.png';
+import stats from '../../../images/samples/data_sample2.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 const name = 'Сидорова Наталья';
 const title = 'Junior';
