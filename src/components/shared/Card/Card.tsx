@@ -14,9 +14,10 @@ const statsResults = `${number}%`;
 
 export const Card = () => {
   const [ isVisited, setIsVisited ] = useState(false);
+  const toggleCard = () => setIsVisited(true);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} onClick={toggleCard}>
       <div className={styles.header}>
         <p className={styles.header_title}>{name}</p>
         <div>
