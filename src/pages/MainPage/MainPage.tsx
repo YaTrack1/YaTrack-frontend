@@ -1,9 +1,7 @@
-import { MainMenu } from '../../components/MainMenu/MainMenu';
+import { MainMenu } from '../../components/shared/MainMenu/MainMenu';
 import { Box } from '@mui/material';
-import { IconButton } from '@mui/material';
+import { IconButton, Typography, ListItemText } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { Typography } from '@mui/material';
-import { ListItemText} from '@mui/material';
 import Menu from '@mui/material/Paper';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
@@ -13,10 +11,11 @@ import { styled } from '@mui/material/styles';
 import {useState} from 'react';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
-import CloseIcon from '@mui/icons-material/Close';
+import { AlertModalPopup } from '../../components/shared/UI/AlertModalPopup/AlertModalPopup';
+import { Card } from '../../components/shared/Card/Card';
 
 export const MainPage: React.FC = () => {
-  const [open, setOpen] = useState(true);
+
   const [isActiveBtn, setIsActiveBtn] = useState(false);
   const cardList=[{},{},{},{},{},{},{},{},{},{},{},{}];
   const Item = styled(Paper)(() => ({
@@ -75,30 +74,11 @@ export const MainPage: React.FC = () => {
           </Box>
           <Button sx={{borderRadius: '6px', textTransform: 'none', fontSize: 16, mr: '24px'}} variant='outlined' disableRipple disableElevation>Выгрузить</Button>
         </Box>
-        <Box sx={{ width: '100%', padding: '15px 0 0px 24px' }}>
-          <Collapse in={open}>
-            <Alert icon={false}
-              action={
-                <IconButton
-                  color='inherit'
-                  size='small'
-                  onClick={() => {
-                    setOpen(false);
-                  }}
-                >
-                  <CloseIcon fontSize='medium' />
-                </IconButton>
-              }
-              sx={{fontSize: '20px', padding: '10px 20px', mb: 2, color: '#1A1B22', borderRadius: '12px', backgroundColor: '#ACCCFF', boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)'}}
-            >
-          Синим цветом подсвечены кандидаты, заинтересовавшиеся этой вакансией
-            </Alert>
-          </Collapse>
-        </Box>
+        <AlertModalPopup></AlertModalPopup>
         <Grid container spacing={3} sx={{ml: '0px', mt: '0'}}>
           {cardList.map((i) => (
             <Grid item xs={2.35}>
-              <Item>здесь будет карточка</Item>
+              <Item><Card></Card></Item>
             </Grid>))}
         </Grid>
       </Box>
