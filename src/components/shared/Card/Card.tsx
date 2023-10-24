@@ -5,6 +5,7 @@ import styles from './Card.module.scss';
 // заглушки. эти данные будут приходит динамически с сервера позже
 import photo from '../../../vendor/images/candidate_photo_sample.png';
 import stats from '../../../vendor/images/data_sample2.svg';
+import { useNavigate } from 'react-router-dom';
 const name = 'Сидорова Наталья';
 const title = 'Junior';
 const activity = 'Была(а) 1 час назад';
@@ -14,7 +15,13 @@ const statsResults = `${number}%`;
 
 export const Card = () => {
   const [ isVisited, setIsVisited ] = useState(false);
-  const toggleCard = () => setIsVisited(true);
+  const navigate = useNavigate();
+
+  const toggleCard = () => {
+    setIsVisited(true);
+    //!! прописать роут
+    navigate('');
+  };
 
   return (
     <section className={styles.container} onClick={toggleCard}>
@@ -25,9 +32,7 @@ export const Card = () => {
         </div>
       </div>
       <div className={styles.data}>
-        <span className={styles.data_results}>
-          {statsResults}
-        </span>
+        <span className={styles.data_results}>{statsResults}</span>
         <img className={isVisited && styles.blackAndWhite} src={stats} alt='Статистика' />
       </div>
       <div className={styles.footer}>
