@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import {Header} from './components/Header/Header';
 import {MainPage} from './pages/MainPage/MainPage';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route path='/employer/home' element={<p>Home</p>}/>
         <Route path='/employer/resumes' element={<MainPage />}/>
         <Route path='/employer/resumes/:id' element={<p>ResumeOneCard</p>}/>
-        <Route path='*' element={<p>404</p>}/>
+        <Route path='*' element={<NotFoundPage />}/>
       </Routes>
     </>
   );
