@@ -1,4 +1,4 @@
-import { MainMenu } from '../shared/MainMenu/MainMenu';
+import { MainMenu } from '../../components/shared/MainMenu/MainMenu';
 import { Box, Button } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,8 +11,8 @@ import {ReactComponent as trash} from '../../images/trash.svg';
 import { styled } from '@mui/material/styles';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-import { CreateVacancyFormSteps } from '../shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
-import { ModalForForm } from '../shared/UI/ModalForForm/ModalForForm';
+import { CreateVacancyFormSteps } from '../../components/shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
+import { ModalForForm } from '../../components/shared/UI/ModalForForm/ModalForForm';
 
 export const PublishedVacancies: React.FC = () => {
   const ClassCard = styled(Card) ({

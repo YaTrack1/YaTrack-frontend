@@ -1,11 +1,6 @@
-<<<<<<< HEAD:src/components/MainPage/MainPage.tsx
-import { MainMenu } from '../shared/MainMenu/MainMenu';
-import { Box, IconButton, Typography, ListItemText } from '@mui/material';
-=======
-import { MainMenu } from '../../components/MainMenu/MainMenu';
+import { MainMenu } from '../../components/shared/MainMenu/MainMenu';
 import { Box } from '@mui/material';
-import { IconButton } from '@mui/material';
->>>>>>> 58804f463edf502738864853999f7661a8b2a19a:src/pages/MainPage/MainPage.tsx
+import { IconButton, Typography, ListItemText } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Menu from '@mui/material/Paper';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,8 +11,8 @@ import { styled } from '@mui/material/styles';
 import {useState} from 'react';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
-import { AlertModalPopup } from '../shared/UI/AlertModalPopup/AlertModalPopup';
-import { Card } from '../shared/Card/Card';
+import { AlertModalPopup } from '../../components/shared/UI/AlertModalPopup/AlertModalPopup';
+import { Card } from '../../components/shared/Card/Card';
 
 export const MainPage: React.FC = () => {
 
