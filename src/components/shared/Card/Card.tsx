@@ -15,6 +15,7 @@ const statsResults = `${number}%`;
 
 export const Card = () => {
   const [ isVisited, setIsVisited ] = useState(false);
+  const [ isCandidateInterest, setIsCandidateInterest ] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   //!! прописать роут для Приглашённые
@@ -27,7 +28,10 @@ export const Card = () => {
   };
 
   return (
-    <section className={styles.container} onClick={toggleCard}>
+    <section
+      className={`${styles.container} ${isCandidateInterest && styles.container_active}`}
+      onClick={toggleCard}
+    >
       <div className={styles.header}>
         <p className={styles.header_title}>{name}</p>
         <div>
