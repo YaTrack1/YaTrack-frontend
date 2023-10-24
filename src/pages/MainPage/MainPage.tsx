@@ -1,4 +1,4 @@
-import { MainMenu } from '../MainMenu/MainMenu';
+import { MainMenu } from '../../components/MainMenu/MainMenu';
 import { Box } from '@mui/material';
 import { IconButton } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';

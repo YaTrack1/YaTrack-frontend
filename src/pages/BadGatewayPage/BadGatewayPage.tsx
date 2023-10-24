@@ -1,5 +1,5 @@
-import { ErrorPage } from '../shared/ErrorPage/ErrorPage';
-import image from '../../vendor/images/500_large chart.png';
+import { ErrorPage } from '../../components/shared/ErrorPage/ErrorPage';
+import image from '../../images/500_large chart.png';
 import { BAD_GATEWAY_SUBTITLE, BAD_GATEWAY_TITLE } from '../../utils/constants';
 
 export const BadGatewayPage = () => {
