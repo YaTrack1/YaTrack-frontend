@@ -5,7 +5,7 @@ import styles from './Card.module.scss';
 // заглушки. эти данные будут приходит динамически с сервера позже
 import photo from '../../../vendor/images/candidate_photo_sample.png';
 import stats from '../../../vendor/images/data_sample2.svg';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const name = 'Сидорова Наталья';
 const title = 'Junior';
 const activity = 'Была(а) 1 час назад';
@@ -16,10 +16,13 @@ const statsResults = `${number}%`;
 export const Card = () => {
   const [ isVisited, setIsVisited ] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  //!! прописать роут для Приглашённые
+  const invitedPath = pathname === '';
 
   const toggleCard = () => {
     setIsVisited(true);
-    //!! прописать роут
+    //!! прописать роут резюме
     navigate('');
   };
 
@@ -39,7 +42,12 @@ export const Card = () => {
         <span className={styles.footer_title}>{title}</span>
         <span className={styles.footer_subtitle}>{activity}</span>
         <div className={styles.footer_buttons}>
-          {/* !!! тут кнопки */}
+          {!invitedPath ?
+            null /* !!! тут кнопки */
+            :
+            //заглушка, серая зона реализации которой нет
+            <div className={styles.footer_status}>{'Принято'}</div>
+          }
         </div>
       </div>
     </section>
