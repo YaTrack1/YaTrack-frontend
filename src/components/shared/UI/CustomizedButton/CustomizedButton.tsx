@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button, { ButtonProps } from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
 import { Stack } from '@mui/system';
+import { useLocation } from 'react-router-dom';
 
 const BootstrapButton = styled(Button)({
   boxShadow: 'none',
@@ -11,7 +12,6 @@ const BootstrapButton = styled(Button)({
   lineHeight: 1,
   backgroundColor: '#5A9BFF',
   width: '278px',
-  height: '50px',
   borderRadius: '6px',
   '&:hover': {
     backgroundColor: '#1D6BF3',
@@ -30,9 +30,9 @@ const BootstrapButton = styled(Button)({
     boxShadow: 'none',
   },
 });
-export default function EntryButton() {
-
+export default function CustomizedButton() {
+  const location=useLocation();
   return (
-    <BootstrapButton type='submit' variant='contained' disableElevation={true}  disableRipple>Текст</BootstrapButton>
+    <BootstrapButton sx={{height: `${location.pathname==='/employer/resumes'? '40px': '50px'}}`}} type='submit' variant='contained' disableElevation={true}  disableRipple>Текст</BootstrapButton>
   );
 }
