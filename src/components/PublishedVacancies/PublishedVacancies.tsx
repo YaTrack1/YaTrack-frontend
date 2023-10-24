@@ -1,4 +1,4 @@
-import { MainMenu } from '../MainMenu/MainMenu';
+import { MainMenu } from '../shared/MainMenu/MainMenu';
 import { Box, Button } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,6 +11,8 @@ import {ReactComponent as trash} from '../../images/trash.svg';
 import { styled } from '@mui/material/styles';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
+import { CreateVacancyFormSteps } from '../shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
+import { ModalForForm } from '../shared/UI/ModalForForm/ModalForForm';
 
 export const PublishedVacancies: React.FC = () => {
   const ClassCard = styled(Card) ({
@@ -49,18 +51,7 @@ export const PublishedVacancies: React.FC = () => {
       filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
     },
   })
-  const Boxstyle = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '654px',
-    bgcolor: 'white',
-    border: '0',
-    boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
-    borderRadius: '12px',
-    p: 2,
-  };
+
   const DeleteStyleButton = styled (Button)({
     border: '1px solid #1D6BF3',
     color: '#5A9BFF',
@@ -77,9 +68,12 @@ export const PublishedVacancies: React.FC = () => {
       backgroundColor: '#B5B5B7',
     },
   })
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
+  const handleOpenModalDelete = () => setOpenModalDelete(true);
+  const handleCloseModalDelete = () => setOpenModalDelete(false);
+  const [openModalCreateVacancy, setOpenModalCreateVacancy] = useState(false);
+  const handleOpenModalCreateVacancy = () => setOpenModalCreateVacancy(true);
+  const handleCloseModalCreateVacancy = () => setOpenModalCreateVacancy(false);
   const listVacancies = [{jobtitle: 'UX/UI дизайнер (junirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrror)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
   return (
     <Box sx={{display:'flex', pr: '30px'}}>
@@ -87,7 +81,7 @@ export const PublishedVacancies: React.FC = () => {
       <Box sx={{flexGrow: 1, mr: '20px', width: '100%'}}>
         <Box sx={{display: 'flex', justifyContent:'space-between', mt: '40px', width: '100%'}}>
           <Typography sx={{fontSize:'34px', ml: '24px'}} variant='h1' component='div'>Опубликованные вакансии</Typography>
-          <CreateVacancyBtn>Создать новую вакансию</CreateVacancyBtn>
+          <CreateVacancyBtn onClick={handleOpenModalCreateVacancy}>Создать новую вакансию</CreateVacancyBtn>
         </Box>
         <List sx={{mr:3, pt: '0'}}>
           {listVacancies.map((vacancy)=>(
@@ -98,7 +92,7 @@ export const PublishedVacancies: React.FC = () => {
                   <SvgIconClass disableRipple>
                     <SvgIcon component={pencil} ></SvgIcon>
                   </SvgIconClass>
-                  <SvgIconClass disableRipple onClick={handleOpen}>
+                  <SvgIconClass disableRipple onClick={handleOpenModalDelete}>
                     <SvgIcon component={trash}></SvgIcon>
                   </SvgIconClass>
                 </Box>
@@ -111,21 +105,18 @@ export const PublishedVacancies: React.FC = () => {
           ))}
         </List>
       </Box>
-      <Modal sx={{backgroundColor: '#1A1B22 0.5'}}
-        open={open}
-        onClose={handleClose}
-      >
-        <Box sx={Boxstyle}>
-          <Typography sx={{fontSize:'24px', textAlign: 'center'}} variant='h6' component='h2'>
-          Вы действительно хотите удалить вакансию?
-          </Typography>
-          <Box sx={{display:'flex', justifyContent: 'space-between', gap: 2, mt: 2}}>
-            <CreateVacancyBtn sx={{width: '100%'}} onClick={handleClose}>Отмена</CreateVacancyBtn>
-            <DeleteStyleButton sx={{width: '100%'}}>Удалить</DeleteStyleButton>
-          </Box>
+      <ModalForForm  open={openModalDelete}
+        onClose={handleCloseModalDelete}>
+        <Typography sx={{fontSize:'24px', textAlign: 'center'}} variant='h6' component='h2'>
+              Вы действительно хотите удалить вакансию?
+        </Typography>
+        <Box sx={{display:'flex', justifyContent: 'space-between', gap: 2, mt: 2}}>
+          <CreateVacancyBtn sx={{width: '100%'}} onClick={handleCloseModalDelete}>Отмена</CreateVacancyBtn>
+          <DeleteStyleButton sx={{width: '100%'}}>Удалить</DeleteStyleButton>
 
-        </Box>
-      </Modal>
+        </Box></ModalForForm>
+      <CreateVacancyFormSteps open={openModalCreateVacancy}
+        onClose={handleCloseModalCreateVacancy}/>
     </Box>
   )
 }

@@ -6,31 +6,33 @@ import { Stack } from '@mui/system';
 const BootstrapButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
-  fontSize: 40,
-  padding: '12px 12px 16px 12px',
+  fontSize: '16px',
+  padding: '0',
   lineHeight: 1,
-  backgroundColor: alpha('#000000', 0.8),
-  fontFamily: 'Suisse Intl',
-  width: '526px',
-  borderRadius: '0',
+  backgroundColor: '#5A9BFF',
+  width: '278px',
+  height: '50px',
+  borderRadius: '6px',
   '&:hover': {
-    backgroundColor: alpha('#000000', 0.6),
+    backgroundColor: '#1D6BF3',
     boxShadow: 'none',
   },
   '&:active': {
-    backgroundColor: alpha('#000000', 0.4),
+    backgroundColor: '#1D6BF3',
     boxShadow: 'none',
   },
   '&:focus': {
-    backgroundColor: alpha('#000000', 0.4),
+    backgroundColor: '##1D6BF3',
+    boxShadow: 'none',
+  },
+  '&:disabled': {
+    backgroundColor: '#B5B5B7',
     boxShadow: 'none',
   },
 });
 export default function EntryButton() {
 
   return (
-    <Stack spacing={2} direction='row'>
-      <BootstrapButton variant='contained'>Вход</BootstrapButton>qw
-    </Stack>
+    <BootstrapButton type='submit' variant='contained' disableElevation={true}  disableRipple>Текст</BootstrapButton>
   );
 }
