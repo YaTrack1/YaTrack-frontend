@@ -10,7 +10,7 @@ import {ReactComponent as closeicon} from '../../../images/close.svg';
 import CustomizedButton from '../UI/CustomizedButton/CustomizedButton';
 interface ISignFormVacancyCreator {
   jobtitle: string;
-  specialization: string;
+  specialization: String;
   city?: string;
   jobdescription?: string;
   conditions?: string;
@@ -59,7 +59,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     textAlign:'left',
     color: '#1A1B22',
   })
-  const specializationOptions = [{id: '1', label: 'Дизайн'},{ id: '2', label: 'Программирование'}, { id: '3', label: 'Менеджмент'}, {id: '4', label: 'Волшебник'}, {id: '5', label: 'Фулстак'}, {id: '6', label: 'Мать'}, {id: '7', label: 'Помогите'}, {id: '8', label:'Как я здесь оказался'}];
+  const specializationOptions = ['Дизайн','Программирование', 'Менеджмент', 'Волшебник', 'Фулстак', 'Мать', 'Помогите', 'Как я здесь оказался'];
   const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
   const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
   const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit']
@@ -73,6 +73,43 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     setStep(1);
     console.log(data)
   }
+  const TextFieldActive = styled(TextField)({
+    '&:checked': {
+      border: '1px solid red',
+      boxShadow: 'none',
+    },
+  })
+  const CssTextField = styled(TextField)({
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#797981',
+      },
+      '&:hover fieldset': {
+        borderColor: '#797981',
+        boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
+      },
+      '&.Mui-focused fieldset': {
+        border: '2px solid #5A9BFF',
+        boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
+      },
+    },
+  });
+  const CssAutocomplete = styled(Autocomplete)({
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#797981',
+      },
+      '&:hover fieldset': {
+        borderColor: '#797981',
+        boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
+      },
+      '&.Mui-focused fieldset': {
+        border: '2px solid #5A9BFF',
+        boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
+      },
+    },
+  })
+
   return (
     <>
       {step === 1 ? (
@@ -92,10 +129,11 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                         const {onChange, value, ref} = field;
                         return (
                           <>
-                            <TextField
+                            <CssTextField
                               inputRef={ref}
                               size='small'
-                              sx={{width: '100%', backgroundColor: '#FFF9D3'}}
+                              fullWidth
+                              sx={{backgroundColor: `${value?'white':'#FFF9D3'}` }}
                               id='jobtitle'
                               placeholder='Например, «UX/UI дизайнер»'
                               value={value || ''}
@@ -118,20 +156,21 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                         const {onChange, value, ref} = field;
                         return (
                           <>
-                            <Autocomplete
+                            <CssAutocomplete
                               value={value ? specializationOptions.find((option)=>{
-                                return value === option.id;
+                                return value === option;
                               }) ?? null
                                 : null}
                               onChange ={(event: any, newValue)=>{
-                                onChange(newValue ? newValue.id : null);
+                                onChange(newValue ? newValue : null);
                               }}
+                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
                               size='small'
                               selectOnFocus
                               disablePortal
                               id='specialization'
                               options={specializationOptions}
-                              sx={{ width: '100%', backgroundColor: '#FFF9D3' }}
+                              fullWidth
                               renderInput={(params) => <TextField placeholder='Например, «Дизайн»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
@@ -148,7 +187,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                       render={({field})=>{
                         const {onChange, value} = field;
                         return (
-                          <TextField
+                          <CssTextField
                             size='small'
                             fullWidth
                             id='city'
@@ -170,7 +209,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                       render={({field})=>{
                         const {onChange, value} = field;
                         return (
-                          <TextField
+                          <CssTextField
                             size='small'
                             fullWidth
                             id='jobdescription'
@@ -192,7 +231,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                       render={({field})=>{
                         const {onChange, value} = field;
                         return (
-                          <TextField
+                          <CssTextField
                             size='small'
                             fullWidth
                             id='jconditions'
@@ -214,7 +253,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                       render={({field})=>{
                         const {onChange, value} = field;
                         return (
-                          <TextField
+                          <CssTextField
                             size='small'
                             fullWidth
                             id='selectionssteps'
@@ -240,7 +279,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
         <ModalForForm open={open} onClose={onClose}>
           <form noValidate onSubmit={handleSubmit(onSubmitSecondStep)}>
             <Box sx={{ width: '100%' }}>
-              <Grid sx={{padding:'0', margin: '0', width: '100%', rowGap: '20px'}} container>
+              <Grid sx={{padding:'0', margin: '20px 0 0 0', width: '100%', rowGap: '20px'}} container>
                 <Grid sx={{padding:'0'}} item xs={6}>
                   <Item sx={{boxShadow: '0', padding:'0 12px 0 0'}}>
                     <CustomInputLabels  shrink htmlFor='schedule'>График работы</CustomInputLabels>
@@ -252,7 +291,9 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                         const {onChange, value, ref} = field;
                         return (
                           <>
-                            <Autocomplete
+                            <CssAutocomplete
+                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
+                              fullWidth
                               value={value ? workSchedule.find((option)=>{
                                 return value === option;
                               }) ?? null
@@ -265,7 +306,6 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               disablePortal
                               id='schedule'
                               options={workSchedule}
-                              sx={{ width: '100%', backgroundColor: '#FFF9D3' }}
                               renderInput={(params) => <TextField placeholder='Например, «Удаленная работа»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
@@ -284,7 +324,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                         const {onChange, value, ref} = field;
                         return (
                           <>
-                            <Autocomplete
+                            <CssAutocomplete
                               value={value ? busyList.find((option)=>{
                                 return value === option;
                               }) ?? null
@@ -297,7 +337,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               disablePortal
                               id='busy'
                               options={busyList}
-                              sx={{ width: '100%', backgroundColor: '#FFF9D3' }}
+                              fullWidth
+                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
                               renderInput={(params) => <TextField placeholder='Например, «Полная»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
