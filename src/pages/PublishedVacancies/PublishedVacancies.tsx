@@ -42,7 +42,7 @@ export const PublishedVacancies: React.FC = () => {
       color: 'white',
       backgroundColor: '#B5B5B7',
     },
-  })
+  });
   const SvgIconClass = styled(IconButton) ({
     padding:'4px',
     margin: '0 0 0 20px',
@@ -50,7 +50,7 @@ export const PublishedVacancies: React.FC = () => {
     '&:hover': {
       filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
     },
-  })
+  });
 
   const DeleteStyleButton = styled (Button)({
     border: '1px solid #1D6BF3',
@@ -67,7 +67,7 @@ export const PublishedVacancies: React.FC = () => {
       color: 'white',
       backgroundColor: '#B5B5B7',
     },
-  })
+  });
   const [openModalDelete, setOpenModalDelete] = useState(false);
   const handleOpenModalDelete = () => setOpenModalDelete(true);
   const handleCloseModalDelete = () => setOpenModalDelete(false);
@@ -118,5 +118,5 @@ export const PublishedVacancies: React.FC = () => {
       <CreateVacancyFormSteps open={openModalCreateVacancy}
         onClose={handleCloseModalCreateVacancy}/>
     </Box>
-  )
-}
+  );
+};

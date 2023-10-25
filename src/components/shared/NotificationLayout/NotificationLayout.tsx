@@ -11,7 +11,7 @@ export const NotificationLayout = ({ title, subtitle, imageSrc }: NotificationLa
       <div className={styles.leftBlock}>
         <div className={styles.information}>
           <h2 className={styles.information_title}>{title}</h2>
-          <p className={styles.information_subtitle}>{subtitle}</p>
+          <p className={styles.information_subtitle} dangerouslySetInnerHTML={{ __html: subtitle }}></p>
         </div>
         {/* <button></button> <------ !! тут кнопка*/}
       </div>
