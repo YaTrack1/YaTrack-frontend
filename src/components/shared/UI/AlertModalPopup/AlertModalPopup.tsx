@@ -31,5 +31,5 @@ export const AlertModalPopup: React.FC = () =>{
         </Alert>
       </Collapse>
     </Box>
-  )
-}
+  );
+};

@@ -1,0 +1,56 @@
+.personalInfo{
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0 0 15px;
+}
+.personalBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 24px;
+  width: inherit;
+  box-sizing: border-box;
+}
+.buttons{
+  display: flex;
+}
+.paper{
+  width: 100%;
+  box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.30), 0px 8px 24px 0px rgba(176, 190, 197, 0.30);
+  border-radius: 12px;
+}
+.infografics{
+  width: 278px;
+  height: 278px;
+}
+.stats{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.photoBox{
+  display: flex;
+  margin-right: 50px;
+}
+.buttons{
+  padding: 20px 45px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.containera{
+  display: flex;
+  max-width: 300px;
+  position: relative;
+}
+.container__title{
+  color: red;
+}
+.container__slider{
+  max-width: 300px;
+	display: flex;
+	justify-content: center;
+	text-align: left;
+}
+.education__wrapper{
+  width: 50%
+}

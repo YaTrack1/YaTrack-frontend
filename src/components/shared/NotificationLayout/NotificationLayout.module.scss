@@ -1,3 +1,6 @@
+@import '../../../styles/abstract/mixins';
+@import '../../../styles/abstract/constants';
+
 .container {
   display: flex;
   width: 1116px;
@@ -22,10 +25,10 @@
 
 .information_title {
   margin: 0;
-  font-size: 24;
+  @include font-h2-med;
 }
 
 .information_subtitle {
   margin: 0;
-  font-size: 16px;
+  @include font-text-reg;
 }
