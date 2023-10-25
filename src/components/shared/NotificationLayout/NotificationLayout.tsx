@@ -1,10 +1,10 @@
-import styles from './ErrorPage.module.scss';
+import styles from './NotificationLayout.module.scss';
 
-export interface ErrorPageProps {
+export interface NotificationLayoutProps {
   [key: string]: string;
 }
 
-export const ErrorPage = ({ title, subtitle, imageSrc }: ErrorPageProps) => {
+export const NotificationLayout = ({ title, subtitle, imageSrc }: NotificationLayoutProps) => {
 
   return(
     <section className={styles.container}>
