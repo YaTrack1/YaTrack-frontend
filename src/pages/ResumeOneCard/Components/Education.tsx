@@ -1,24 +1,31 @@
 import {SectionWrapper} from '../../../components/shared/SectionWrapper/SectionWrapper';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import styles from '../ResumeOneCard.module.scss';
 import React from 'react';
+import styled from '@emotion/styled';
+const CssTypography = styled(Typography)({
+  fontSize: '16px',
+  marginBottom: '10px',
+})
 export const Education = () => {
   return (
-    <SectionWrapper title='Образование'>
-      <Box sx={{display:'flex', pr: '30px'}}>
+
+    <Box sx={{width: '100%', p:'0 24px'}}>
+      <Typography variant='h2' sx={{fontSize: '24px', mb: '23px'}}>Образование</Typography>
+      <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
         <div className={styles.education__wrapper}>
-          <p className={styles.text}>Высшее</p>
-          <p className={styles.text}>ВУЗ</p>
-          <p className={styles.text}>2222-4444</p>
-          <p className={styles.text}>блаблабла</p>
+          <Typography variant='h3' sx={{fontSize: '20px', mb: '10px'}}>Высшее</Typography>
+          <CssTypography variant='h3'>Московский государственный технический университет имени Н. Э. Баумана</CssTypography>
+          <CssTypography variant='h3'>2222-4444</CssTypography>
+          <CssTypography variant='h3'>блаблабла</CssTypography>
         </div>
-        <div className={styles.education__type}>
-          <p className={styles.text}>Дополнительное</p>
-          <p className={styles.text}>Курсы</p>
-          <p className={styles.text}>2222-4444</p>
-          <p className={styles.text}>блаблабла</p>
+        <div className={styles.education__wrapper}>
+          <Typography variant='h3'  sx={{fontSize: '20px', mb: '10px'}}>Дополнительное</Typography>
+          <CssTypography variant='h3'>ВУЗ</CssTypography>
+          <CssTypography variant='h3'>2222-4444</CssTypography>
+          <CssTypography variant='h3'>блаблабла</CssTypography>
         </div>
       </Box>
-    </SectionWrapper>
+    </Box>
   );
 };
