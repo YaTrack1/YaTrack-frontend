@@ -1,14 +1,15 @@
-import { TextField, Button, Stack} from '@mui/material';
+import { TextField, Button, Stack, Typography, Link} from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { TFormValues, TRegisterProps } from './TypesRegister';
-import { schema } from './SchemaRegister';
+import { schema } from './SchemaLogin';
+import { TFormValues, TLoginProps } from './TypesLogin';
+import BasicSelect from '../../components/shared/MuiSelectButton/MuiSelectButton';
+import { AuthorizationWrapper } from '../../components/shared/AuthorizationWrapper/AuthorizationWrapper';
 
-export const MuiRegisterForm: React.FC<TRegisterProps> = ({role}) => {
+export const MuiLoginForm: React.FC<TLoginProps> = ({role}) => {
 
   const form = useForm<TFormValues>({
     defaultValues: {
-      name: '',
       email: '',
       password: '',
     },
@@ -21,14 +22,12 @@ export const MuiRegisterForm: React.FC<TRegisterProps> = ({role}) => {
     console.log(data);
   };
   return (
-    <div>
+    <AuthorizationWrapper>
+      <Stack spacing={2} width={392}>
+        <Typography>Авторизация</Typography>
+        <BasicSelect />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Stack spacing={2} width={392}>
-          <TextField placeholder='Фамилия Имя' type='text' {...register('name',
-            {required: 'Name is required'},
-          )}
-          error={!!errors.name}
-          helperText={errors.name?.message}/>
           <TextField placeholder='Почта' type='email' {...register('email',
             {required: 'Email is required'},
           )}
@@ -42,6 +41,8 @@ export const MuiRegisterForm: React.FC<TRegisterProps> = ({role}) => {
           <Button type='submit' variant='contained' color='primary' disabled={!isDirty || !isValid || (role === 'employee')}>Войти</Button>
         </Stack>
       </form>
-    </div>
+        <Typography>Новый пользователь? <Link href='/signup'>Зарегистрироваться</Link></Typography>
+        </Stack>
+    </AuthorizationWrapper>
   );
 };
