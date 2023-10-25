@@ -100,7 +100,7 @@ export const MainPage: React.FC = () => {
             </Box>
           </RadioGroup>
         </FormControl>
-        <FiltredVacancies vacanciesList={listCandidates()}/>
+        <FiltredVacancies selectedValue={selectedValue} vacanciesList={listCandidates()}/>
       </Box>
     </Box>
   );
