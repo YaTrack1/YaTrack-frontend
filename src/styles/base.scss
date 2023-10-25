@@ -1,4 +1,5 @@
 @import '../styles/abstract/constants';
+@import './abstract/mixins';
 
 * {
   box-sizing: border-box;
@@ -41,4 +42,9 @@ html {
   footer {
     flex: 0 0 auto;
   }
+
+  p {
+    @include font-text-reg;
+  }
+
 }
