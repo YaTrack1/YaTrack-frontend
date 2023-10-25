@@ -50,7 +50,6 @@ export const Card = () => {
         <span className={styles.footer_subtitle}>{activity}</span>
         <div className={styles.footer_buttons}>
           {!invitedPath ?
-            // null /* !!! тут кнопки */
             <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
               <CustomizedButton/>
               <LikeButton/>
