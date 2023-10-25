@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {Box} from '@mui/material';
+import CustomizedButton from '../UI/CustomizedButton/CustomizedButton';
+import LikeButton from '../UI/LikeButton/LikeButton';
 
 import styles from './Card.module.scss';
 
@@ -47,7 +50,10 @@ export const Card = () => {
         <span className={styles.footer_subtitle}>{activity}</span>
         <div className={styles.footer_buttons}>
           {!invitedPath ?
-            null /* !!! тут кнопки */
+            <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
+              <CustomizedButton/>
+              <LikeButton/>
+            </Box>
             :
             //заглушка, серая зона реализации которой нет
             <div className={styles.footer_status}>{'Принято'}</div>

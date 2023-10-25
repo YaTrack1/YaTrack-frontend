@@ -80,6 +80,14 @@
   line-height: 20px;
 }
 
+@mixin font-caption-reg {
+  font-family: 'YS Text';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
   @mixin link {
   text-decoration: none;
   transition: 1s;

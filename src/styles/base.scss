@@ -1,6 +1,10 @@
 @import "./abstract/placeholders";
+@import '../styles/abstract/constants';
+@import './abstract/mixins';
+
 * {
   box-sizing: border-box;
+  color: $black-900;
 }
 
 html {
@@ -41,7 +45,8 @@ html {
     flex: 0 0 auto;
   }
 
-  .p {
-
+  p {
+    @include font-text-reg;
   }
+
 }
