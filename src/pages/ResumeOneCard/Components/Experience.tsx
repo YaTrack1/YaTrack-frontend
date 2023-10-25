@@ -19,14 +19,12 @@ export const Experience = () => {
           >
             <Typography>Основные обязанности</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-            1. Исследование и анализ целевой аудитории, конкурентов и отрасли.
-            2. Разработка концепций и идей для визуальных решений, включая логотипы, типографику, изображения, цвета, шаблоны и т.д.
-            3. Создание макетов и прототипов для печати и цифровых медиа.
-            </Typography>
-          </AccordionDetails>
         </Accordion>
+      </div>
+      <div>
+        <h2 className={styles.title}>Графический дизайнер</h2>
+        <p className={styles.text}>111-222</p>
+        <p className={styles.text}>2 года</p>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -35,14 +33,12 @@ export const Experience = () => {
           >
             <Typography>Основные обязанности</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              1. Исследование и анализ целевой аудитории, конкурентов и отрасли.
-              2. Разработка концепций и идей для визуальных решений, включая логотипы, типографику, изображения, цвета, шаблоны и т.д.
-              3. Создание макетов и прототипов для печати и цифровых медиа.
-            </Typography>
-          </AccordionDetails>
         </Accordion>
+      </div>
+      <div>
+        <h2 className={styles.title}>Графический дизайнер</h2>
+        <p className={styles.text}>111-222</p>
+        <p className={styles.text}>2 года</p>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -51,14 +47,12 @@ export const Experience = () => {
           >
             <Typography>Основные обязанности</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              1. Исследование и анализ целевой аудитории, конкурентов и отрасли.
-              2. Разработка концепций и идей для визуальных решений, включая логотипы, типографику, изображения, цвета, шаблоны и т.д.
-              3. Создание макетов и прототипов для печати и цифровых медиа.
-            </Typography>
-          </AccordionDetails>
         </Accordion>
+      </div>
+      <div>
+        <h2 className={styles.title}>Графический дизайнер</h2>
+        <p className={styles.text}>111-222</p>
+        <p className={styles.text}>2 года</p>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -67,13 +61,6 @@ export const Experience = () => {
           >
             <Typography>Основные обязанности</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              1. Исследование и анализ целевой аудитории, конкурентов и отрасли.
-              2. Разработка концепций и идей для визуальных решений, включая логотипы, типографику, изображения, цвета, шаблоны и т.д.
-              3. Создание макетов и прототипов для печати и цифровых медиа.
-            </Typography>
-          </AccordionDetails>
         </Accordion>
       </div>
     </div>
