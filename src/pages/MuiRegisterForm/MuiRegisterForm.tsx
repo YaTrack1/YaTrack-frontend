@@ -25,28 +25,28 @@ export const MuiRegisterForm: React.FC<TRegisterProps> = ({role}) => {
   return (
     <AuthorizationWrapper>
       <Stack spacing={2} width={392}>
-        <Typography>Авторизация</Typography>
+        <Typography variant='h4'>Авторизация</Typography>
         <BasicSelect />
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Stack spacing={2} width={392}>
-          <TextField placeholder='Фамилия Имя' type='text' {...register('name',
-            {required: 'Name is required'},
-          )}
-          error={!!errors.name}
-          helperText={errors.name?.message}/>
-          <TextField placeholder='Почта' type='email' {...register('email',
-            {required: 'Email is required'},
-          )}
-          error={!!errors.email}
-          helperText={errors.email?.message}/>
-          <TextField placeholder='Пароль' type='password' {...register('password',
-            {required: 'Password is required'},
-          )}
-          error={!!errors.password}
-          helperText={errors.password?.message}/>
-          <Button type='submit' variant='contained' color='primary' disabled={!isDirty || !isValid || (role === 'employee')}>Войти</Button>
-        </Stack>
-      </form>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <Stack spacing={2} width={392}>
+            <TextField placeholder='Фамилия Имя' type='text' {...register('name',
+              {required: 'Name is required'},
+            )}
+            error={!!errors.name}
+            helperText={errors.name?.message}/>
+            <TextField placeholder='Почта' type='email' {...register('email',
+              {required: 'Email is required'},
+            )}
+            error={!!errors.email}
+            helperText={errors.email?.message}/>
+            <TextField placeholder='Пароль' type='password' {...register('password',
+              {required: 'Password is required'},
+            )}
+            error={!!errors.password}
+            helperText={errors.password?.message}/>
+            <Button type='submit' variant='contained' color='primary' disabled={!isDirty || !isValid || (role === 'employee')}>Войти</Button>
+          </Stack>
+        </form>
         <Typography>Уже есть аккаунт? <Link href='/signin'>Войти</Link></Typography>
       </Stack>
     </AuthorizationWrapper>

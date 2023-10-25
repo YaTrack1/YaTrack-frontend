@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.ts,.jsx .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier . --write",
     "prepare": "husky install",
@@ -105,8 +105,8 @@
     "webpack": "^5.88.2"
   },
   "lint-staged": {
-    "*.{js, jsx}": "npm run lint",
-    "*.{js, jsx, css, md, html, json}": "npm run format"
+    "*.{js, ts, tsx}": "npm run lint",
+    "*.{js, ts, tsx, css, md, html, json}": "npm run format"
   },
   "husky": {
     "hooks": {
