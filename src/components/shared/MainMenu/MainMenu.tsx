@@ -47,7 +47,7 @@ export const MainMenu : React.FC = () => {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          ['& .MuiDrawer-paper']: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', borderRight: '1px solid white' },
+          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', borderRight: '1px solid white' },
         }}
       >
         <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
@@ -67,5 +67,5 @@ export const MainMenu : React.FC = () => {
       </Drawer>
 
     </Box>
-  )
-}
+  );
+};

@@ -46,7 +46,7 @@ export const MainPage: React.FC = () => {
       borderBottom: '1px solid #1D6BF3',
       color: 'black',
     },
-  })
+  });
   return (
     <Box sx={{display:'flex', pr: '48px'}}>
       <MainMenu />
@@ -83,5 +83,5 @@ export const MainPage: React.FC = () => {
         </Grid>
       </Box>
     </Box>
-  )
-}
+  );
+};

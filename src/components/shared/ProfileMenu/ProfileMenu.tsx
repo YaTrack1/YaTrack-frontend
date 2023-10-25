@@ -19,5 +19,5 @@ export const ProfileMenu : React.FC = () => {
         </MenuItem>
       </MenuList>
     </Paper>
-  )
-}
+  );
+};
