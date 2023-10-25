@@ -4,6 +4,7 @@ import {MainPage} from './pages/MainPage/MainPage';
 import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
 import { createTheme, ThemeProvider, Button } from '@mui/material';
+import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { MuiLoginForm } from './pages/MuiLoginForm/MuiLoginForm';
 import { MuiRegisterForm } from './pages/MuiRegisterForm/MuiRegisterForm';
 
@@ -38,7 +39,7 @@ function App() {
         <Route path='/' element={<Navigate to='/employer/home'/>}/>
         <Route path='/employer/home' element={<PublishedVacancies />}/>
         <Route path='/employer/resumes' element={<MainPage />}/>
-        <Route path='/employer/resumes/:id' element={<p>ResumeOneCard</p>}/>
+        <Route path='/employer/resumes/:id' element={<ResumeOneCard />}/>
         <Route path='*' element={<NotFoundPage />}/>
       </Routes>
       <Button />
