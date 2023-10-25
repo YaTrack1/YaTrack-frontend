@@ -1,22 +1,22 @@
-import { Route, Routes } from 'react-router-dom';
-import { CreateVacancyFormSteps } from './components/shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import {Header} from './components/Header/Header';
-import { MuiRegisterForm } from './components/MuiRegisterForm/MuiRegisterForm';
-import { MainMenu } from './components/MainMenu/MainMenu';
-import {MainPage} from './components/MainPage/MainPage';
-import { MuiLoginForm } from './components/MuiLoginForm/MuiLoginForm';
+import {MainPage} from './pages/MainPage/MainPage';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
 
 function App() {
   return (
     <>
-      <Header/>
-      <CreateVacancyFormSteps />
-      <MuiRegisterForm role='employer'/>
-      <MuiLoginForm role='employer' />
-      <MainPage />
-      {/* <MainMenu /> */}
-      {/* <CreateVacancyFormSteps />
-      <Popup /> */}
+      <Header />
+      <Routes>
+        <Route path='/signin' element={<p>Signin</p>}/>
+        <Route path='/signup' element={<p>Signup</p>}/>
+        <Route path='/' element={<Navigate to='/employer/home'/>}/>
+        <Route path='/employer/home' element={<PublishedVacancies />}/>
+        <Route path='/employer/resumes' element={<MainPage />}/>
+        <Route path='/employer/resumes/:id' element={<p>ResumeOneCard</p>}/>
+        <Route path='*' element={<NotFoundPage />}/>
+      </Routes>
     </>
   );
 }

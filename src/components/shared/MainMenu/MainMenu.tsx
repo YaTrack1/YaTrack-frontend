@@ -53,9 +53,9 @@ export const MainMenu : React.FC = () => {
         <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
           <Toolbar />
           {companyList.map((i) => (
-            <CompanyButton disableElevation disableRipple >
+            <CompanyButton key={i.id} disableElevation disableRipple >
               <CardContent sx={{ textAlign: 'start', pl: '15px'}}>
-                <ListItem key={i.id} disablePadding sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <ListItem  disablePadding sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
                   <Typography variant='h3' sx={{wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', textTransform: 'none'}}>{i.name}</Typography>
                   <Typography variant='h3' sx={{ wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', mt: '16px'}}>{i.INN}</Typography>
                 </ListItem>
