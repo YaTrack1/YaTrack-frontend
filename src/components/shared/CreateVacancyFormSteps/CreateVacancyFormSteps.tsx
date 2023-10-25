@@ -24,7 +24,7 @@ const StyledButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
   fontSize: 40,
-})
+});
 const SvgIconClass = styled(IconButton) ({
   padding:'0',
   margin: '0 0 0 20px',
@@ -36,7 +36,7 @@ const SvgIconClass = styled(IconButton) ({
   '&:hover': {
     filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
   },
-})
+});
 interface ICreateVacancyFormSteps {
 	// isOpened: boolean;
 	// setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
@@ -58,21 +58,21 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     fontSize: '13px',
     textAlign:'left',
     color: '#1A1B22',
-  })
+  });
   const specializationOptions = [{id: '1', label: 'Дизайн'},{ id: '2', label: 'Программирование'}, { id: '3', label: 'Менеджмент'}, {id: '4', label: 'Волшебник'}, {id: '5', label: 'Фулстак'}, {id: '6', label: 'Мать'}, {id: '7', label: 'Помогите'}, {id: '8', label:'Как я здесь оказался'}];
   const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
   const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
-  const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit']
-  const hardSkillListAdd=['lkj', ';lkjh', ';lkh', 'lkjhe', ';lkjhgfe', 'd', 'dd', 'ddddd', 'dsa']
+  const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
+  const hardSkillListAdd=['lkj', ';lkjh', ';lkh', 'lkjhe', ';lkjhgfe', 'd', 'dd', 'ddddd', 'dsa'];
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitFirstStep = (data: Object) => {
     setStep(2);
-    console.log(data)
-  }
+    console.log(data);
+  };
   const onSubmitSecondStep =(data: Object)=>{
     setStep(1);
-    console.log(data)
-  }
+    console.log(data);
+  };
   return (
     <>
       {step === 1 ? (
@@ -104,7 +104,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               }}/>
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
                           </>
-                        )}}/>
+                        );}}/>
                   </Item>
                 </Grid>
                 <Grid item xs={6}>
@@ -135,7 +135,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               renderInput={(params) => <TextField placeholder='Например, «Дизайн»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
-                          </>)
+                          </>);
                       }}/>
                   </Item>
                 </Grid>
@@ -158,7 +158,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             onChange ={(newValue)=>{
                               onChange(newValue ? newValue : null);
                             }}/>
-                        )}}/>
+                        );}}/>
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
@@ -180,7 +180,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             onChange ={(newValue)=>{
                               onChange(newValue ? newValue : null);
                             }}/>
-                        )}}/>
+                        );}}/>
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
@@ -202,7 +202,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             onChange ={(newValue)=>{
                               onChange(newValue ? newValue : null);
                             }}/>
-                        )}}/>
+                        );}}/>
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
@@ -224,7 +224,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             onChange ={(newValue)=>{
                               onChange(newValue ? newValue : null);
                             }}/>
-                        )}}/>
+                        );}}/>
                   </Item>
                 </Grid>
               </Grid>
@@ -269,7 +269,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               renderInput={(params) => <TextField placeholder='Например, «Удаленная работа»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
-                          </>)
+                          </>);
                       }}/>
                   </Item>
                 </Grid>
@@ -301,7 +301,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               renderInput={(params) => <TextField placeholder='Например, «Полная»' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
-                          </>)
+                          </>);
                       }}/>
                   </Item>
                 </Grid>
@@ -333,7 +333,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               renderInput={(params) => <TextField placeholder='Выберите 3 самых приоритетных скила' {...params} inputRef={ref}/>}
                             />
                             {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
-                          </>)
+                          </>);
                       }}/>
                   </Item>
                 </Grid>
@@ -363,7 +363,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               sx={{ width: '100%' }}
                               renderInput={(params) => <TextField placeholder='Выберите 8 дополнительных скилов' {...params}/>}
                             />
-                          </>)
+                          </>);
                       }}/>
                   </Item>
                 </Grid>
@@ -378,8 +378,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
         </ModalForForm>
       )}
     </>
-  )
-}
+  );
+};
 
 // const onSubmitFirstStep: SubmitHandler<ISignUpFields> = () => {
 //   const userEmail = getValues('email');

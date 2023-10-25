@@ -51,4 +51,4 @@ export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose}) => {
       </Modal>
     </div>
   );
-}
+};
