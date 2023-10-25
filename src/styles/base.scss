@@ -1,5 +1,8 @@
+@import '../styles/abstract/constants';
+
 * {
   box-sizing: border-box;
+  color: $black-900;
 }
 
 html {
