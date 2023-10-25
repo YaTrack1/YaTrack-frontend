@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import {Header} from './components/Header/Header';
 import {MainPage} from './pages/MainPage/MainPage';
-import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
 
 function App() {
