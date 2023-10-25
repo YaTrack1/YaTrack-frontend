@@ -1,4 +1,4 @@
-import { ErrorPage } from '../../components/shared/ErrorPage/ErrorPage';
+import { ErrorPage } from '../shared/ErrorPage/ErrorPage';
 import image from '../../images/no_candidate_locator.png';
 import { NO_CANDIDATE_SUBTITLE, NO_CANDIDATE_TITLE } from '../../utils/constants';
 

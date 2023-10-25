@@ -8,6 +8,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
+    "@hookform/resolvers": "^3.3.2",
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@reduxjs/toolkit": "^1.9.7",
@@ -33,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier . --write",
     "prepare": "husky install",
@@ -97,6 +98,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^6.0.0",
     "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "sass": "^1.69.4",
     "sentence-splitter": "^4.2.1",
@@ -104,8 +106,8 @@
     "webpack": "^5.88.2"
   },
   "lint-staged": {
-    "*.{js, jsx}": "npm run lint",
-    "*.{js, jsx, css, md, html, json}": "npm run format"
+    "*.{js, ts, tsx}": "npm run lint",
+    "*.{js, ts, tsx, css, md, html, json}": "npm run format"
   },
   "husky": {
     "hooks": {

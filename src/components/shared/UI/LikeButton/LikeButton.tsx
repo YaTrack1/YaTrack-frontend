@@ -6,9 +6,9 @@ import { ReactComponent as likeBlue}  from '../../../../images/Like_filled.svg';
 import { styled} from '@mui/material/styles';
 
 export default function LikeButton() {
-  const [isLiked, setIsLiked] = useState(false)
+  const [isLiked, setIsLiked] = useState(false);
   function handleLikeClick(){
-    setIsLiked(!isLiked)
+    setIsLiked(!isLiked);
   }
 
   return (
