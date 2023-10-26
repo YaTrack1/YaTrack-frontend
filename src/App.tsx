@@ -3,12 +3,17 @@ import {Header} from './components/Header/Header';
 import {MainPage} from './pages/MainPage/MainPage';
 import { NotFoundNotice } from './components/NotFoundNotice/NotFoundNotice';
 import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
+import { createTheme, ThemeProvider, StyledEngineProvider, Button } from '@mui/material';
 import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { MuiLoginForm } from './pages/MuiLoginForm/MuiLoginForm';
 import { MuiRegisterForm } from './pages/MuiRegisterForm/MuiRegisterForm';
 
 function App() {
+  const theme = createTheme({
+  })
   return (
+    <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={theme}>
     <>
       <Header />
       <Routes>
@@ -21,8 +26,11 @@ function App() {
         <Route path='/employer/resumes/:id' element={<p>ResumeOneCard</p>}/>
         <Route path='*' element={<NotFoundNotice />}/>
       </Routes>
+      <Button />
     </>
-  );
+    </ThemeProvider>
+    </StyledEngineProvider>
+      );
 }
 
 export default App;

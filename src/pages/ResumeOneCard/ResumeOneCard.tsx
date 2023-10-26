@@ -28,7 +28,7 @@ export const ResumeOneCard = () => {
           <Skills />
         </Box>
         {/* здесь нужен слайдер */}
-        {/* <Experience /> */}
+         <Experience />
 
         <Education />
       </Box>
