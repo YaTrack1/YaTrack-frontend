@@ -3,33 +3,16 @@ import {Header} from './components/Header/Header';
 import {MainPage} from './pages/MainPage/MainPage';
 import { NotFoundNotice } from './components/NotFoundNotice/NotFoundNotice';
 import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
-import { createTheme, ThemeProvider, Button } from '@mui/material';
+import { createTheme, ThemeProvider, StyledEngineProvider, Button } from '@mui/material';
 import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { MuiLoginForm } from './pages/MuiLoginForm/MuiLoginForm';
 import { MuiRegisterForm } from './pages/MuiRegisterForm/MuiRegisterForm';
 
 function App() {
   const theme = createTheme({
-    palette: {
-      mode: 'light',
-      primary: {
-        main: '#FF0200',
-        light: '#B5B5B7',
-        dark: '#1D6BF3',
-        contrastText: '#FFFFFF',
-      },
-      secondary: {
-        main: '#FFFFFF',
-        light: '#1D6BF3',
-        dark: '#1D6BF3',
-        contrastText: '#B5B5B7',
-      },
-      error: {
-        main: '#FF0200',
-      },
-    },
   })
   return (
+    <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
     <>
       <Header />
@@ -46,7 +29,8 @@ function App() {
       <Button />
     </>
     </ThemeProvider>
-  );
+    </StyledEngineProvider>
+      );
 }
 
 export default App;

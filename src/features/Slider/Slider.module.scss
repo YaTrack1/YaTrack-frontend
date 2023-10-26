@@ -1,0 +1,40 @@
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.arrows {
+    z-index: 10;
+
+		&_prev {
+			position: absolute;
+			top: 53px;
+			left: 0;
+			height: 40px;
+			width: 40px;
+			background-color: rgba(255, 255, 255, 0.8);
+			background-image: url(../Slider/lib/arrow.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+
+		}
+
+		&_next {
+			position: absolute;
+			top: 53px;
+			left: calc(100% - 40px);
+			height: 40px;
+			width: 40px;
+			background-color: rgba(255, 255, 255, 0.8);
+			background-image: url(../Slider/lib/arrow.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-color: #CDBCEC;
+		}
+}
