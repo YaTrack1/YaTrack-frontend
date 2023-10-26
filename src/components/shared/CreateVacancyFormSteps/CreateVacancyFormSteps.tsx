@@ -20,11 +20,6 @@ interface ISignFormVacancyCreator {
   hardSkillListImport?: any;
   hardSkillListAdd?:any;
 }
-const StyledButton = styled(Button)({
-  boxShadow: 'none',
-  textTransform: 'none',
-  fontSize: 40,
-});
 const SvgIconClass = styled(IconButton) ({
   padding:'0',
   margin: '0 0 0 20px',
@@ -73,12 +68,6 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     setStep(1);
     console.log(data);
   };
-  const TextFieldActive = styled(TextField)({
-    '&:checked': {
-      border: '1px solid red',
-      boxShadow: 'none',
-    },
-  });
   const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -109,15 +98,14 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
       },
     },
   });
-
   return (
     <>
       {step === 1 ? (
-        <ModalForForm open={open} onClose={onClose}>
+        <ModalForForm open={open} onClose={onClose} step={step}>
           <AlertModalPopup/>
           <form noValidate onSubmit={handleSubmit(onSubmitFirstStep)} >
             <Box sx={{ width: '100%' }}>
-              <Grid sx={{padding:'0', margin: '0', width: '100%', rowGap: '20px'}} container>
+              <Grid sx={{padding:'0', margin: '0', width: '100%', rowGap: '4px'}} container>
                 <Grid sx={{padding:'0'}} item xs={6}>
                   <Item sx={{boxShadow: '0', padding:'0 12px 0 0'}}>
                     <CustomInputLabels  shrink htmlFor='jobtitle'>Должность</CustomInputLabels>
@@ -140,7 +128,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               onChange ={(newValue)=>{
                                 onChange(newValue ? newValue : null);
                               }}/>
-                            {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
+                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
                           </>
                         );}}/>
                   </Item>
@@ -173,7 +161,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               fullWidth
                               renderInput={(params) => <TextField placeholder='Например, «Дизайн»' {...params} inputRef={ref}/>}
                             />
-                            {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
+                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
                           </>);
                       }}/>
                   </Item>
@@ -201,7 +189,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
+                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
                     <CustomInputLabels shrink htmlFor='jobdescription'>Описание вакансии</CustomInputLabels>
                     <Controller
                       name='jobdescription'
@@ -223,7 +211,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
+                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
                     <CustomInputLabels shrink htmlFor='conditions'>Обязанности и условия</CustomInputLabels>
                     <Controller
                       name='conditions'
@@ -245,7 +233,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
+                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
                     <CustomInputLabels shrink htmlFor='selectionssteps'>Этапы отбора</CustomInputLabels>
                     <Controller
                       name='selectionssteps'
@@ -276,10 +264,10 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
           <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
         </ModalForForm>
       ): (
-        <ModalForForm open={open} onClose={onClose}>
+        <ModalForForm open={open} onClose={onClose} step={step}>
           <form noValidate onSubmit={handleSubmit(onSubmitSecondStep)}>
             <Box sx={{ width: '100%' }}>
-              <Grid sx={{padding:'0', margin: '20px 0 0 0', width: '100%', rowGap: '20px'}} container>
+              <Grid sx={{padding:'0', margin: '20px 0 0 0', width: '100%', rowGap: '4px'}} container>
                 <Grid sx={{padding:'0'}} item xs={6}>
                   <Item sx={{boxShadow: '0', padding:'0 12px 0 0'}}>
                     <CustomInputLabels  shrink htmlFor='schedule'>График работы</CustomInputLabels>
@@ -308,7 +296,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               options={workSchedule}
                               renderInput={(params) => <TextField placeholder='Например, «Удаленная работа»' {...params} inputRef={ref}/>}
                             />
-                            {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
+                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
                           </>);
                       }}/>
                   </Item>
@@ -341,7 +329,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
                               renderInput={(params) => <TextField placeholder='Например, «Полная»' {...params} inputRef={ref}/>}
                             />
-                            {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
+                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
                           </>);
                       }}/>
                   </Item>
@@ -373,7 +361,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               sx={{ width: '100%', backgroundColor: '#FFF9D3' }}
                               renderInput={(params) => <TextField placeholder='Выберите 3 самых приоритетных скила' {...params} inputRef={ref}/>}
                             />
-                            {error ? (<span style={{color: 'red'}}>{error.message}</span>):null}
+                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
                           </>);
                       }}/>
                   </Item>
