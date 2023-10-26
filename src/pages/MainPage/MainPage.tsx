@@ -21,6 +21,8 @@ import FormLabel from '@mui/material/FormLabel';
 import {FiltredVacancies} from '../../components/shared/FiltredVacancies/FiltredVacancies';
 
 export const MainPage: React.FC = () => {
+  const menuBtn = [{i: 1, menu: 'Подходящие'}, {i:2, menu: 'Избранное'}, {i: 3, menu:'Приглашенные'}]
+  const [activeMenu, setActiveMenu] = useState(menuBtn[0].i)
   const [isActiveMenu, setIsActiveMenu] = useState(true);
   const [isActiveBtn, setIsActiveBtn] = useState(false);
   const cardList=[{},{},{},{},{},{},{},{},{},{},{},{}];
@@ -61,6 +63,7 @@ export const MainPage: React.FC = () => {
     color: '#797981',
     textTransform: 'none',
     fontSize: '24px',
+    borderRadius: '0',
     '&:hover': {
       backgroundColor: 'white',
       boxShadow: 'none',
@@ -68,21 +71,30 @@ export const MainPage: React.FC = () => {
   });
   const [selectedValue, setSelectedValue] = useState('candidates');
 
-  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue((event.target as HTMLInputElement).value);
-  };
+  // const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSelectedValue((event.target as HTMLInputElement).value);
+  // };
   function listCandidates () {
-    if (selectedValue==='candidates')
-      return [cardList, cardListButtons];
-    if (selectedValue ==='liked')
-      return [likedList, cardListButtons];
+    if (activeMenu===menuBtn[0].i) return [cardList, cardListButtons];
+    if (activeMenu===menuBtn[1].i) return [likedList, cardListButtons];
     else return [invitedList, likelistButtons];
+    // if (selectedValue==='candidates')
+    //   return [cardList, cardListButtons];
+    // if (selectedValue ==='liked')
+    //   return [likedList, cardListButtons];
+    // else return [invitedList, likelistButtons];
   }
   return (
     <Box sx={{display:'flex', pr: '48px'}}>
       <MainMenu />
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flexGrow: 1}}>
-        <IconButton disableRipple sx={{mt:'30px', color: 'black'}}>
+        <Box sx={{display: 'flex'}}>
+          <CssButtonMenu disableElevation disableRipple onClick={()=>{setActiveMenu(menuBtn[0].i)}} sx={{borderBottom: `${activeMenu===menuBtn[0].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[0].i ? 'black' : '#797981'}`}}>{menuBtn[0].menu}</CssButtonMenu>
+          <CssButtonMenu onClick={()=>{setActiveMenu(menuBtn[1].i)}} sx={{borderBottom: `${activeMenu===menuBtn[1].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[1].i ? 'black' : '#797981'}`}}>{menuBtn[1].menu}</CssButtonMenu>
+          <CssButtonMenu onClick={()=>{setActiveMenu(menuBtn[2].i)}} sx={{borderBottom: `${activeMenu===menuBtn[2].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[2].i ? 'black' : '#797981'}`}}>{menuBtn[2].menu}</CssButtonMenu>
+        </Box>
+
+        {/* <IconButton disableRipple sx={{mt:'30px', color: 'black'}}>
           <ArrowBackIosNewIcon sx={{ml: '20px', mr: '15px'}}/>
           <Typography variant='h4' component='div'>UX/UI дизайнер</Typography>
         </IconButton>
@@ -99,7 +111,7 @@ export const MainPage: React.FC = () => {
               <FormControlLabel sx={{color: `${selectedValue==='invited' ? 'black' : '#797981'}`, borderBottom: `${selectedValue==='invited' ? '1px solid #1D6BF3' : '1px solid white'}`}}  value='invited' control={<Radio sx={{display: 'none'}}/>} label='Приглашенные'/>
             </Box>
           </RadioGroup>
-        </FormControl>
+        </FormControl> */}
         <FiltredVacancies selectedValue={selectedValue} vacanciesList={listCandidates()}/>
       </Box>
     </Box>
