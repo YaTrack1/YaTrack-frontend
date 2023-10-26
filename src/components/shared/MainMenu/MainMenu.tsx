@@ -14,6 +14,7 @@ import { styled, alpha } from '@mui/material/styles';
 const drawerWidth = 252;
 export const MainMenu : React.FC = () => {
   const companyList = [{name: 'Компаddd', INN: 'ИНН 111111111', id: 1}, {name: 'Компssssssssssssssssания2', INN: 'ИНН 111111111', id: 2}, {name: 'Компания', INN: 'ИНН 111111111', id: 3}];
+  const [activeComoany, setStatusCompany] = useState(companyList[0].id);
   const CompanyButton = styled(Button)({
     width: '204px',
     borderRadius: '12px 0px 0px 12px',
@@ -52,7 +53,7 @@ export const MainMenu : React.FC = () => {
         <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
           <Toolbar />
           {companyList.map((i) => (
-            <CompanyButton key={i.id} disableElevation disableRipple >
+            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id)}} sx={{backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
               <CardContent sx={{ textAlign: 'start', pl: '15px'}}>
                 <ListItem  disablePadding sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
                   <Typography variant='h3' sx={{wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', textTransform: 'none'}}>{i.name}</Typography>
