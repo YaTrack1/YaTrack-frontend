@@ -13,7 +13,6 @@ import { styled, alpha } from '@mui/material/styles';
 
 const drawerWidth = 252;
 export const MainMenu : React.FC = () => {
-  const [isActiveCard, setIsActiveCard] = useState(false);
   const companyList = [{name: 'Компаddd', INN: 'ИНН 111111111', id: 1}, {name: 'Компssssssssssssssssания2', INN: 'ИНН 111111111', id: 2}, {name: 'Компания', INN: 'ИНН 111111111', id: 3}];
   const CompanyButton = styled(Button)({
     width: '204px',
@@ -24,7 +23,7 @@ export const MainMenu : React.FC = () => {
     pt: '2px',
     boxShadow: 'none',
     '&:hover': {
-      backgroundColor: alpha('#797981', 0.7),
+      backgroundColor: '#F1F6FF',
       boxShadow: 'none',
       color: 'white',
     },
