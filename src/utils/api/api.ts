@@ -9,7 +9,7 @@ export const checkResponse = <T>(res: Response): Promise<T> => {
 };
 
 export const register = ({ username, email, password }: UserType) => {
-  return fetch(`${BASE_URL}/signup`, {
+  return fetch(`${BASE_URL}/auth/users`, {
     method: METHOD.POST,
     headers: JSON_HEADERS,
     body: JSON.stringify({ username, email, password }),
@@ -18,7 +18,7 @@ export const register = ({ username, email, password }: UserType) => {
 };
 
 export const login = ({ email, password }: UserType) => {
-  return fetch(`${BASE_URL}/signin`, {
+  return fetch(`${BASE_URL}/auth/token/login`, {
     method: METHOD.POST,
     headers: JSON_HEADERS,
     body: JSON.stringify({ email, password }),
