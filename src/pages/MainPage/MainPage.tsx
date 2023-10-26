@@ -13,11 +13,21 @@ import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 import { AlertModalPopup } from '../../components/shared/UI/AlertModalPopup/AlertModalPopup';
 import { Card } from '../../components/shared/Card/Card';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import {FiltredVacancies} from '../../components/shared/FiltredVacancies/FiltredVacancies';
 
 export const MainPage: React.FC = () => {
-
+  const [isActiveMenu, setIsActiveMenu] = useState(true);
   const [isActiveBtn, setIsActiveBtn] = useState(false);
   const cardList=[{},{},{},{},{},{},{},{},{},{},{},{}];
+  const cardListButtons = ['Активные', 'Максимальное совпадение', 'Проявившие интерес'];
+  const likelistButtons = ['Принято', 'Ожидание', 'Отказ']
+  const likedList = [{},{},{}];
+  const invitedList = [{},{}];
   const Item = styled(Paper)(() => ({
     height: '300px',
     borderRadius: '12px',
@@ -47,6 +57,27 @@ export const MainPage: React.FC = () => {
       color: 'black',
     },
   });
+  const CssButtonMenu = styled(Button) ({
+    color: '#797981',
+    textTransform: 'none',
+    fontSize: '24px',
+    '&:hover': {
+      backgroundColor: 'white',
+      boxShadow: 'none',
+    },
+  });
+  const [selectedValue, setSelectedValue] = useState('candidates');
+
+  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue((event.target as HTMLInputElement).value);
+  };
+  function listCandidates () {
+    if (selectedValue==='candidates')
+      return [cardList, cardListButtons];
+    if (selectedValue ==='liked')
+      return [likedList, cardListButtons];
+    else return [invitedList, likelistButtons];
+  }
   return (
     <Box sx={{display:'flex', pr: '48px'}}>
       <MainMenu />
@@ -55,32 +86,21 @@ export const MainPage: React.FC = () => {
           <ArrowBackIosNewIcon sx={{ml: '20px', mr: '15px'}}/>
           <Typography variant='h4' component='div'>UX/UI дизайнер</Typography>
         </IconButton>
-        <Menu component='nav' sx={{display: 'flex', ml: '24px', mt:'28px', gap: '40px'}} elevation={0}>
-          <MenuCandidatesItem disableRipple disableGutters>
-            <ListItemText><Typography variant='h5' component='div'>Подходящие кандидаты</Typography></ListItemText>
-          </MenuCandidatesItem>
-          <MenuCandidatesItem disableRipple disableGutters>
-            <ListItemText><Typography variant='h5' component='div'>Избранное</Typography></ListItemText>
-          </MenuCandidatesItem>
-          <MenuCandidatesItem disableRipple disableGutters>
-            <ListItemText><Typography variant='h5' component='div'>Приглашенные</Typography></ListItemText>
-          </MenuCandidatesItem>
-        </Menu>
-        <Box sx={{width: '100%', display:'flex', justifyContent:'space-between', m: '20px 0 0 24px'}}>
-          <Box sx={{display: 'flex', gap:'20px'}}>
-            <ButtonClassYellow onClick={()=>setIsActiveBtn(!isActiveBtn)} disableRipple disableElevation >Активные</ButtonClassYellow>
-            <Button sx={{border: '0',color: 'black', borderRadius: '12px', textTransform: 'none', fontSize: 16, backgroundColor: '#DDE0E4'}} disableRipple disableElevation>Максимальное совпадение</Button>
-            <Button sx={{border: '0',color: 'black', borderRadius: '12px', textTransform: 'none', fontSize: 16, backgroundColor: '#DDE0E4'}} disableRipple disableElevation>Проявившие интерес</Button>
-          </Box>
-          <Button sx={{borderRadius: '6px', textTransform: 'none', fontSize: 16, mr: '24px'}} variant='outlined' disableRipple disableElevation>Выгрузить</Button>
-        </Box>
-        <AlertModalPopup></AlertModalPopup>
-        <Grid container spacing={3} sx={{ml: '0px', mt: '0'}}>
-          {cardList.map((i) => (
-            <Grid item xs={2.35}>
-              <Item><Card></Card></Item>
-            </Grid>))}
-        </Grid>
+        <FormControl sx={{}}>
+          <RadioGroup
+            aria-labelledby='Меню кандидатов'
+            defaultValue='candidates'
+            name='radio-buttons-group'
+            onChange={handleChangeRadio}
+          >
+            <Box sx={{display: 'flex', ml: '30px', mt:'28px', gap: '40px'}}>
+              <FormControlLabel sx={{color: `${selectedValue==='candidates' ? 'black' : '#797981'}`, borderBottom: `${selectedValue==='candidates' ? '1px solid #1D6BF3' : '1px solid white'}`}} value='candidates' control={<Radio sx={{display: 'none'}}/>} label='Подходящие кандидаты'/>
+              <FormControlLabel sx={{color: `${selectedValue==='liked' ? 'black' : '#797981'}`, borderBottom: `${selectedValue==='liked' ? '1px solid #1D6BF3' : '1px solid white'}`}} value='liked' control={<Radio sx={{display: 'none'}}/>} label='Избранные'  />
+              <FormControlLabel sx={{color: `${selectedValue==='invited' ? 'black' : '#797981'}`, borderBottom: `${selectedValue==='invited' ? '1px solid #1D6BF3' : '1px solid white'}`}}  value='invited' control={<Radio sx={{display: 'none'}}/>} label='Приглашенные'/>
+            </Box>
+          </RadioGroup>
+        </FormControl>
+        <FiltredVacancies selectedValue={selectedValue} vacanciesList={listCandidates()}/>
       </Box>
     </Box>
   );
