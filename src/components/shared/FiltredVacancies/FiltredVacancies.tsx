@@ -1,18 +1,11 @@
 import { Box, Checkbox } from '@mui/material';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
 import { Card } from '../Card/Card';
 import {useState, FC, useEffect} from 'react';
 import{ FiltredSubMenu} from '../FiltredSubMenu/FiltredSubMenu';
-
-const Item = styled(Paper)(() => ({
-  height: '300px',
-  borderRadius: '12px',
-  boxShadow: '0px 4px 6px 0px rgba(176, 190, 197, 0.30)',
-}));
 export interface IFiltredVacanciesProps {
 	vacanciesList: any;
  activeMenu: any;
@@ -49,7 +42,7 @@ export const FiltredVacancies: FC<IFiltredVacanciesProps> = ({vacanciesList, act
       <Grid container spacing={3} sx={{ml: '0px', mt: '0'}}>
         {vacanciesList[0].map((i: any) => (
           <Grid item xs={2.35}>
-            <Item><Card/></Item>
+            <Card/>
           </Grid>))}
       </Grid>
     </>
