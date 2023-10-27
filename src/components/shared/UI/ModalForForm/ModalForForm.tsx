@@ -23,7 +23,7 @@ const Boxstyle = {
   overflowY: 'scroll',
 };
 
-export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose, step}) => {
+export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose}) => {
   return (
     <div>
       <Modal
@@ -32,12 +32,6 @@ export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose, step}) 
         sx={{position: 'fixed', overflowY: 'scroll'}}
       >
         <Box sx={Boxstyle}>
-          {/* для попап удаления убрать */}
-          <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
-          <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step!==1 ? '#FFCE92' : '#DDE0E4' }`, p: '8px'}} variant='h3'>Шаг 2</Typography>
-          </Box>
           {children}
         </Box>
       </Modal>

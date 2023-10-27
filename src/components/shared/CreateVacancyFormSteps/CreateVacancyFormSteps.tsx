@@ -101,7 +101,12 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
   return (
     <>
       {step === 1 ? (
-        <ModalForForm open={open} onClose={onClose} step={step}>
+        <ModalForForm open={open} onClose={onClose}>
+          <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
+          <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
+            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>
+            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step!==1 ? '#FFCE92' : '#DDE0E4' }`, p: '8px'}} variant='h3'>Шаг 2</Typography>
+          </Box>
           <AlertModalPopup/>
           <form noValidate onSubmit={handleSubmit(onSubmitFirstStep)} >
             <Box sx={{ width: '100%' }}>
@@ -265,6 +270,11 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
         </ModalForForm>
       ): (
         <ModalForForm open={open} onClose={onClose} step={step}>
+          <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
+          <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
+            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>
+            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step!==1 ? '#FFCE92' : '#DDE0E4' }`, p: '8px'}} variant='h3'>Шаг 2</Typography>
+          </Box>
           <form noValidate onSubmit={handleSubmit(onSubmitSecondStep)}>
             <Box sx={{ width: '100%' }}>
               <Grid sx={{padding:'0', margin: '20px 0 0 0', width: '100%', rowGap: '4px'}} container>
