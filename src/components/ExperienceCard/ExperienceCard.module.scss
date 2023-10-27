@@ -16,7 +16,7 @@
 
 .containerLong {
   background: $black-100;
-  height: 360px;
+  height: auto;
 }
 
 .title {
@@ -34,6 +34,7 @@
 .text {
   margin: 0;
   @include font-text-reg;
+  white-space: normal;
 }
 
 .button_wrap {
