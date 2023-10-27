@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { useEffect, useState, FC } from 'react';
+import { useState, FC } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { Button, Typography, TextField, IconButton, SvgIcon, Box, InputLabel, InputBase, Autocomplete, Grid, Paper } from '@mui/material';
+import { Button, Typography, TextField, IconButton, SvgIcon, Box, InputLabel, Autocomplete, Grid, Paper } from '@mui/material';
 import { ModalForForm } from '../UI/ModalForForm/ModalForForm';
 import  styles from './CreateVacancyFormSteps.module.scss';
 import { styled, alpha } from '@mui/material/styles';
 import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
 import {ReactComponent as closeicon} from '../../../images/close.svg';
-import CustomizedButton from '../UI/CustomizedButton/CustomizedButton';
+import {CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
 interface ISignFormVacancyCreator {
   jobtitle: string;
   specialization: String;
@@ -37,8 +37,10 @@ interface ICreateVacancyFormSteps {
 	// setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
   onClose: any;
+  submitNewVacancy: any;
+  // handleClick: any;
 }
-export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClose}) => {
+export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClose,  submitNewVacancy}) => {
   const [step, setStep] = useState<number>(1);
   const Item = styled(Paper)(({ theme }) => ({
     // с этими стилями надо разобраться в конце концов
@@ -65,6 +67,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     console.log(data);
   };
   const onSubmitSecondStep =(data: Object)=>{
+    submitNewVacancy(data)
     setStep(1);
     console.log(data);
   };
@@ -410,7 +413,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
             </Box>
             <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
               <CustomizedButton/>
-              <CustomizedButton/>
+              <CustomizedButton />
             </Box>
           </form>
           <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
