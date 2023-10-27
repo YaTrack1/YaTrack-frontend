@@ -3,12 +3,13 @@ import React from 'react';
 import {Card} from '../../../components/shared/Card/Card';
 import { FC } from 'react';
 import Slider from '../../../features/Slider/Slider';
+// массив заглушка !!
+import { EXPERIENCE_DATA } from '../../../utils/hardcode';
 
 export const Experience = () => {
-  const experienceList = ['a', 'b', 'c', 'd', 'e', 'f']
   return (
     <div>
-<Slider images={experienceList} />
+      <Slider data={EXPERIENCE_DATA} />
     </div>
   );
 };
