@@ -101,7 +101,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
   return (
     <>
       {step === 1 ? (
-        <ModalForForm open={open} onClose={onClose} step={step}>
+        <ModalForForm open={open} onClose={onClose}>
           <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
           <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
             <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>

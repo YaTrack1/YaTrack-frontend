@@ -23,7 +23,7 @@ const Boxstyle = {
   overflowY: 'scroll',
 };
 
-export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose, step}) => {
+export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose}) => {
   return (
     <div>
       <Modal

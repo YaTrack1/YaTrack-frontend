@@ -15,6 +15,7 @@ import { CreateVacancyFormSteps } from '../../components/shared/CreateVacancyFor
 import { ModalForForm } from '../../components/shared/UI/ModalForForm/ModalForForm';
 import { CardVacancy} from '../../components/shared/CardVacancy/CardVacancy';
 import {ReactComponent as closeicon} from '../../images/close.svg';
+import { ChangeVacancyForm } from '../../components/shared/ChangeVacancyForm/ChangeVacancyForm';
 
 export const PublishedVacancies: React.FC = () => {
 
@@ -72,12 +73,21 @@ export const PublishedVacancies: React.FC = () => {
   const [openModalCreateVacancy, setOpenModalCreateVacancy] = useState(false);
   const handleOpenModalCreateVacancy = () => setOpenModalCreateVacancy(true);
   const handleCloseModalCreateVacancy = () => setOpenModalCreateVacancy(false);
-  const listVacancies = [{jobtitle: 'UX/UI дизайнер (junirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrror)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
-  const [vacancies, setVacanciesList] = useState(listVacancies)
+  const handleCloseModalRedVacancy = () => setOpenRedForm(false)
+  const [openRedForm, setOpenRedForm] = useState(false)
+  const [onCloseRedForm, setOnCloseRedForm] = useState(false)
+  const listVacancies = [{jobtitle: 'UX/UI дизайнер (junirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrror)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'UX/UI дизайнер1 (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX1/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'UX/UI дизайнер 1(junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (1junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'UX/UI дизайнер (junio1r)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
+  const [vacancies, setVacanciesList] = useState(listVacancies);
+  const [vacancyForRed, setVacancyForRed] = useState({})
   function handleDeleteVacancy(titleModal: string){
     const newlist =  vacancies.filter((i)=>i.jobtitle!==titleModal)
     setVacanciesList(newlist)
     handleCloseModalDelete();
+  }
+  function handleRedVacancyOpen(data: any){
+    vacancies.filter((i)=>i.jobtitle===data)
+    console.log(vacancies.filter((i)=>i.jobtitle===data))
+    setOpenRedForm(true)
   }
   return (
     <Box sx={{display:'flex', pr: '30px'}}>
@@ -90,7 +100,7 @@ export const PublishedVacancies: React.FC = () => {
         <List sx={{mr:3, pt: '0'}}>
           {vacancies.map((vacancy)=>(
             <ListItem key={vacancy.id} disablePadding disableGutters sx={{ml:'24px',mt: '40px'}}>
-              <CardVacancy handleOpenModalDelete={handleOpenModalDelete} vacancy={vacancy}/>
+              <CardVacancy  handleRedVacancyOpen={handleRedVacancyOpen} handleOpenModalDelete={handleOpenModalDelete} vacancy={vacancy}/>
             </ListItem>
           ))}
         </List>
@@ -106,8 +116,8 @@ export const PublishedVacancies: React.FC = () => {
           <CreateVacancyBtn sx={{width: '100%'}} onClick={handleCloseModalDelete}>Отмена</CreateVacancyBtn>
           <DeleteStyleButton onClick={()=>handleDeleteVacancy(titleModal)} sx={{width: '100%'}}>Удалить</DeleteStyleButton>
         </Box></ModalForForm>
-      <CreateVacancyFormSteps open={openModalCreateVacancy}
-        onClose={handleCloseModalCreateVacancy}/>
+      <CreateVacancyFormSteps open={openModalCreateVacancy} onClose={handleCloseModalCreateVacancy}/>
+      <ChangeVacancyForm open={openRedForm} vacancyForRed={vacancyForRed} onClose={handleCloseModalRedVacancy}/>
     </Box>
   );
 };

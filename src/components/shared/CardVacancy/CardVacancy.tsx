@@ -13,8 +13,9 @@ import {useState, FC} from 'react';
 export interface ICardVacancyProps {
 	vacancy: any;
   handleOpenModalDelete: any;
+  handleRedVacancyOpen: any;
 }
-export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDelete}) => {
+export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDelete,  handleRedVacancyOpen}) => {
   const ClassCard = styled(Card) ({
     alignItems: 'center',
     padding: '20px',
@@ -40,12 +41,15 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
   function handleOpenModal (data: any){
     handleOpenModalDelete(data);
   }
+  function handleRedOpen(jobtitle: any){
+    handleRedVacancyOpen(jobtitle)
+  }
   return (
     <ClassCard >
       <Typography sx={{width: '708px', overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis'}} variant='h5' component='div'>{vacancy.jobtitle}</Typography>
       <Box>
         <SvgIconClass disableRipple>
-          <SvgIcon component={pencil} ></SvgIcon>
+          <SvgIcon onClick={()=>handleRedOpen(jobtitle)} component={pencil} ></SvgIcon>
         </SvgIconClass>
         <SvgIconClass disableRipple onClick={()=>handleOpenModal(jobtitle)}>
           <SvgIcon component={trash}></SvgIcon>
