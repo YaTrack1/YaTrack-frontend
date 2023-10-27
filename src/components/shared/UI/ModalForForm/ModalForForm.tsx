@@ -32,7 +32,6 @@ export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose, step}) 
         sx={{position: 'fixed', overflowY: 'scroll'}}
       >
         <Box sx={Boxstyle}>
-          {/* для попап удаления убрать */}
           {children}
         </Box>
       </Modal>
