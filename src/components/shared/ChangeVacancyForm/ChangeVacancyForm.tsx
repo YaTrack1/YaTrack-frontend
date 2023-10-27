@@ -83,7 +83,7 @@ const SvgIconClass = styled(IconButton) ({
   '&:hover': {
     filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
   },
-})
+});
 const specializationOptions = ['Дизайн','Программирование', 'Менеджмент', 'Волшебник', 'Фулстак', 'Мать', 'Помогите', 'Как я здесь оказался'];
 const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
 const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
@@ -92,8 +92,8 @@ const hardSkillListAdd=['lkj', ';lkjh', ';lkh', 'lkjhe', ';lkjhgfe', 'd', 'dd', 
 export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, vacancyForRed}) => {
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitRedForm = (data: Object)=>{
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   const specializationOptions = ['Дизайн','Программирование', 'Менеджмент', 'Волшебник', 'Фулстак', 'Мать', 'Помогите', 'Как я здесь оказался'];
 
@@ -390,5 +390,5 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
       </form>
       <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
     </ModalForForm>
-  )
-}
+  );
+};
