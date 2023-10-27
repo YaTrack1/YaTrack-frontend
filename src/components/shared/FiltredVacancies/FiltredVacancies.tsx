@@ -1,4 +1,3 @@
-
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
@@ -16,7 +15,6 @@ const Item = styled(Paper)(() => ({
 export interface IFiltredVacanciesProps {
 	vacanciesList: any;
 	selectedValue: any;
-	// changeValue: (value: number) => void;
 }
 export const FiltredVacancies: FC<IFiltredVacanciesProps> = ({vacanciesList, selectedValue}) => {
   const [activeBtn, setIsActiveBtn] = useState(false);
