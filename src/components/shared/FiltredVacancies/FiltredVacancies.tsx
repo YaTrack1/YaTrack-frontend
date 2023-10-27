@@ -8,7 +8,6 @@ import {useState, FC, useEffect} from 'react';
 import{ FiltredSubMenu} from '../FiltredSubMenu/FiltredSubMenu';
 export interface IFiltredVacanciesProps {
 	vacanciesList: any;
-	selectedValue: any;
  activeMenu: any;
 }
 export const FiltredVacancies: FC<IFiltredVacanciesProps> = ({vacanciesList, activeMenu}) => {
