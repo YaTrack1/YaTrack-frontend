@@ -7,6 +7,7 @@ import { About } from './Components/About';
 import { Skills } from './Components/Skills';
 import { Experience } from './Components/Experience';
 import { Education } from './Components/Education';
+import { EDUCATION_DATA } from '../../utils/hardcode';
 
 export const ResumeOneCard = () => {
   return (
@@ -29,7 +30,7 @@ export const ResumeOneCard = () => {
         </Box>
         {/* здесь нужен слайдер */}
         <Experience />
-        <Education />
+        <Education data={EDUCATION_DATA}/>
       </Box>
     </Box>
   );
