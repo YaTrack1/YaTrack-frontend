@@ -7,7 +7,6 @@ import { About } from './Components/About';
 import { Skills } from './Components/Skills';
 import { Experience } from './Components/Experience';
 import { Education } from './Components/Education';
-import { Diagram } from '../../components/Diagram/Diagram';
 
 export const ResumeOneCard = () => {
   return (
@@ -34,7 +33,6 @@ export const ResumeOneCard = () => {
         <Education />
       </Box>
     </Box>
-  <Diagram kind='small'/>
 </>
 );
 };
