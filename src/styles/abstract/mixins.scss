@@ -81,7 +81,7 @@
 }
 
 @mixin font-caption-reg {
-  font-family: 'YS Text';
+  @extend %font-text;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;

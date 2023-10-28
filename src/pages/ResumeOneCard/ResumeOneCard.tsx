@@ -11,6 +11,7 @@ import { Diagram } from '../../components/Diagram/Diagram';
 
 export const ResumeOneCard = () => {
   return (
+    <>
     <Box sx={{display:'flex'}}>
       <MainMenu/>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flexGrow: 1}}>
@@ -28,11 +29,12 @@ export const ResumeOneCard = () => {
           <About />
           <Skills />
         </Box>
-        <Diagram />
         {/* здесь нужен слайдер */}
         <Experience />
         <Education />
       </Box>
     </Box>
-  );
+  <Diagram kind='small'/>
+</>
+);
 };
