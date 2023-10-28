@@ -1,0 +1,167 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.diagram {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  &_kind {
+    &_big {
+      width: 264px;
+      height: 264px;
+    }
+    &_small {
+      width: 152px;
+      height: 108px;
+    }
+  }
+}
+
+.diagramWrapper {
+  position: relative;
+  &_kind {
+    &_big {
+      width: 264px;
+      height: 264px;
+    }
+
+    &_small {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.circleOne {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  &_kind {
+    &_big {
+      width: 264px;
+      height: 264px;
+    }
+    &_small {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.circleTwo {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  z-index: 1;
+  &_kind {
+    &_big {
+      width: 225px;
+      height: 225px;
+      border: 4px solid white;
+    }
+    &_small {
+      width: 85px;
+      height: 85px;
+    }
+  }
+}
+
+.circleThree {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  z-index: 2;
+  &_kind {
+    &_big {
+      width: 180px;
+      height: 180px;
+      border: 4px solid white;
+    }
+    &_small {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.circleFour {
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  &_kind {
+    &_big {
+      width: 135px;
+      height: 135px;
+    }
+    &_small {
+      width: 55px;
+      height: 55px;
+    }
+  }
+}
+
+.total {
+  margin: 0 auto;
+  &_kind {
+    &_big {
+      @include font-h1-med;
+    }
+    &_small {
+      @include font-h3-med;
+    }
+  }
+}
+
+.textWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  margin-top: 2px;
+  &_kind {
+    &_big {
+      width: 123px;
+      height: 68px;
+    }
+    &_small {
+      width: 96px;
+      height: 36px;
+    }
+  }
+}
+
+.text {
+  text-wrap: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &_kind {
+    &_big {
+      @include font-caption-reg;
+      margin-bottom: 6px;
+
+    }
+    &_small {
+      @include font-caption-reg;
+      font-size: 11px;
+      line-height: 10px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import styles from '../ResumeOneCard.module.scss';
 import { Avatar, Chip, Paper, Box, Typography, Button} from '@mui/material';
 import photo from '../../../images/samples/candidate_photo_sample.png';
-import stats from '../../../images/samples/data_sample2.svg';
+import { Diagram } from '../../../components/Diagram/Diagram';
 import React from 'react';
 
 export const Hero = () => {
@@ -27,7 +27,7 @@ export const Hero = () => {
             sx={{ width: '278px', height: '278px' }}
           />
           <div className={styles.infografics}>
-            <img className={styles.stats} src={stats} alt='Статистика' />
+            <Diagram kind='big'/>
           </div>
         </Box>
       </Box>
