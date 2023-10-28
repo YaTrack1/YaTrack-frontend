@@ -1,10 +1,13 @@
 import styles from './NotificationLayout.module.scss';
 
 export interface NotificationLayoutProps {
-  [key: string]: string;
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  children?: any
 }
 
-export const NotificationLayout = ({ title, subtitle, imageSrc }: NotificationLayoutProps) => {
+export const NotificationLayout = ({ title, subtitle, imageSrc, children }: NotificationLayoutProps) => {
 
   return(
     <section className={styles.container}>
@@ -13,7 +16,7 @@ export const NotificationLayout = ({ title, subtitle, imageSrc }: NotificationLa
           <h2 className={styles.information_title}>{title}</h2>
           <p className={styles.information_subtitle} dangerouslySetInnerHTML={{ __html: subtitle }}></p>
         </div>
-        {/* <button></button> <------ !! тут кнопка*/}
+        {children}
       </div>
       <div className={styles.rightBlock}>
         <img src={imageSrc} alt={title}/>
