@@ -1,3 +1,5 @@
+@import '../../styles/abstract/mixins';
+
 .personalInfo{
   display: flex;
   flex-direction: column;
@@ -51,6 +53,38 @@
 	justify-content: center;
 	text-align: left;
 }
-.education__wrapper{
-  width: 50%
+
+.education_container{
+  padding: 40px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education_title{
+  margin: 0;
+  @include font-h2-med;
+}
+
+.education_subtitle{
+  margin: 0;
+  padding-bottom: 4px;
+  @include font-h3-med;
+}
+
+.education_text{
+  margin: 0;
+  @include font-text-reg;
+}
+
+.education_blocks_wrap{
+  display: flex;
+  gap: 24px;
+}
+
+.education_block{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

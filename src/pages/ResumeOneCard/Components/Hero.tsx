@@ -24,7 +24,7 @@ export const Hero = () => {
           <Avatar
             alt='Фото кандидата'
             src={photo}
-            sx={{ width: '278px', height: '278px' }}
+            sx={{ width: '278px', height: '278px'}}
           />
           <div className={styles.infografics}>
             <Diagram kind='big'/>
