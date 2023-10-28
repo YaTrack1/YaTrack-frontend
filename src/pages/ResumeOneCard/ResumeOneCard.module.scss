@@ -68,10 +68,12 @@
 
 .education_subtitle{
   margin: 0;
+  padding-bottom: 4px;
   @include font-h3-med;
 }
 
 .education_text{
+  margin: 0;
   @include font-text-reg;
 }
 
@@ -82,4 +84,7 @@
 
 .education_block{
   width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
