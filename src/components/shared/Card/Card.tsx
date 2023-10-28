@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Box} from '@mui/material';
-import CustomizedButton from '../UI/CustomizedButton/CustomizedButton';
+import {CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
 import LikeButton from '../UI/LikeButton/LikeButton';
 
 import styles from './Card.module.scss';

@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { useEffect, useState, FC } from 'react';
+import { FC } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { Button, Typography, TextField, IconButton, SvgIcon, Box, InputLabel, InputBase, Autocomplete, Grid, Paper } from '@mui/material';
+import {  Typography, TextField, IconButton, SvgIcon, Box, InputLabel,Autocomplete, Grid, Paper } from '@mui/material';
 import { ModalForForm } from '../UI/ModalForForm/ModalForForm';
-import  styles from './CreateVacancyFormSteps.module.scss';
 import { styled, alpha } from '@mui/material/styles';
-import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
 import {ReactComponent as closeicon} from '../../../images/close.svg';
-import CustomizedButton from '../UI/CustomizedButton/CustomizedButton';
+import { CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
 interface ISignFormVacancyCreator {
   jobtitle: string;
   specialization: String;
@@ -27,6 +25,7 @@ interface ICreateVacancyFormSteps {
   open: boolean;
   onClose?: any;
   vacancyForRed: any;
+  submitNewVacancy?: any;
 }
 const CssTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
@@ -84,7 +83,6 @@ const SvgIconClass = styled(IconButton) ({
     filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
   },
 });
-const specializationOptions = ['Дизайн','Программирование', 'Менеджмент', 'Волшебник', 'Фулстак', 'Мать', 'Помогите', 'Как я здесь оказался'];
 const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
 const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
 const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
