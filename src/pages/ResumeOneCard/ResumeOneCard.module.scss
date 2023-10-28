@@ -16,6 +16,13 @@
 .buttons{
   display: flex;
 }
+
+.buttons__box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 .paper{
   width: 100%;
   box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.30), 0px 8px 24px 0px rgba(176, 190, 197, 0.30);
@@ -33,6 +40,7 @@
 .photoBox{
   display: flex;
   margin-right: 50px;
+  gap: 34px;
 }
 .buttons{
   padding: 20px 45px 20px 20px;

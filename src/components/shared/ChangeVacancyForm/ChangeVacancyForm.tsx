@@ -382,8 +382,8 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
           </Grid>
         </Box>
         <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
-          <CustomizedButton/>
-          <CustomizedButton/>
+          <CustomizedButton text='Сохранить'/>
+          <CustomizedButton text='Удалить'/>
         </Box>
       </form>
       <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>

@@ -50,7 +50,7 @@ export const Card = () => {
         <div className={styles.footer_buttons}>
           {!invitedPath ?
             <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
-              <CustomizedButton/>
+              <CustomizedButton text='Пригласить'/>
               <LikeButton/>
             </Box>
             :

@@ -59,37 +59,37 @@ export const PublishedVacancies: React.FC = () => {
     },
   });
   const [openModalDelete, setOpenModalDelete] = useState(false);
-  const [titleModal, setTitleModal] = useState('')
+  const [titleModal, setTitleModal] = useState('');
   const handleOpenModalDelete = (data: any) => {
     setOpenModalDelete(true);
-    setTitleModal(data)
-  }
+    setTitleModal(data);
+  };
 
   const handleCloseModalDelete = () => setOpenModalDelete(false);
   const [openModalCreateVacancy, setOpenModalCreateVacancy] = useState(false);
   const handleOpenModalCreateVacancy = () => setOpenModalCreateVacancy(true);
   const handleCloseModalCreateVacancy = () => setOpenModalCreateVacancy(false);
-  const handleCloseModalRedVacancy = () => setOpenRedForm(false)
-  const [openRedForm, setOpenRedForm] = useState(false)
+  const handleCloseModalRedVacancy = () => setOpenRedForm(false);
+  const [openRedForm, setOpenRedForm] = useState(false);
   const listVacancies = [{jobtitle: 'UX/UI дизайнер (junirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrror)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'UX/UI дизайнер1 (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX1/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'UX/UI дизайнер 1(junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (1junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'UX/UI дизайнер (junio1r)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
   const [vacancies, setVacanciesList] = useState(listVacancies);
-  const [vacancyForRed, setVacancyForRed] = useState({})
+  const [vacancyForRed, setVacancyForRed] = useState({});
   function handleDeleteVacancy(titleModal: string){
-    const newlist =  vacancies.filter((i)=>i.jobtitle!==titleModal)
-    setVacanciesList(newlist)
+    const newlist =  vacancies.filter((i)=>i.jobtitle!==titleModal);
+    setVacanciesList(newlist);
     handleCloseModalDelete();
   }
   function handleRedVacancyOpen(data: any){
-    vacancies.filter((i)=>i.jobtitle===data)
-    console.log(vacancies.filter((i)=>i.jobtitle===data))
-    setOpenRedForm(true)
+    vacancies.filter((i)=>i.jobtitle===data);
+    console.log(vacancies.filter((i)=>i.jobtitle===data));
+    setOpenRedForm(true);
   }
   function  submitNewVacancy(data: any){
-    const newvac = {jobtitle: data.jobtitle, newresume: [1,2,3,4,5,6], id:10}
-    vacancies.unshift(newvac)
-    console.log(vacancies)
-    setVacanciesList(vacancies)
-    setOpenModalCreateVacancy(false)
+    const newvac = {jobtitle: data.jobtitle, newresume: [1,2,3,4,5,6], id:10};
+    vacancies.unshift(newvac);
+    console.log(vacancies);
+    setVacanciesList(vacancies);
+    setOpenModalCreateVacancy(false);
   }
   return (
     <Box sx={{display:'flex', pr: '30px'}}>

@@ -4,6 +4,3 @@ export type TFormValues = {
   password: string
 }
 
-export type TRegisterProps = {
-  role: string
-}

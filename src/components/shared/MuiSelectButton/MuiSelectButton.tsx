@@ -3,7 +3,7 @@ import { Box, MenuItem, FormControl } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function BasicSelect() {
-  const [role, setRole] = React.useState('Как рекрутер');
+  const [role, setRole] = React.useState('employer');
 
   const handleChange = (event: SelectChangeEvent) => {
     setRole(event.target.value as string);

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { useLocation } from 'react-router-dom';
 import {  FC } from 'react';
 
@@ -32,10 +32,11 @@ const BootstrapButton = styled(Button)({
 });
 export interface ICustomizedButton{
   onClickBtn?: any;
+  text: string;
 }
-export const CustomizedButton: FC<ICustomizedButton> = ({onClickBtn}) => {
+export const CustomizedButton: FC<ICustomizedButton> = ({onClickBtn, text}) => {
   const location=useLocation();
   return (
-    <BootstrapButton onClick = {onClickBtn} sx={{height: `${location.pathname==='/employer/resumes'? '40px': '50px'}}`}} type='submit' variant='contained' disableElevation={true}  disableRipple>Текст</BootstrapButton>
+    <BootstrapButton onClick = {onClickBtn} sx={{height: `${location.pathname==='/employer/resumes'? '40px': '50px'}}`}} type='submit' variant='contained' disableElevation={true}  disableRipple>{text}</BootstrapButton>
   );
-}
+};

@@ -1,4 +1,5 @@
 import styles from '../ResumeOneCard.module.scss';
+import React from 'react';
 
 interface EducationData {
   title: string;

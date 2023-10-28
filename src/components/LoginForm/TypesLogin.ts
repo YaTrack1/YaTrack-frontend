@@ -3,6 +3,3 @@ export type TFormValues = {
   password: string
 }
 
-export type TLoginProps = {
-  role: string
-}
