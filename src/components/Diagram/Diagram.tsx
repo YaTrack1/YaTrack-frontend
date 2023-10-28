@@ -31,14 +31,14 @@ export const Diagram = ({kind}: IDiagram) => {
         <p className={ [styles['text'], styles[`text_kind_${kind}`] ].join(' ')}>Типографика</p>
         <p className={ [styles['text'], styles[`text_kind_${kind}`] ].join(' ')}>Анимация</p>
       </div>
-    <div className={ [styles['diagramWrapper'], styles[`diagramWrapper_kind_${kind}`] ].join(' ')}>
-      <div className={ [styles['circleOne'], styles[`circleOne_kind_${kind}`] ].join(' ')} style={styleOne}></div>
-      <div className={ [styles['circleTwo'], styles[`circleTwo_kind_${kind}`] ].join(' ')} style={styleTwo}></div>
-      <div className={ [styles['circleThree'], styles[`circleThree_kind_${kind}`] ].join(' ')} style={styleThree}></div>
-      <div className={ [styles['circleFour'], styles[`circleFour_kind_${kind}`] ].join(' ')}>
-        <h3 className={ [styles['total'], styles[`total_kind_${kind}`] ].join(' ') }>{total}%</h3>
+      <div className={ [styles['diagramWrapper'], styles[`diagramWrapper_kind_${kind}`] ].join(' ')}>
+        <div className={ [styles['circleOne'], styles[`circleOne_kind_${kind}`] ].join(' ')} style={styleOne}></div>
+        <div className={ [styles['circleTwo'], styles[`circleTwo_kind_${kind}`] ].join(' ')} style={styleTwo}></div>
+        <div className={ [styles['circleThree'], styles[`circleThree_kind_${kind}`] ].join(' ')} style={styleThree}></div>
+        <div className={ [styles['circleFour'], styles[`circleFour_kind_${kind}`] ].join(' ')}>
+          <h3 className={ [styles['total'], styles[`total_kind_${kind}`] ].join(' ') }>{total}%</h3>
+        </div>
       </div>
     </div>
-    </div>
-  )
-}
+  );
+};

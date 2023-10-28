@@ -38,4 +38,4 @@ export const CustomizedButton: FC<ICustomizedButton> = ({onClickBtn}) => {
   return (
     <BootstrapButton onClick = {onClickBtn} sx={{height: `${location.pathname==='/employer/resumes'? '40px': '50px'}}`}} type='submit' variant='contained' disableElevation={true}  disableRipple>Текст</BootstrapButton>
   );
-}
+};

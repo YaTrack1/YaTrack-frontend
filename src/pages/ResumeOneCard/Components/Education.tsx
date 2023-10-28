@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 const CssTypography = styled(Typography)({
   fontSize: '16px',
   marginBottom: '10px',
-})
+});
 export const Education = () => {
   return (
 

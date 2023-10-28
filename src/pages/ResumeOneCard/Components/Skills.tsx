@@ -4,7 +4,7 @@ import React from 'react';
 import { Button, Tooltip, styled } from '@mui/material';
 
 export const Skills = () => {
-  const skillList = [{skill: 'Figma', status: 20}, {skill: 'Figma', status: 80}, {skill: 'Figma', status: 70}, {skill: 'НавыкНавыкНавык', status: 20}, {skill: 'Figma', status: 70}, {skill: 'НавыкНавыкНавык', status: 20}]
+  const skillList = [{skill: 'Figma', status: 20}, {skill: 'Figma', status: 80}, {skill: 'Figma', status: 70}, {skill: 'НавыкНавыкНавык', status: 20}, {skill: 'Figma', status: 70}, {skill: 'НавыкНавыкНавык', status: 20}];
   return (
     <SectionWrapper title='Навыки'>
       <div className={styles.skills__wrapper}>
@@ -25,4 +25,4 @@ export const Skills = () => {
       </div>
     </SectionWrapper>
   );
-}
+};

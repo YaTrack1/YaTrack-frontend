@@ -67,7 +67,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     console.log(data);
   };
   const onSubmitSecondStep =(data: Object)=>{
-    submitNewVacancy(data)
+    submitNewVacancy(data);
     setStep(1);
     console.log(data);
   };

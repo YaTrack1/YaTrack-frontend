@@ -42,7 +42,7 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
     handleOpenModalDelete(data);
   }
   function handleRedOpen(jobtitle: any){
-    handleRedVacancyOpen(jobtitle)
+    handleRedVacancyOpen(jobtitle);
   }
   return (
     <ClassCard >
@@ -59,5 +59,5 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
         <Typography sx={{borderRadius: '12px', padding: '8px', fontSize:'18px', textAlign:'right', backgroundColor: '#C2E5CE'}} variant='h4' component='div'>Есть новые кандидаты +{vacancy.newresume.length}</Typography>
       </Box>
     </ClassCard>
-  )
-}
+  );
+};

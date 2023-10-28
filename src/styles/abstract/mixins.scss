@@ -1,4 +1,5 @@
 @import './placeholders';
+@import './constants';
 
 @mixin font-h1-reg {
   @extend %font-display;
@@ -139,4 +140,19 @@
   background-color: transparent;
   cursor: pointer;
   transition: ease-in-out 350ms;
+}
+
+@mixin button-blue {
+  @include button;
+  background-color: $blue;
+  color: $white;
+  &:hover {
+    background-color: $blue-main;
+  }
+  &:focus {
+    background-color: $blue-main;
+  }
+  &:disabled {
+    background-color: $black-300;
+  }
 }

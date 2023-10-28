@@ -1,3 +1,6 @@
+@import '../../../styles/abstract/mixins';
+@import '../../../styles/abstract/constants';
+
 .authWrapper {
   width: 100%;
   margin-top: 50px;
@@ -6,4 +9,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.authWrapper__frame {
+  width: 432px;
+  padding: 20px;
+}
+
+.authWrapper__title {
+  @include font-h1-med;
+  text-align: center;
+}
+
+.authWrapper__text {
+  @include font-text-reg;
+  text-align: center;
+}
+
+.authWrapper__link {
+  @include font-text-med;
+  color: $black-900;
 }

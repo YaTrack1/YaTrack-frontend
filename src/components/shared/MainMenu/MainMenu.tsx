@@ -51,7 +51,7 @@ export const MainMenu : React.FC = () => {
         <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
           <Toolbar />
           {companyList.map((i) => (
-            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id)}} sx={{borderRight: '1px solid white', backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
+            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id);}} sx={{borderRight: '1px solid white', backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
               <CardContent sx={{ textAlign: 'start', pl: '15px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
                   <Typography variant='h3' sx={{wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', textTransform: 'none'}}>{i.name}</Typography>
