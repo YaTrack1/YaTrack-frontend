@@ -3,6 +3,8 @@ import { Avatar, Chip, Paper, Box, Typography, Button} from '@mui/material';
 import photo from '../../../images/samples/candidate_photo_sample.png';
 import { Diagram } from '../../../components/Diagram/Diagram';
 import React from 'react';
+import LikeButton from '../../../components/shared/UI/LikeButton/LikeButton';
+import { CustomizedButton } from '../../../components/shared/UI/CustomizedButton/CustomizedButton';
 
 export const Hero = () => {
   return (
@@ -24,7 +26,7 @@ export const Hero = () => {
           <Avatar
             alt='Фото кандидата'
             src={photo}
-            sx={{ width: '278px', height: '278px' }}
+            sx={{ width: '278px', height: '278px'}}
           />
           <div className={styles.infografics}>
             <Diagram kind='big'/>
@@ -33,8 +35,8 @@ export const Hero = () => {
       </Box>
       <Box className={styles.buttons}>
         <Box className={styles.buttons__box}>
-          <Button>Пригласить</Button>
-          <Button>O</Button>
+          <CustomizedButton text='Пригласить' />
+          <LikeButton />
         </Box>
         <Box className={styles.buttons__label}>
           <Chip sx={{ fontSize: '18px',borderRadius: '12px', backgroundColor: '#CCC2ED'}} label='Активный' />

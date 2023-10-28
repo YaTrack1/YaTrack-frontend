@@ -7,10 +7,10 @@ import { About } from './Components/About';
 import { Skills } from './Components/Skills';
 import { Experience } from './Components/Experience';
 import { Education } from './Components/Education';
+import { EDUCATION_DATA } from '../../utils/hardcode';
 
 export const ResumeOneCard = () => {
   return (
-    <>
       <Box sx={{display:'flex'}}>
         <MainMenu/>
         <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flexGrow: 1}}>
@@ -21,18 +21,16 @@ export const ResumeOneCard = () => {
             </IconButton>
             <Button sx={{borderRadius: '6px', textTransform: 'none', fontSize: 16, mr: '45px', width: 'auto', height: '40px'}} variant='outlined' disableRipple disableElevation>Выгрузить в PDF</Button>
           </Box>
-          <Box sx={{width: '100%', p: '0 48px 0 24px'}}>
-            <Hero />
-          </Box>
-          <Box sx={{display: 'flex', gap: '24px', m: '30px 48px 0 24px'}}>
-            <About />
-            <Skills />
-          </Box>
-          {/* здесь нужен слайдер */}
-          <Experience />
-          <Education />
+        <Box sx={{width: '100%', p: '0 48px 0 24px'}}>
+          <Hero />
         </Box>
+        <Box sx={{display: 'flex', gap: '24px', m: '30px 48px 0 24px'}}>
+          <About />
+          <Skills />
+        </Box>
+        <Experience />
+        <Education data={EDUCATION_DATA}/>
       </Box>
-    </>
+      </Box>
   );
 };

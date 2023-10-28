@@ -265,8 +265,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
               </Grid>
             </Box>
             <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
-              <CustomizedButton/>
-              <CustomizedButton/>
+              <CustomizedButton text='Далее'/>
+              <CustomizedButton text='Сохранить черновик'/>
             </Box>
           </form>
           <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
@@ -412,8 +412,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
               </Grid>
             </Box>
             <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
-              <CustomizedButton/>
-              <CustomizedButton />
+              <CustomizedButton text='Опубликовать'/>
+              <CustomizedButton text='Сохранить черновик' />
             </Box>
           </form>
           <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>

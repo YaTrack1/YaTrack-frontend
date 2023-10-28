@@ -7,13 +7,11 @@ import styles from './Card.module.scss';
 
 // заглушки. эти данные будут приходит динамически с сервера позже
 import photo from '../../../images/samples/candidate_photo_sample.png';
-import stats from '../../../images/samples/data_sample2.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Diagram } from '../../Diagram/Diagram';
 const name = 'Сидорова Наталья';
 const title = 'Junior';
 const activity = 'Была(а) 1 час назад';
-const number = '90';
-const statsResults = `${number}%`;
 //--------------------------------------------------------------------
 
 export const Card = () => {
@@ -42,8 +40,9 @@ export const Card = () => {
         </div>
       </div>
       <div className={styles.data}>
-        <span className={styles.data_results}>{statsResults}</span>
-        <img className={isVisited && styles.blackAndWhite} src={stats} alt='Статистика' />
+        <div className={isVisited && styles.blackAndWhite}>
+          <Diagram kind='small'/>
+        </div>
       </div>
       <div className={styles.footer}>
         <span className={styles.footer_title}>{title}</span>
@@ -51,7 +50,7 @@ export const Card = () => {
         <div className={styles.footer_buttons}>
           {!invitedPath ?
             <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
-              <CustomizedButton/>
+              <CustomizedButton text='Пригласить'/>
               <LikeButton/>
             </Box>
             :
