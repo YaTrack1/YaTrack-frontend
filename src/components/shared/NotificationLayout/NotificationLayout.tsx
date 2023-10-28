@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import styles from './NotificationLayout.module.scss';
 
 export interface NotificationLayoutProps {
   title: string;
   subtitle: string;
   imageSrc: string;
-  children?: any
+  children?: ReactNode;
 }
 
 export const NotificationLayout = ({ title, subtitle, imageSrc, children }: NotificationLayoutProps) => {
