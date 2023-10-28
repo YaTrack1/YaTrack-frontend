@@ -1,7 +1,16 @@
 import styles from '../ResumeOneCard.module.scss';
 
+interface EducationData {
+  title: string;
+  years: string;
+  grade: string;
+}
+
 interface EducationProps {
-  data: any;
+  data: {
+    mainEdu: EducationData;
+    additionalEdu: EducationData;
+  };
 }
 
 export const Education = ({ data }: EducationProps) => {
