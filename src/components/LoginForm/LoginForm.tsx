@@ -25,7 +25,7 @@ export const LoginForm: React.FC = () => {
   // };
 
   const onSubmit = () => {
-    navigate('/employer/home');
+    navigate('/employer');
     employer()
       .then((res) => {
         console.log(res);

@@ -21,7 +21,7 @@ export const RegisterForm: React.FC = () => {
   const { register, handleSubmit, formState } = form;
   const { errors, isDirty, isValid } = formState;
   const onSubmit = (data: TFormValues) => {
-    navigate('/employer/home');
+    navigate('/employer');
     console.log(data);
   };
   return (

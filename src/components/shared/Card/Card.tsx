@@ -25,7 +25,7 @@ export const Card = () => {
   const toggleCard = () => {
     setIsVisited(true);
     //!! прописать роут резюме
-    navigate('');
+    navigate('id');
   };
 
   return (

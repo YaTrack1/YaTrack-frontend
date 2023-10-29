@@ -3,11 +3,11 @@ import {useState} from 'react';
 import { SvgIcon, IconButton} from '@mui/material';
 import { ReactComponent as like}  from '../../../../images/Like.svg';
 import { ReactComponent as likeBlue}  from '../../../../images/Like_filled.svg';
-import { styled} from '@mui/material/styles';
 
 export default function LikeButton() {
   const [isLiked, setIsLiked] = useState(false);
-  function handleLikeClick(){
+  function handleLikeClick(e: any){
+    e.stopPropagation();
     setIsLiked(!isLiked);
   }
 
