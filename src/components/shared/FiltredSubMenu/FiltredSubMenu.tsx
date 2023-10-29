@@ -3,11 +3,7 @@ import { FC } from 'react';
 import Button from '@mui/material/Button';
 import {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
-interface IFiltredSubMenu{
-  handleFiltredSubBtnClick: any;
-  buttonInfo: any;
-  activeMenu: number;
-}
+import {IFiltredSubMenu} from './TypesFiltredSubMenu';
 
 export const  FiltredSubMenu: FC<IFiltredSubMenu> = ({handleFiltredSubBtnClick, buttonInfo, activeMenu}) => {
   const textForBtn = buttonInfo.submenu;

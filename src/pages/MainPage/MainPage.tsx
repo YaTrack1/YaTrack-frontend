@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import {useState} from 'react';
 import {FiltredVacancies} from '../../components/shared/FiltredVacancies/FiltredVacancies';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {MENU_BTN, CARD_LIST, CARD_LIST_BUTTONS, LIKE_LIST_BUTTONS, LIKED_LIST, INVITED_LIST} from '../../utils/constants';
 
 const CssButtonMenu = styled(Button) ({
   padding: '0',
@@ -24,18 +25,12 @@ const CssIconButton = styled(IconButton)({
   },
 });
 export const MainPage: React.FC = () => {
-  const menuBtn = [{i: 1, menu: 'Подходящие кандидаты'}, {i:2, menu: 'Избранное'}, {i: 3, menu:'Приглашенные'}];
-  const [activeMenu, setActiveMenu] = useState(menuBtn[0].i);
-  const cardList=[{},{},{},{},{},{},{},{},{},{},{},{}];
-  const cardListButtons = [{submenu: 'Активные', color: '#FFF9D3'}, {submenu: 'Максимальное совпадение', color: ' rgba(255, 191, 253, 0.87)'} , {submenu: 'Проявившие интерес', color: '#ACCCFF'}];
-  const likelistButtons = [{submenu: 'Принято', color: '#C2E5CE'}, {submenu: 'Отказ', color: '#FFDDE5'}, {submenu: 'Ожидание', color: '#FFF9D3'}];
-  const likedList = [{},{},{}];
-  const invitedList = [{},{}];
+  const [activeMenu, setActiveMenu] = useState(MENU_BTN[0].i);
 
   function listCandidates () {
-    if (activeMenu===menuBtn[0].i) return [cardList, cardListButtons];
-    if (activeMenu===menuBtn[1].i) return [likedList, cardListButtons];
-    else return [invitedList, likelistButtons];
+    if (activeMenu===MENU_BTN[0].i) return [CARD_LIST, CARD_LIST_BUTTONS];
+    if (activeMenu===MENU_BTN[1].i) return [LIKED_LIST, CARD_LIST_BUTTONS];
+    else return [INVITED_LIST, LIKE_LIST_BUTTONS];
 
   }
 
@@ -49,9 +44,9 @@ export const MainPage: React.FC = () => {
 
         </Box>
         <Box sx={{display: 'flex',ml: '24px'}}>
-          <CssButtonMenu disableElevation disableRipple onClick={()=>{setActiveMenu(menuBtn[0].i);}} sx={{borderBottom: `${activeMenu===menuBtn[0].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[0].i ? 'black' : '#797981'}`}}>{menuBtn[0].menu}</CssButtonMenu>
-          <CssButtonMenu disableElevation disableRipple onClick={()=>{setActiveMenu(menuBtn[1].i);}} sx={{borderBottom: `${activeMenu===menuBtn[1].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[1].i ? 'black' : '#797981'}`}}>{menuBtn[1].menu}</CssButtonMenu>
-          <CssButtonMenu  disableElevation disableRipple onClick={()=>{setActiveMenu(menuBtn[2].i);}} sx={{borderBottom: `${activeMenu===menuBtn[2].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===menuBtn[2].i ? 'black' : '#797981'}`}}>{menuBtn[2].menu}</CssButtonMenu>
+          <CssButtonMenu disableElevation disableRipple onClick={()=>{setActiveMenu(MENU_BTN[0].i);}} sx={{borderBottom: `${activeMenu===MENU_BTN[0].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===MENU_BTN[0].i ? 'black' : '#797981'}`}}>{MENU_BTN[0].menu}</CssButtonMenu>
+          <CssButtonMenu disableElevation disableRipple onClick={()=>{setActiveMenu(MENU_BTN[1].i);}} sx={{borderBottom: `${activeMenu===MENU_BTN[1].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===MENU_BTN[1].i ? 'black' : '#797981'}`}}>{MENU_BTN[1].menu}</CssButtonMenu>
+          <CssButtonMenu  disableElevation disableRipple onClick={()=>{setActiveMenu(MENU_BTN[2].i);}} sx={{borderBottom: `${activeMenu===MENU_BTN[2].i ? '1px solid #1D6BF3' : 'white'}`, color: `${activeMenu===MENU_BTN[2].i ? 'black' : '#797981'}`}}>{MENU_BTN[2].menu}</CssButtonMenu>
         </Box>
         <FiltredVacancies activeMenu={activeMenu} vacanciesList={listCandidates()}/>
       </Box>

@@ -1,20 +1,14 @@
 import {ReactComponent as pencil} from '../../../images/pencil.svg';
 import {ReactComponent as trash} from '../../../images/close.svg';
 import { styled } from '@mui/material/styles';
-import { Box, Button } from '@mui/material';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import { Box } from '@mui/material';
 import { Card } from '@mui/material';
 import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { SvgIcon } from '@mui/material';
-import {useState, FC} from 'react';
+import {FC} from 'react';
+import {ICardVacancyProps} from './TypesCardVacancy';
 
-export interface ICardVacancyProps {
-	vacancy: any;
-  handleOpenModalDelete: any;
-  handleRedVacancyOpen: any;
-}
 export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDelete,  handleRedVacancyOpen}) => {
   const ClassCard = styled(Card) ({
     alignItems: 'center',
@@ -48,8 +42,8 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
     <ClassCard >
       <Typography sx={{width: '708px', overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis'}} variant='h5' component='div'>{vacancy.jobtitle}</Typography>
       <Box>
-        <SvgIconClass disableRipple>
-          <SvgIcon onClick={()=>handleRedOpen(jobtitle)} component={pencil} ></SvgIcon>
+        <SvgIconClass onClick={()=>handleRedOpen(jobtitle)} disableRipple>
+          <SvgIcon component={pencil} ></SvgIcon>
         </SvgIconClass>
         <SvgIconClass disableRipple onClick={()=>handleOpenModal(jobtitle)}>
           <SvgIcon component={trash}></SvgIcon>

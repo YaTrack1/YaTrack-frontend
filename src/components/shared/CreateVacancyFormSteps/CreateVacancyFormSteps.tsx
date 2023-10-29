@@ -1,25 +1,14 @@
 import * as React from 'react';
 import { useState, FC } from 'react';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { Button, Typography, TextField, IconButton, SvgIcon, Box, InputLabel, Autocomplete, Grid, Paper } from '@mui/material';
+import { useForm, Controller } from 'react-hook-form';
+import {Typography, TextField, IconButton, SvgIcon, Box, InputLabel, Autocomplete, Grid, Paper } from '@mui/material';
 import { ModalForForm } from '../UI/ModalForForm/ModalForForm';
-import  styles from './CreateVacancyFormSteps.module.scss';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
 import {ReactComponent as closeicon} from '../../../images/close.svg';
 import {CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
-interface ISignFormVacancyCreator {
-  jobtitle: string;
-  specialization: String;
-  city?: string;
-  jobdescription?: string;
-  conditions?: string;
-  selectionssteps?: string;
-  schedule?: string;
-  busy?: string;
-  hardSkillListImport?: any;
-  hardSkillListAdd?:any;
-}
+import {ISignFormVacancyCreator, ICreateVacancyFormSteps} from './TypesCreateVacancyFormSteps';
+
 const SvgIconClass = styled(IconButton) ({
   padding:'0',
   margin: '0 0 0 20px',
@@ -32,14 +21,7 @@ const SvgIconClass = styled(IconButton) ({
     filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
   },
 });
-interface ICreateVacancyFormSteps {
-	// isOpened: boolean;
-	// setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  open: boolean;
-  onClose: any;
-  submitNewVacancy: any;
-  // handleClick: any;
-}
+
 export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClose,  submitNewVacancy}) => {
   const [step, setStep] = useState<number>(1);
   const Item = styled(Paper)(({ theme }) => ({
