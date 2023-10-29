@@ -40,7 +40,7 @@ export const Card = () => {
         </div>
       </div>
       <div className={styles.data}>
-        <div className={isVisited && styles.blackAndWhite}>
+        <div className={isVisited ? styles.blackAndWhite : undefined}>
           <Diagram kind='small'/>
         </div>
       </div>

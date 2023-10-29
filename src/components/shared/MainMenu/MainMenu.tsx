@@ -38,22 +38,21 @@ export const MainMenu : React.FC = () => {
     },
   });
   return (
-    <Box position='static' sx={{ display: 'flex'}}>
+    <Box position='relative' sx={{ display: 'flex'}}>
       <CssBaseline />
       <Drawer
         variant='permanent'
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', borderRight: '1px solid white' },
-        }}
+          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', position: 'absolute', border: 'none' },
+          }}
       >
-        <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
-          <Toolbar />
+        <Box position='relative' sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
           {companyList.map((i) => (
-            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id);}} sx={{borderRight: '1px solid white', backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
+            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id);}} sx={{borderRight: 'none', backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
               <CardContent sx={{ textAlign: 'start', pl: '15px'}}>
-                <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', border: 'none'}}>
                   <Typography variant='h3' sx={{wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', textTransform: 'none'}}>{i.name}</Typography>
                   <Typography variant='h3' sx={{ wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', mt: '16px'}}>{i.INN}</Typography>
                 </Box>
@@ -63,7 +62,6 @@ export const MainMenu : React.FC = () => {
         </Box>
         <ProfileMenu/>
       </Drawer>
-
     </Box>
   );
 };

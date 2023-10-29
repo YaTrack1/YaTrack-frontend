@@ -7,14 +7,12 @@ import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material'
 import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import styles from './App.module.scss';
 
 function App() {
-  const theme = createTheme({
-  });
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <>
+        <div className={styles.app}>
           <Header />
           <Routes>
             <Route path='/signin' element={<LoginPage />}/>
@@ -25,8 +23,7 @@ function App() {
             <Route path='/employer/resumes/id' element={<ResumeOneCard />}/>
             <Route path='*' element={<NotFoundNotice />}/>
           </Routes>
-        </>
-      </ThemeProvider>
+        </div>
     </StyledEngineProvider>
   );
 }

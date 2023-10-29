@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 export const ProfileMenu : React.FC = () => {
   return (
-    <Paper sx={{ width: 'inherit', maxWidth: '100%', position: 'fixed', bottom: '0', backgroundColor: '#1A1B22'}}>
+    <Paper sx={{ width: 'inherit', maxWidth: '100%', position: 'relative', backgroundColor: '#1A1B22'}}>
       <MenuList sx={{ml: '35px', borderRight:'1px solid white'}}>
         <MenuItem  disableRipple>
           <ListItemText sx={{color: 'white'}}>Личный Кабинет</ListItemText>
