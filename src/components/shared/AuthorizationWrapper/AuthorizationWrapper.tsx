@@ -1,15 +1,8 @@
 import styles from './AuthorizationWrapper.module.scss';
-import { ReactNode } from 'react';
 import { Link, Paper, Typography, Stack } from '@mui/material';
 import BasicSelect from '../MuiSelectButton/MuiSelectButton';
+import { IAuthorizationWrapper } from './TypesAuthorizationWrapper';
 
-interface IAuthorizationWrapper {
-  children: ReactNode;
-  header: string;
-  text?: string;
-  link?: string;
-  linkText?: string;
-}
 export function AuthorizationWrapper({children, header, text, link, linkText}: IAuthorizationWrapper) {
 
   return(

@@ -6,12 +6,13 @@ import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { SvgIcon } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CreateVacancyFormSteps } from '../../components/shared/CreateVacancyFormSteps/CreateVacancyFormSteps';
 import { ModalForForm } from '../../components/shared/UI/ModalForForm/ModalForForm';
 import { CardVacancy} from '../../components/shared/CardVacancy/CardVacancy';
 import {ReactComponent as closeicon} from '../../images/close.svg';
 import { ChangeVacancyForm } from '../../components/shared/ChangeVacancyForm/ChangeVacancyForm';
+import {LIST_VACANCIES} from '../../utils/constants';
 
 export const PublishedVacancies: React.FC = () => {
 
@@ -71,8 +72,7 @@ export const PublishedVacancies: React.FC = () => {
   const handleCloseModalCreateVacancy = () => setOpenModalCreateVacancy(false);
   const handleCloseModalRedVacancy = () => setOpenRedForm(false);
   const [openRedForm, setOpenRedForm] = useState(false);
-  const listVacancies = [{jobtitle: 'UX/UI дизайнер (junirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrror)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'UX/UI дизайнер1 (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX1/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'UX/UI дизайнер 1(junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (1junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'UX/UI дизайнер (junio1r)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
-  const [vacancies, setVacanciesList] = useState(listVacancies);
+  const [vacancies, setVacanciesList] = useState(LIST_VACANCIES);
   const [vacancyForRed, setVacancyForRed] = useState({});
   function handleDeleteVacancy(titleModal: string){
     const newlist =  vacancies.filter((i)=>i.jobtitle!==titleModal);

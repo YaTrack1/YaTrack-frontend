@@ -1,5 +1,5 @@
 import styles from '../ResumeOneCard.module.scss';
-import { Avatar, Chip, Paper, Box, Typography, Button} from '@mui/material';
+import { Avatar, Chip, Paper, Box, Typography } from '@mui/material';
 import photo from '../../../images/samples/candidate_photo_sample.png';
 import { Diagram } from '../../../components/Diagram/Diagram';
 import React from 'react';
