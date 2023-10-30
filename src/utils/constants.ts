@@ -39,7 +39,7 @@ export const NO_INVITED_NOTICE = {
   SUBTITLE: 'Это можно сделать на вкладке Подходящие кандидаты или Избранное',
 };
 
-export const WORK_SCHEDULE = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
+export const WORK_SCHEDULE = ['Удаленная работа', 'Гибкий график', 'Сменный график'];
 export const BUSY_LIST = ['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
 export const HARD_SKILL_LIST_IMPORTANT =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
 export const HARD_LIST_SKILL_ADDITIONAL=['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit', 'JavaScript', 'React', 'MUI', 'CSS', 'БЭМ'];
