@@ -38,11 +38,11 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     textAlign:'left',
     color: '#1A1B22',
   });
-  const specializationOptions = ['Дизайн','Программирование', 'Менеджмент', 'Волшебник', 'Фулстак', 'Мать', 'Помогите', 'Как я здесь оказался'];
+  const specializationOptions = ['Дизайн', 'Программирование', 'Менеджмент', 'Машинное обучение', 'Тестирование'];
   const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
   const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
   const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
-  const hardSkillListAdd=['lkj', ';lkjh', ';lkh', 'lkjhe', ';lkjhgfe', 'd', 'dd', 'ddddd', 'dsa'];
+  const hardSkillListAdd=['JavaScript', 'Firma', 'Python', 'Go', 'SQL', 'UX-исследования'];
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitFirstStep = (data: Object) => {
     setStep(2);
