@@ -56,7 +56,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
   &_kind {
     &_big {
@@ -76,7 +76,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
   &_kind {
     &_big {
@@ -97,7 +97,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 3;
   display: flex;
   align-items: center;
@@ -156,7 +156,6 @@
     &_big {
       @include font-caption-reg;
       margin-bottom: 6px;
-
     }
     &_small {
       @include font-caption-reg;

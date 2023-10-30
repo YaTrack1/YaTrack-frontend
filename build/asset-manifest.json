@@ -28,8 +28,5 @@
     "main.503a4619.css.map": "/static/css/main.503a4619.css.map",
     "main.7fd1811d.js.map": "/static/js/main.7fd1811d.js.map"
   },
-  "entrypoints": [
-    "static/css/main.503a4619.css",
-    "static/js/main.7fd1811d.js"
-  ]
+  "entrypoints": ["static/css/main.503a4619.css", "static/js/main.7fd1811d.js"]
 }

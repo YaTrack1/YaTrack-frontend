@@ -8,7 +8,7 @@ export interface ISignFormVacancyCreator {
   schedule?: string;
   busy?: string;
   hardSkillListImport?: any;
-  hardSkillListAdd?:any;
+  hardSkillListAdd?: any;
 }
 
 export interface ICreateVacancyFormSteps {

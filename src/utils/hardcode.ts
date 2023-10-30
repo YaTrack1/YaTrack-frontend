@@ -82,7 +82,8 @@ export const EXPERIENCE_DATA = [
 
 export const EDUCATION_DATA = {
   mainEdu: {
-    title: 'Московский государственный технический университет имени Н. Э. Баумана',
+    title:
+      'Московский государственный технический университет имени Н. Э. Баумана',
     years: '2018 - 2022',
     grade: 'Бакалавр - «Экономист»',
   },
@@ -92,4 +93,3 @@ export const EDUCATION_DATA = {
     grade: 'Дизайнер интерфейсов',
   },
 };
-

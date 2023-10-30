@@ -28,34 +28,33 @@
 }
 
 .arrows {
+  &_prev {
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background-color: inherit;
+    background-image: url(../../images/icon/arrow_right.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
 
-		&_prev {
-			left: 0;
-			height: 40px;
-			width: 40px;
-			background-color: inherit;
-			background-image: url(../../images/icon/arrow_right.svg);
-			background-position: center;
-			background-repeat: no-repeat;
-      border: 0;
-      transform: rotate(180deg);
-      cursor: pointer;
-		}
+  &_next {
+    left: calc(100% - 40px);
+    height: 40px;
+    width: 40px;
+    background-color: inherit;
+    background-image: url(../../images/icon/arrow_right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    padding-right: 50px;
+    cursor: pointer;
+  }
 
-		&_next {
-			left: calc(100% - 40px);
-			height: 40px;
-			width: 40px;
-			background-color: inherit;
-			background-image: url(../../images/icon/arrow_right.svg);
-			background-repeat: no-repeat;
-			background-position: center;
-      border: 0;
-      padding-right: 50px;
-      cursor: pointer;
-		}
-
-		&:hover {
-			opacity: 0.6;
-		}
+  &:hover {
+    opacity: 0.6;
+  }
 }

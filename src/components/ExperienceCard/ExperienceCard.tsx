@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './ExperienceCard.module.scss';
-import {ExperienceCardProps} from './TypesExperienceCard';
+import { ExperienceCardProps } from './TypesExperienceCard';
 
 export const ExperienceCard = ({
   title,
@@ -8,9 +8,13 @@ export const ExperienceCard = ({
   experince,
   duties,
 }: ExperienceCardProps) => {
-  const [ isClicked, setIsClicked ] = useState(false);
-  const containerClass = `${styles.container} ${isClicked && styles.containerLong}`;
-  const hiddenBlockClass = `${styles.text} ${!isClicked && styles.hidden_block}`;
+  const [isClicked, setIsClicked] = useState(false);
+  const containerClass = `${styles.container} ${
+    isClicked && styles.containerLong
+  }`;
+  const hiddenBlockClass = `${styles.text} ${
+    !isClicked && styles.hidden_block
+  }`;
   const buttonClass = `${styles.arrow_down} ${isClicked && styles.arrow_up}`;
 
   const toggleButton = () => setIsClicked(!isClicked);
@@ -21,7 +25,7 @@ export const ExperienceCard = ({
   // const experince = '2 года';
   // const duties: string = '1. Исследование и анализ целевой аудитории, конкурентов и отрасли. 2. Разработка концепций и идей для визуальных решений, включая логотипы, типографику, изображения, цвета, шаблоны и т.д. 3. Создание макетов и прототипов для печати и цифровых медиа.';
 
-  return(
+  return (
     <div className={containerClass}>
       <div>
         <h3 className={styles.title}>{title}</h3>
@@ -33,7 +37,7 @@ export const ExperienceCard = ({
       <div>
         <div className={styles.button_wrap}>
           <h3 className={styles.title}>Основные обязанности</h3>
-          <button className={buttonClass} onClick={toggleButton}/>
+          <button className={buttonClass} onClick={toggleButton} />
         </div>
         <p className={hiddenBlockClass}>{duties}</p>
       </div>

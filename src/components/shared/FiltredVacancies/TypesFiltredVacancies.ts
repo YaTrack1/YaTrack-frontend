@@ -1,4 +1,4 @@
 export interface IFiltredVacanciesProps {
-	vacanciesList: Array<any>;
- activeMenu: number;
+  vacanciesList: Array<any>;
+  activeMenu: number;
 }

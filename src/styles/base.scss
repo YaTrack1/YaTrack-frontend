@@ -1,4 +1,4 @@
-@import "./abstract/placeholders";
+@import './abstract/placeholders';
 @import '../styles/abstract/constants';
 @import './abstract/mixins';
 
@@ -13,7 +13,7 @@ html {
 
 .page {
   width: 1440px;
-margin: 0 auto;
+  margin: 0 auto;
   position: relative;
 
   &_lock {
@@ -46,5 +46,4 @@ margin: 0 auto;
   footer {
     flex: 0 0 auto;
   }
-
 }

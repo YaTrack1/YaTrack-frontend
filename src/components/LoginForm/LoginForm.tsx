@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Stack } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,24 +29,35 @@ export const LoginForm: React.FC = () => {
     dispatch(
       setIsLoggedIn({
         isLoggedIn: true,
-      }),
+      })
     );
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <Stack spacing={2} width={392}>
-        <TextField placeholder='Почта' type='email' {...register('email',
-          {required: 'Email is required'},
-        )}
-        error={!!errors.email}
-        helperText={errors.email?.message}/>
-        <TextField placeholder='Пароль' type='password' {...register('password',
-          {required: 'Password is required'},
-        )}
-        error={!!errors.password}
-        helperText={errors.password?.message}/>
-        <Button type='submit' variant='contained' className={styles.button} disabled={!isDirty || !isValid}>Войти</Button>
+        <TextField
+          placeholder='Почта'
+          type='email'
+          {...register('email', { required: 'Email is required' })}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+        />
+        <TextField
+          placeholder='Пароль'
+          type='password'
+          {...register('password', { required: 'Password is required' })}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+        />
+        <Button
+          type='submit'
+          variant='contained'
+          className={styles.button}
+          disabled={!isDirty || !isValid}
+        >
+          Войти
+        </Button>
       </Stack>
     </form>
   );

@@ -7,8 +7,5 @@ export default configureStore({
     auth: authReducer,
   },
 
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
-
-    ),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });

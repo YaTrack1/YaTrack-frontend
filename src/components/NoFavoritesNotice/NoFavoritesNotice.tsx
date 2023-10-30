@@ -3,7 +3,7 @@ import image from '../../images/large_chart_with_like.png';
 import { NO_FAVORITES_NOTICE } from '../../utils/constants';
 
 export const NoFavoritesNotice = () => {
-  return(
+  return (
     <NotificationLayout
       title={NO_FAVORITES_NOTICE.TITLE}
       subtitle={NO_FAVORITES_NOTICE.SUBTITLE}

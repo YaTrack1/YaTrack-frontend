@@ -7,10 +7,10 @@ import { useState } from 'react';
 import { ProfileMenu } from '../ProfileMenu/ProfileMenu';
 import { styled } from '@mui/material/styles';
 import { CompanyCard } from '../CompanyCard/CompanyCard';
-import {COMPANY_LIST} from '../../../utils/constants';
+import { COMPANY_LIST } from '../../../utils/constants';
 
 const drawerWidth = 252;
-export const MainMenu : React.FC = () => {
+export const MainMenu: React.FC = () => {
   const [activeComoany, setStatusCompany] = useState(COMPANY_LIST[0].id);
   const CompanyButton = styled(Button)({
     width: '204px',
@@ -37,23 +37,53 @@ export const MainMenu : React.FC = () => {
     },
   });
   return (
-    <Box position='relative' sx={{ display: 'flex'}}>
+    <Box position='relative' sx={{ display: 'flex' }}>
       <CssBaseline />
       <Drawer
         variant='permanent'
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', position: 'absolute', border: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}}
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+            backgroundColor: '#1A1B22',
+            position: 'absolute',
+            border: 'none',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          },
+        }}
       >
-        <Box position='relative' sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
+        <Box
+          position='relative'
+          sx={{
+            overflow: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+          }}
+        >
           {COMPANY_LIST.map((i) => (
-            <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id);}} sx={{backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
-              <CompanyCard card={i}/>
+            <CompanyButton
+              key={i.id}
+              disableElevation
+              disableRipple
+              onClick={() => {
+                setStatusCompany(i.id);
+              }}
+              sx={{
+                backgroundColor: `${
+                  activeComoany === i.id ? 'white' : '#797981'
+                }`,
+              }}
+            >
+              <CompanyCard card={i} />
             </CompanyButton>
           ))}
         </Box>
-        <ProfileMenu/>
+        <ProfileMenu />
       </Drawer>
     </Box>
   );

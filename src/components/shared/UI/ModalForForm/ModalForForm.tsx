@@ -18,17 +18,15 @@ const Boxstyle = {
   overflowY: 'scroll',
 };
 
-export const ModalForForm: FC<IVacancyForm> = ({children, open, onClose}) => {
+export const ModalForForm: FC<IVacancyForm> = ({ children, open, onClose }) => {
   return (
     <div>
       <Modal
         open={open}
         onClose={onClose}
-        sx={{position: 'fixed', overflowY: 'scroll'}}
+        sx={{ position: 'fixed', overflowY: 'scroll' }}
       >
-        <Box sx={Boxstyle}>
-          {children}
-        </Box>
+        <Box sx={Boxstyle}>{children}</Box>
       </Modal>
     </div>
   );

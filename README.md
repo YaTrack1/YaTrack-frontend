@@ -1,9 +1,11 @@
 # YaTrack-frontend
 
-## Website 
+## Website
+
 https://develop--inspiring-crisp-9ef44d.netlify.app/
 
 ## Team
+
 Frontend developers:
 
 Yulia Menacho-Pagés (Telegram: @yuliamenachopages, Github: YuliaMenachoPages)

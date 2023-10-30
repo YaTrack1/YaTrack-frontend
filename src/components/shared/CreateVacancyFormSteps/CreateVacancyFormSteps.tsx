@@ -1,16 +1,29 @@
 import * as React from 'react';
 import { useState, FC } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import {Typography, TextField, IconButton, SvgIcon, Box, InputLabel, Autocomplete, Grid, Paper } from '@mui/material';
+import {
+  Typography,
+  TextField,
+  IconButton,
+  SvgIcon,
+  Box,
+  InputLabel,
+  Autocomplete,
+  Grid,
+  Paper,
+} from '@mui/material';
 import { ModalForForm } from '../UI/ModalForForm/ModalForForm';
 import { styled } from '@mui/material/styles';
 import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
-import {ReactComponent as closeicon} from '../../../images/close.svg';
-import {CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
-import {ISignFormVacancyCreator, ICreateVacancyFormSteps} from './TypesCreateVacancyFormSteps';
+import { ReactComponent as closeicon } from '../../../images/close.svg';
+import { CustomizedButton } from '../UI/CustomizedButton/CustomizedButton';
+import {
+  ISignFormVacancyCreator,
+  ICreateVacancyFormSteps,
+} from './TypesCreateVacancyFormSteps';
 
-const SvgIconClass = styled(IconButton) ({
-  padding:'0',
+const SvgIconClass = styled(IconButton)({
+  padding: '0',
   margin: '0 0 0 20px',
   width: '24px',
   height: '24px',
@@ -22,7 +35,11 @@ const SvgIconClass = styled(IconButton) ({
   },
 });
 
-export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClose,  submitNewVacancy}) => {
+export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
+  open,
+  onClose,
+  submitNewVacancy,
+}) => {
   const [step, setStep] = useState<number>(1);
   const Item = styled(Paper)(({ theme }) => ({
     // с этими стилями надо разобраться в конце концов
@@ -35,19 +52,43 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
   }));
   const CustomInputLabels = styled(InputLabel)({
     fontSize: '13px',
-    textAlign:'left',
+    textAlign: 'left',
     color: '#1A1B22',
   });
-  const specializationOptions = ['Дизайн', 'Программирование', 'Менеджмент', 'Машинное обучение', 'Тестирование'];
-  const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
-  const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
-  const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
-  const hardSkillListAdd=['JavaScript', 'Firma', 'Python', 'Go', 'SQL', 'UX-исследования'];
-  const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
+  const specializationOptions = [
+    'Дизайн',
+    'Программирование',
+    'Менеджмент',
+    'Машинное обучение',
+    'Тестирование',
+  ];
+  const workSchedule = [
+    'Удаленная работа',
+    ' Частичная занятость',
+    'Гибкий график',
+    'Сменный график',
+  ];
+  const busyList = ['Полная', 'Частичная', 'Стажировка', 'Волонтёрство'];
+  const hardSkillListImport = [
+    'UX-исследования',
+    'Прототипирование',
+    'Анимация',
+    'Типографика',
+    'UI-kit',
+  ];
+  const hardSkillListAdd = [
+    'JavaScript',
+    'Firma',
+    'Python',
+    'Go',
+    'SQL',
+    'UX-исследования',
+  ];
+  const { handleSubmit, control } = useForm<ISignFormVacancyCreator>();
   const onSubmitFirstStep = (data: Object) => {
     setStep(2);
   };
-  const onSubmitSecondStep =(data: Object)=>{
+  const onSubmitSecondStep = (data: Object) => {
     submitNewVacancy(data);
     setStep(1);
   };
@@ -86,83 +127,158 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
     <>
       {step === 1 ? (
         <ModalForForm open={open} onClose={onClose}>
-          <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
-          <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step!==1 ? '#FFCE92' : '#DDE0E4' }`, p: '8px'}} variant='h3'>Шаг 2</Typography>
+          <Typography sx={{ fontSize: '34px' }} variant='h2'>
+            Создание вакансии
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '20px', mt: '40px' }}>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                borderRadius: '12px',
+                backgroundColor: `${step === 1 ? '#FFCE92' : '#DDE0E4'}`,
+                p: '8px',
+              }}
+              variant='h3'
+            >
+              Шаг 1
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                borderRadius: '12px',
+                backgroundColor: `${step !== 1 ? '#FFCE92' : '#DDE0E4'}`,
+                p: '8px',
+              }}
+              variant='h3'
+            >
+              Шаг 2
+            </Typography>
           </Box>
-          <AlertModalPopup/>
-          <form noValidate onSubmit={handleSubmit(onSubmitFirstStep)} >
+          <AlertModalPopup />
+          <form noValidate onSubmit={handleSubmit(onSubmitFirstStep)}>
             <Box sx={{ width: '100%' }}>
-              <Grid sx={{padding:'0', margin: '0', width: '100%', rowGap: '4px'}} container>
-                <Grid sx={{padding:'0'}} item xs={6}>
-                  <Item sx={{boxShadow: '0', padding:'0 12px 0 0'}}>
-                    <CustomInputLabels  shrink htmlFor='jobtitle'>Должность</CustomInputLabels>
+              <Grid
+                sx={{ padding: '0', margin: '0', width: '100%', rowGap: '4px' }}
+                container
+              >
+                <Grid sx={{ padding: '0' }} item xs={6}>
+                  <Item sx={{ boxShadow: '0', padding: '0 12px 0 0' }}>
+                    <CustomInputLabels shrink htmlFor='jobtitle'>
+                      Должность
+                    </CustomInputLabels>
                     <Controller
                       name='jobtitle'
-                      rules ={{required: 'Заполните обязательное поле'}}
+                      rules={{ required: 'Заполните обязательное поле' }}
                       control={control}
-                      render={({field, fieldState: {error}})=>{
-                        const {onChange, value, ref} = field;
+                      render={({ field, fieldState: { error } }) => {
+                        const { onChange, value, ref } = field;
                         return (
                           <>
                             <CssTextField
                               inputRef={ref}
                               size='small'
                               fullWidth
-                              sx={{backgroundColor: `${value?'white':'#FFF9D3'}` }}
+                              sx={{
+                                backgroundColor: `${
+                                  value ? 'white' : '#FFF9D3'
+                                }`,
+                              }}
                               id='jobtitle'
                               placeholder='Например, «UX/UI дизайнер»'
                               value={value || ''}
-                              onChange ={(newValue)=>{
+                              onChange={(newValue) => {
                                 onChange(newValue ? newValue : null);
-                              }}/>
-                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
+                              }}
+                            />
+                            <span
+                              style={{
+                                color: 'red',
+                                height: '16px',
+                                textAlign: 'left',
+                                width: '100%',
+                                display: 'block',
+                                fontSize: '11px',
+                              }}
+                            >
+                              {error ? error.message : null}
+                            </span>
                           </>
-                        );}}/>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={6}>
-                  <Item sx={{boxShadow: '0', padding:'0 0 0 12px'}}>
-                    <CustomInputLabels  shrink htmlFor='specialization'>Специализация</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0 0 0 12px' }}>
+                    <CustomInputLabels shrink htmlFor='specialization'>
+                      Специализация
+                    </CustomInputLabels>
                     <Controller
-                      rules ={{required: 'Заполните обязательное поле'}}
+                      rules={{ required: 'Заполните обязательное поле' }}
                       name='specialization'
-                      control = {control}
-                      render={({field, fieldState: {error}})=>{
-                        const {onChange, value, ref} = field;
+                      control={control}
+                      render={({ field, fieldState: { error } }) => {
+                        const { onChange, value, ref } = field;
                         return (
                           <>
                             <CssAutocomplete
-                              value={value ? specializationOptions.find((option)=>{
-                                return value === option;
-                              }) ?? null
-                                : null}
-                              onChange ={(event: any, newValue)=>{
+                              value={
+                                value
+                                  ? specializationOptions.find((option) => {
+                                      return value === option;
+                                    }) ?? null
+                                  : null
+                              }
+                              onChange={(event: any, newValue) => {
                                 onChange(newValue ? newValue : null);
                               }}
-                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
+                              sx={{
+                                backgroundColor: `${
+                                  value ? 'white' : '#FFF9D3'
+                                }`,
+                              }}
                               size='small'
                               selectOnFocus
                               disablePortal
                               id='specialization'
                               options={specializationOptions}
                               fullWidth
-                              renderInput={(params) => <TextField placeholder='Например, «Дизайн»' {...params} inputRef={ref}/>}
+                              renderInput={(params) => (
+                                <TextField
+                                  placeholder='Например, «Дизайн»'
+                                  {...params}
+                                  inputRef={ref}
+                                />
+                              )}
                             />
-                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
-                          </>);
-                      }}/>
+                            <span
+                              style={{
+                                color: 'red',
+                                height: '16px',
+                                textAlign: 'left',
+                                width: '100%',
+                                display: 'block',
+                                fontSize: '11px',
+                              }}
+                            >
+                              {error ? error.message : null}
+                            </span>
+                          </>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
-                    <CustomInputLabels shrink htmlFor='city'>Город</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0' }}>
+                    <CustomInputLabels shrink htmlFor='city'>
+                      Город
+                    </CustomInputLabels>
                     <Controller
                       name='city'
                       control={control}
-                      render={({field})=>{
-                        const {onChange, value} = field;
+                      render={({ field }) => {
+                        const { onChange, value } = field;
                         return (
                           <CssTextField
                             size='small'
@@ -171,20 +287,25 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             multiline
                             rows={1}
                             value={value || ''}
-                            onChange ={(newValue)=>{
+                            onChange={(newValue) => {
                               onChange(newValue ? newValue : null);
-                            }}/>
-                        );}}/>
+                            }}
+                          />
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
-                    <CustomInputLabels shrink htmlFor='jobdescription'>Описание вакансии</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0', mt: '16px' }}>
+                    <CustomInputLabels shrink htmlFor='jobdescription'>
+                      Описание вакансии
+                    </CustomInputLabels>
                     <Controller
                       name='jobdescription'
                       control={control}
-                      render={({field})=>{
-                        const {onChange, value} = field;
+                      render={({ field }) => {
+                        const { onChange, value } = field;
                         return (
                           <CssTextField
                             size='small'
@@ -193,20 +314,25 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             multiline
                             rows={3}
                             value={value || ''}
-                            onChange ={(newValue)=>{
+                            onChange={(newValue) => {
                               onChange(newValue ? newValue : null);
-                            }}/>
-                        );}}/>
+                            }}
+                          />
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
-                    <CustomInputLabels shrink htmlFor='conditions'>Обязанности и условия</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0', mt: '16px' }}>
+                    <CustomInputLabels shrink htmlFor='conditions'>
+                      Обязанности и условия
+                    </CustomInputLabels>
                     <Controller
                       name='conditions'
                       control={control}
-                      render={({field})=>{
-                        const {onChange, value} = field;
+                      render={({ field }) => {
+                        const { onChange, value } = field;
                         return (
                           <CssTextField
                             size='small'
@@ -215,20 +341,25 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             multiline
                             rows={3}
                             value={value || ''}
-                            onChange ={(newValue)=>{
+                            onChange={(newValue) => {
                               onChange(newValue ? newValue : null);
-                            }}/>
-                        );}}/>
+                            }}
+                          />
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0',  mt: '16px'}}>
-                    <CustomInputLabels shrink htmlFor='selectionssteps'>Этапы отбора</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0', mt: '16px' }}>
+                    <CustomInputLabels shrink htmlFor='selectionssteps'>
+                      Этапы отбора
+                    </CustomInputLabels>
                     <Controller
                       name='selectionssteps'
                       control={control}
-                      render={({field})=>{
-                        const {onChange, value} = field;
+                      render={({ field }) => {
+                        const { onChange, value } = field;
                         return (
                           <CssTextField
                             size='small'
@@ -237,82 +368,160 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                             multiline
                             rows={3}
                             value={value || ''}
-                            onChange ={(newValue)=>{
+                            onChange={(newValue) => {
                               onChange(newValue ? newValue : null);
-                            }}/>
-                        );}}/>
+                            }}
+                          />
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
               </Grid>
             </Box>
-            <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
-              <CustomizedButton text='Далее'/>
-              <CustomizedButton text='Сохранить черновик'/>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                margin: '40px 0',
+              }}
+            >
+              <CustomizedButton text='Далее' />
+              <CustomizedButton text='Сохранить черновик' />
             </Box>
           </form>
-          <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
+          <SvgIconClass onClick={onClose} disableRipple>
+            <SvgIcon
+              sx={{ width: '100%', height: '100%' }}
+              component={closeicon}
+              inheritViewBox
+            ></SvgIcon>
+          </SvgIconClass>
         </ModalForForm>
-      ): (
+      ) : (
         <ModalForForm open={open} onClose={onClose} step={step}>
-          <Typography sx={{fontSize: '34px'}} variant='h2'>Создание вакансии</Typography>
-          <Box sx={{display: 'flex', gap: '20px', mt: '40px'}}>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step===1 ? '#FFCE92' : '#DDE0E4' }` , p: '8px'}} variant='h3'>Шаг 1</Typography>
-            <Typography sx={{fontSize: '18px', borderRadius: '12px', backgroundColor: `${step!==1 ? '#FFCE92' : '#DDE0E4' }`, p: '8px'}} variant='h3'>Шаг 2</Typography>
+          <Typography sx={{ fontSize: '34px' }} variant='h2'>
+            Создание вакансии
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '20px', mt: '40px' }}>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                borderRadius: '12px',
+                backgroundColor: `${step === 1 ? '#FFCE92' : '#DDE0E4'}`,
+                p: '8px',
+              }}
+              variant='h3'
+            >
+              Шаг 1
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                borderRadius: '12px',
+                backgroundColor: `${step !== 1 ? '#FFCE92' : '#DDE0E4'}`,
+                p: '8px',
+              }}
+              variant='h3'
+            >
+              Шаг 2
+            </Typography>
           </Box>
           <form noValidate onSubmit={handleSubmit(onSubmitSecondStep)}>
             <Box sx={{ width: '100%' }}>
-              <Grid sx={{padding:'0', margin: '20px 0 0 0', width: '100%', rowGap: '4px'}} container>
-                <Grid sx={{padding:'0'}} item xs={6}>
-                  <Item sx={{boxShadow: '0', padding:'0 12px 0 0'}}>
-                    <CustomInputLabels  shrink htmlFor='schedule'>График работы</CustomInputLabels>
+              <Grid
+                sx={{
+                  padding: '0',
+                  margin: '20px 0 0 0',
+                  width: '100%',
+                  rowGap: '4px',
+                }}
+                container
+              >
+                <Grid sx={{ padding: '0' }} item xs={6}>
+                  <Item sx={{ boxShadow: '0', padding: '0 12px 0 0' }}>
+                    <CustomInputLabels shrink htmlFor='schedule'>
+                      График работы
+                    </CustomInputLabels>
                     <Controller
-                      rules ={{required: 'Заполните обязательное поле'}}
+                      rules={{ required: 'Заполните обязательное поле' }}
                       name='schedule'
-                      control = {control}
-                      render={({field, fieldState: {error}})=>{
-                        const {onChange, value, ref} = field;
+                      control={control}
+                      render={({ field, fieldState: { error } }) => {
+                        const { onChange, value, ref } = field;
                         return (
                           <>
                             <CssAutocomplete
-                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
+                              sx={{
+                                backgroundColor: `${
+                                  value ? 'white' : '#FFF9D3'
+                                }`,
+                              }}
                               fullWidth
-                              value={value ? workSchedule.find((option)=>{
-                                return value === option;
-                              }) ?? null
-                                : null}
-                              onChange ={(event: any, newValue)=>{
-                                onChange(newValue ? newValue: null);
+                              value={
+                                value
+                                  ? workSchedule.find((option) => {
+                                      return value === option;
+                                    }) ?? null
+                                  : null
+                              }
+                              onChange={(event: any, newValue) => {
+                                onChange(newValue ? newValue : null);
                               }}
                               size='small'
                               selectOnFocus
                               disablePortal
                               id='schedule'
                               options={workSchedule}
-                              renderInput={(params) => <TextField placeholder='Например, «Удаленная работа»' {...params} inputRef={ref}/>}
+                              renderInput={(params) => (
+                                <TextField
+                                  placeholder='Например, «Удаленная работа»'
+                                  {...params}
+                                  inputRef={ref}
+                                />
+                              )}
                             />
-                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
-                          </>);
-                      }}/>
+                            <span
+                              style={{
+                                color: 'red',
+                                height: '16px',
+                                textAlign: 'left',
+                                width: '100%',
+                                display: 'block',
+                                fontSize: '11px',
+                              }}
+                            >
+                              {error ? error.message : null}
+                            </span>
+                          </>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={6}>
-                  <Item sx={{boxShadow: '0', padding:'0 0 0 12px'}}>
-                    <CustomInputLabels  shrink htmlFor='busy'>Специализация</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0 0 0 12px' }}>
+                    <CustomInputLabels shrink htmlFor='busy'>
+                      Специализация
+                    </CustomInputLabels>
                     <Controller
-                      rules ={{required: 'Заполните обязательное поле'}}
+                      rules={{ required: 'Заполните обязательное поле' }}
                       name='busy'
-                      control = {control}
-                      render={({field, fieldState: {error}})=>{
-                        const {onChange, value, ref} = field;
+                      control={control}
+                      render={({ field, fieldState: { error } }) => {
+                        const { onChange, value, ref } = field;
                         return (
                           <>
                             <CssAutocomplete
-                              value={value ? busyList.find((option)=>{
-                                return value === option;
-                              }) ?? null
-                                : null}
-                              onChange ={(event: any, newValue)=>{
-                                onChange(newValue ? newValue: null);
+                              value={
+                                value
+                                  ? busyList.find((option) => {
+                                      return value === option;
+                                    }) ?? null
+                                  : null
+                              }
+                              onChange={(event: any, newValue) => {
+                                onChange(newValue ? newValue : null);
                               }}
                               size='small'
                               selectOnFocus
@@ -320,23 +529,48 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               id='busy'
                               options={busyList}
                               fullWidth
-                              sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
-                              renderInput={(params) => <TextField placeholder='Например, «Полная»' {...params} inputRef={ref}/>}
+                              sx={{
+                                backgroundColor: `${
+                                  value ? 'white' : '#FFF9D3'
+                                }`,
+                              }}
+                              renderInput={(params) => (
+                                <TextField
+                                  placeholder='Например, «Полная»'
+                                  {...params}
+                                  inputRef={ref}
+                                />
+                              )}
                             />
-                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
-                          </>);
-                      }}/>
+                            <span
+                              style={{
+                                color: 'red',
+                                height: '16px',
+                                textAlign: 'left',
+                                width: '100%',
+                                display: 'block',
+                                fontSize: '11px',
+                              }}
+                            >
+                              {error ? error.message : null}
+                            </span>
+                          </>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
-                    <CustomInputLabels shrink htmlFor='hardSkillListImport'>Важные hard-скилы</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0' }}>
+                    <CustomInputLabels shrink htmlFor='hardSkillListImport'>
+                      Важные hard-скилы
+                    </CustomInputLabels>
                     <Controller
-                      rules ={{required: 'Заполните обязательное поле'}}
+                      rules={{ required: 'Заполните обязательное поле' }}
                       name='hardSkillListImport'
-                      control = {control}
-                      render={({field, fieldState: {error}})=>{
-                        const {onChange, value, ref} = field;
+                      control={control}
+                      render={({ field, fieldState: { error } }) => {
+                        const { onChange, value, ref } = field;
                         return (
                           <>
                             <Autocomplete
@@ -345,29 +579,54 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               getOptionLabel={(option) => option}
                               value={value || []}
                               filterSelectedOptions
-                              onChange ={(event: any, newValue)=>{
-                                onChange(newValue.length<=3 ? newValue: [newValue[0], newValue[1], value[2]]);
+                              onChange={(event: any, newValue) => {
+                                onChange(
+                                  newValue.length <= 3
+                                    ? newValue
+                                    : [newValue[0], newValue[1], value[2]]
+                                );
                               }}
                               size='small'
                               selectOnFocus
                               disablePortal
                               id='hardSkillListImport'
                               sx={{ width: '100%', backgroundColor: '#FFF9D3' }}
-                              renderInput={(params) => <TextField placeholder='Выберите 3 самых приоритетных скила' {...params} inputRef={ref}/>}
+                              renderInput={(params) => (
+                                <TextField
+                                  placeholder='Выберите 3 самых приоритетных скила'
+                                  {...params}
+                                  inputRef={ref}
+                                />
+                              )}
                             />
-                            <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
-                          </>);
-                      }}/>
+                            <span
+                              style={{
+                                color: 'red',
+                                height: '16px',
+                                textAlign: 'left',
+                                width: '100%',
+                                display: 'block',
+                                fontSize: '11px',
+                              }}
+                            >
+                              {error ? error.message : null}
+                            </span>
+                          </>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
                 <Grid item xs={12}>
-                  <Item sx={{boxShadow: '0', padding:'0'}}>
-                    <CustomInputLabels shrink htmlFor='hardSkillListAdd'>Дополнительные hard-скилы</CustomInputLabels>
+                  <Item sx={{ boxShadow: '0', padding: '0' }}>
+                    <CustomInputLabels shrink htmlFor='hardSkillListAdd'>
+                      Дополнительные hard-скилы
+                    </CustomInputLabels>
                     <Controller
                       name='hardSkillListAdd'
-                      control = {control}
-                      render={({field})=>{
-                        const {onChange, value} = field;
+                      control={control}
+                      render={({ field }) => {
+                        const { onChange, value } = field;
                         return (
                           <>
                             <Autocomplete
@@ -376,28 +635,60 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
                               getOptionLabel={(option) => option}
                               value={value || []}
                               filterSelectedOptions
-                              onChange ={(event: any, newValue)=>{
-                                onChange(newValue.length<=8 ? newValue: [newValue[0], newValue[1],newValue[2], newValue[3], newValue[4], newValue[5], newValue[6], value[7]]);
+                              onChange={(event: any, newValue) => {
+                                onChange(
+                                  newValue.length <= 8
+                                    ? newValue
+                                    : [
+                                        newValue[0],
+                                        newValue[1],
+                                        newValue[2],
+                                        newValue[3],
+                                        newValue[4],
+                                        newValue[5],
+                                        newValue[6],
+                                        value[7],
+                                      ]
+                                );
                               }}
                               size='small'
                               selectOnFocus
                               disablePortal
                               id='hardSkillListAdd'
                               sx={{ width: '100%' }}
-                              renderInput={(params) => <TextField placeholder='Выберите 8 дополнительных скилов' {...params}/>}
+                              renderInput={(params) => (
+                                <TextField
+                                  placeholder='Выберите 8 дополнительных скилов'
+                                  {...params}
+                                />
+                              )}
                             />
-                          </>);
-                      }}/>
+                          </>
+                        );
+                      }}
+                    />
                   </Item>
                 </Grid>
               </Grid>
             </Box>
-            <Box sx={{display: 'flex', justifyContent:'space-between', margin: '40px 0'}}>
-              <CustomizedButton text='Опубликовать'/>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                margin: '40px 0',
+              }}
+            >
+              <CustomizedButton text='Опубликовать' />
               <CustomizedButton text='Сохранить черновик' />
             </Box>
           </form>
-          <SvgIconClass onClick={onClose} disableRipple><SvgIcon sx={{width: '100%', height: '100%'}} component={closeicon} inheritViewBox></SvgIcon></SvgIconClass>
+          <SvgIconClass onClick={onClose} disableRipple>
+            <SvgIcon
+              sx={{ width: '100%', height: '100%' }}
+              component={closeicon}
+              inheritViewBox
+            ></SvgIcon>
+          </SvgIconClass>
         </ModalForForm>
       )}
     </>

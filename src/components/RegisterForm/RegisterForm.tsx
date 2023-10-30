@@ -28,28 +28,42 @@ export const RegisterForm: React.FC = () => {
     dispatch(
       setIsLoggedIn({
         isLoggedIn: true,
-      }),
+      })
     );
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <Stack spacing={2} width={392}>
-        <TextField placeholder='Фамилия Имя' type='text' {...register('name',
-          {required: 'Name is required'},
-        )}
-        error={!!errors.name}
-        helperText={errors.name?.message}/>
-        <TextField placeholder='Почта' type='email' {...register('email',
-          {required: 'Email is required'},
-        )}
-        error={!!errors.email}
-        helperText={errors.email?.message}/>
-        <TextField placeholder='Пароль' type='password' {...register('password',
-          {required: 'Password is required'},
-        )}
-        error={!!errors.password}
-        helperText={errors.password?.message}/>
-        <Button type='submit' variant='contained' color='primary' className={styles.button} disabled={!isDirty || !isValid}>Войти</Button>
+        <TextField
+          placeholder='Фамилия Имя'
+          type='text'
+          {...register('name', { required: 'Name is required' })}
+          error={!!errors.name}
+          helperText={errors.name?.message}
+        />
+        <TextField
+          placeholder='Почта'
+          type='email'
+          {...register('email', { required: 'Email is required' })}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+        />
+        <TextField
+          placeholder='Пароль'
+          type='password'
+          {...register('password', { required: 'Password is required' })}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+        />
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          className={styles.button}
+          disabled={!isDirty || !isValid}
+        >
+          Войти
+        </Button>
       </Stack>
     </form>
   );

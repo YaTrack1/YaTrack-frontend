@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {Box} from '@mui/material';
-import {CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
+import { Box } from '@mui/material';
+import { CustomizedButton } from '../UI/CustomizedButton/CustomizedButton';
 import LikeButton from '../UI/LikeButton/LikeButton';
 
 import styles from './Card.module.scss';
@@ -15,9 +15,9 @@ const activity = 'Была(а) 1 час назад';
 //--------------------------------------------------------------------
 
 export const Card = () => {
-  const [ isVisited, setIsVisited ] = useState(false);
+  const [isVisited, setIsVisited] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [ isCandidateInterest, setIsCandidateInterest ] = useState(false);
+  const [isCandidateInterest, setIsCandidateInterest] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   //!! прописать роут для Приглашённые
@@ -31,33 +31,35 @@ export const Card = () => {
 
   return (
     <section
-      className={`${styles.container} ${isCandidateInterest && styles.container_active}`}
+      className={`${styles.container} ${
+        isCandidateInterest && styles.container_active
+      }`}
       onClick={toggleCard}
     >
       <div className={styles.header}>
         <p className={styles.header_title}>{name}</p>
         <div>
-          <img className={styles.header_img} src={photo} alt='Фото кандидата'/>
+          <img className={styles.header_img} src={photo} alt='Фото кандидата' />
         </div>
       </div>
       <div className={styles.data}>
         <div className={isVisited ? styles.blackAndWhite : undefined}>
-          <Diagram kind='small'/>
+          <Diagram kind='small' />
         </div>
       </div>
       <div className={styles.footer}>
         <span className={styles.footer_title}>{title}</span>
         <span className={styles.footer_subtitle}>{activity}</span>
         <div className={styles.footer_buttons}>
-          {!invitedPath ?
-            <Box sx={{display: 'flex', width: '100%', gap: '10px'}}>
-              <CustomizedButton text='Пригласить'/>
-              <LikeButton/>
+          {!invitedPath ? (
+            <Box sx={{ display: 'flex', width: '100%', gap: '10px' }}>
+              <CustomizedButton text='Пригласить' />
+              <LikeButton />
             </Box>
-            :
+          ) : (
             //заглушка, серая зона реализации которой нет
             <div className={styles.footer_status}>{'Принято'}</div>
-          }
+          )}
         </div>
       </div>
     </section>

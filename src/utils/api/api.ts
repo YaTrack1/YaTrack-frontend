@@ -13,8 +13,7 @@ export const register = ({ username, email, password }: UserType) => {
     method: METHOD.POST,
     headers: JSON_HEADERS,
     body: JSON.stringify({ username, email, password }),
-  })
-    .then(res => checkResponse<UserType>(res));
+  }).then((res) => checkResponse<UserType>(res));
 };
 
 export const login = ({ email, password }: UserType) => {
@@ -22,6 +21,5 @@ export const login = ({ email, password }: UserType) => {
     method: METHOD.POST,
     headers: JSON_HEADERS,
     body: JSON.stringify({ email, password }),
-  })
-    .then(res => checkResponse<UserType>(res));
+  }).then((res) => checkResponse<UserType>(res));
 };

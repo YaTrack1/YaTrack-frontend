@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IVacancyForm {
-	children: ReactNode;
+  children: ReactNode;
   open: boolean;
   onClose: any;
   step?: number;

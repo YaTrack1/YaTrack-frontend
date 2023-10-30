@@ -89,7 +89,7 @@
   line-height: 16px;
 }
 
-  @mixin link {
+@mixin link {
   text-decoration: none;
   transition: 1s;
   cursor: pointer;

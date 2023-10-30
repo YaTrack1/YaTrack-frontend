@@ -37,14 +37,20 @@ function Slider({ data }: SliderProps) {
       <div className={styles.header_wrap}>
         <h2 className={styles.title}>Опыт работы</h2>
         <div className={styles.arrows}>
-          {
-            currentPos > 0 &&
-            <button type='button' className={styles.arrows_prev} onClick={() => changeSlides(-1)}/>
-          }
-          {
-            currentPos < maxPos &&
-            <button type='button' className={styles.arrows_next} onClick={() => changeSlides(1)}/>
-          }
+          {currentPos > 0 && (
+            <button
+              type='button'
+              className={styles.arrows_prev}
+              onClick={() => changeSlides(-1)}
+            />
+          )}
+          {currentPos < maxPos && (
+            <button
+              type='button'
+              className={styles.arrows_next}
+              onClick={() => changeSlides(1)}
+            />
+          )}
         </div>
       </div>
       <div className={styles.container}>

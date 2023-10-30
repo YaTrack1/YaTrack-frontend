@@ -1,5 +1,5 @@
 export interface ICardVacancyProps {
-	vacancy: any;
+  vacancy: any;
   handleOpenModalDelete: any;
   handleRedVacancyOpen: any;
 }
