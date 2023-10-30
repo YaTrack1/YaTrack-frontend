@@ -1,4 +1,95 @@
-@mixin link {
+@import './placeholders';
+@import './constants';
+
+@mixin font-h1-reg {
+  @extend %font-display;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+@mixin font-h1-med {
+  @extend %font-display;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+@mixin font-h2-reg {
+  @extend %font-display;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@mixin font-h2-med {
+  @extend %font-display;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@mixin font-h3-reg {
+  @extend %font-display;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin font-h3-med {
+  @extend %font-display;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@mixin font-subtitle-reg {
+  @extend %font-text;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin font-subtitle-med {
+  @extend %font-text;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@mixin font-text-reg {
+  @extend %font-text;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin font-text-med {
+  @extend %font-text;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@mixin font-caption-reg {
+  @extend %font-text;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+  @mixin link {
   text-decoration: none;
   transition: 1s;
   cursor: pointer;
@@ -49,4 +140,19 @@
   background-color: transparent;
   cursor: pointer;
   transition: ease-in-out 350ms;
+}
+
+@mixin button-blue {
+  @include button;
+  background-color: $blue;
+  color: $white;
+  &:hover {
+    background-color: $blue-main;
+  }
+  &:focus {
+    background-color: $blue-main;
+  }
+  &:disabled {
+    background-color: $black-300;
+  }
 }

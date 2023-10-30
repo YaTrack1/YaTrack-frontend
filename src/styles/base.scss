@@ -1,5 +1,10 @@
+@import "./abstract/placeholders";
+@import '../styles/abstract/constants';
+@import './abstract/mixins';
+
 * {
   box-sizing: border-box;
+  color: $black-900;
 }
 
 html {
@@ -7,7 +12,9 @@ html {
 }
 
 .page {
-  margin: 0;
+  width: 1440px;
+margin: 0 auto;
+  position: relative;
 
   &_lock {
     overflow: hidden;
@@ -21,6 +28,8 @@ html {
   min-height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
+  @extend %font-display;
+  @extend %font-text;
   font-style: normal;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -37,4 +46,5 @@ html {
   footer {
     flex: 0 0 auto;
   }
+
 }

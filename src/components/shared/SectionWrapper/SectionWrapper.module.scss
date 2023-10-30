@@ -1,0 +1,7 @@
+@import '../../../styles/abstract/mixins';
+
+
+.section__title {
+  margin: 0 0 20px 0;
+  @include font-h2-med;
+}

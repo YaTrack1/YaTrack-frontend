@@ -1,0 +1,34 @@
+@import '../../../styles/abstract/mixins';
+@import '../../../styles/abstract/constants';
+
+.container {
+  display: flex;
+  width: 1116px;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftBlock {
+  width: 505px;
+}
+
+.rightBlock {
+  width: 423px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.information_title {
+  margin: 0;
+  @include font-h2-med;
+}
+
+.information_subtitle {
+  margin: 0;
+  @include font-text-reg;
+}
