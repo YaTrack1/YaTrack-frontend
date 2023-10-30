@@ -8,21 +8,23 @@ import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsAc
 import SvgIcon from '@mui/material/SvgIcon';
 import  { ReactComponent as logo}  from '../../images/logo.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate ('/employer');
+  };
   return (
-    <Box  sx={{ flexGrow: 0, mb: '62px', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-      <AppBar  position='fixed'  sx={{ backgroundColor:'#1A1B22' }}>
-        <Toolbar>
-          {isLoggedIn===true ?
-            (<><SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon>
-              <Typography variant='h6' component='div' sx={{ flexGrow: 1, color: 'white'}}>
+    <Box width='100%' position='relative' sx={{ flexGrow: 0, width: 1440, zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar  position='relative'  sx={{ backgroundColor:'#1A1B22', width: 1440 }}>
+        <Toolbar sx={{ width: 1440 }}>
+          {isLoggedIn ? (<><IconButton><SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox onClick={handleClick}></SvgIcon></IconButton>
+            <Typography variant='h6' component='div' sx={{ flexGrow: 1, color: 'white'}}>
            Иванова Анна
-              </Typography>
-              <IconButton sx={{mr: 2, filter: 'invert(1)' }} color='inherit'><NotificationsActiveOutlinedIcon/></IconButton></>
-            ) : (
-              <SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon>)}
+            </Typography>
+            <IconButton sx={{mr: 2, filter: 'invert(1)'}} color='inherit'><NotificationsActiveOutlinedIcon/></IconButton></>) : (<IconButton><SvgIcon sx={{width: '45px', height: '45px', ml: '25px', mr: '70px'}} component={logo} inheritViewBox></SvgIcon></IconButton>)}
         </Toolbar>
       </AppBar>
     </Box>

@@ -14,5 +14,5 @@ export const CompanyCard : FC<ICompanyCard> = ({card}) =>{
         <Typography variant='h3' sx={{ wordBreak:'break-all', width: '164px', flexGrow: 1, fontSize: '20px', mt: '16px'}}>{card.INN}</Typography>
       </Box>
     </CardContent>
-  )
-}
+  );
+};

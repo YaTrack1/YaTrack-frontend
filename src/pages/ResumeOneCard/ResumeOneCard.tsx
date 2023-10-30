@@ -8,14 +8,19 @@ import { Skills } from './Components/Skills';
 import { Experience } from './Components/Experience';
 import { Education } from './Components/Education';
 import { EDUCATION_DATA } from '../../utils/hardcode';
+import { useNavigate } from 'react-router-dom';
 
 export const ResumeOneCard = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/employer/resumes');
+  };
   return (
     <Box sx={{display:'flex'}}>
       <MainMenu/>
       <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flexGrow: 1}}>
         <Box sx={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: '30px', mb: '40px'}}>
-          <IconButton disableRipple sx={{ color: 'black'}}>
+          <IconButton disableRipple sx={{ color: 'black'}} onClick={handleClick}>
             <ArrowBackIosNewIcon sx={{ml: '20px', mr: '15px'}}/>
             <Typography variant='h4' component='div'>Резюме</Typography>
           </IconButton>

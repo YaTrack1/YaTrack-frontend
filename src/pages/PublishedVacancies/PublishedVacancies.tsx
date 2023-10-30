@@ -102,7 +102,7 @@ export const PublishedVacancies: React.FC = () => {
         <List sx={{mr:3, pt: '0'}}>
           {vacancies.map((vacancy)=>(
             <ListItem key={vacancy.id} disablePadding disableGutters sx={{ml:'24px',mt: '40px'}}>
-              <CardVacancy  handleRedVacancyOpen={handleRedVacancyOpen} handleOpenModalDelete={handleOpenModalDelete} vacancy={vacancy}/>
+              <CardVacancy handleRedVacancyOpen={handleRedVacancyOpen} handleOpenModalDelete={handleOpenModalDelete} vacancy={vacancy}/>
             </ListItem>
           ))}
         </List>

@@ -7,27 +7,23 @@ import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material'
 import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import styles from './App.module.scss';
 
 function App() {
-  const theme = createTheme({
-  });
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <>
-          <Header />
-          <Routes>
-            <Route path='/signin' element={<LoginPage />}/>
-            <Route path='/signup' element={<RegisterPage />}/>
-            <Route path='/' element={<Navigate to='/employer/home'/>}/>
-            <Route path='/employer/home' element={<PublishedVacancies />}/>
-            <Route path='/employer/resumes' element={<MainPage />}/>
-            <Route path='/employer/resumes/:id' element={<ResumeOneCard />}/>
-            <Route path='/employer/resumes/:id' element={<p>ResumeOneCard</p>}/>
-            <Route path='*' element={<NotFoundNotice />}/>
-          </Routes>
-        </>
-      </ThemeProvider>
+      <div className={styles.app}>
+        <Header />
+        <Routes>
+          <Route path='/signin' element={<LoginPage />}/>
+          <Route path='/signup' element={<RegisterPage />}/>
+          <Route path='/' element={<Navigate to='/employer'/>}/>
+          <Route path='/employer/' element={<PublishedVacancies />}/>
+          <Route path='/employer/resumes' element={<MainPage />}/>
+          <Route path='/employer/resumes/id' element={<ResumeOneCard />}/>
+          <Route path='*' element={<NotFoundNotice />}/>
+        </Routes>
+      </div>
     </StyledEngineProvider>
   );
 }

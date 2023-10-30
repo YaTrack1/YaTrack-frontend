@@ -46,7 +46,7 @@ export const HARD_LIST_SKILL_ADDITIONAL=['UX-исследования', 'Про�
 
 export const COMPANY_LIST= [{name: 'ЯП', INN: 'ИНН 1111111111', id: 1}, {name: 'Решения для бизнеса', INN: 'ИНН 1111111111', id: 2}, {name: 'Сбербанк', INN: 'ИНН 1111111111', id: 3}, {name: 'ВТБ', INN: 'ИНН 1111111111', id: 4}];
 
-export const MAIN_MENU_LIST =[{id: 1, title: 'Личный кабинет'}, {id: 2, title: 'Настройки'},{id: 3, title: 'Выход'}]
+export const MAIN_MENU_LIST =[{id: 1, title: 'Личный кабинет'}, {id: 2, title: 'Настройки'},{id: 3, title: 'Выход'}];
 
 export const LIST_VACANCIES = [{jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id:1}, {jobtitle: 'Front-end разработчик (junior)', newresume: [1,2,3,4,5,6], id: 2}, {jobtitle: 'UX1/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 3}, {jobtitle: 'Front-end разработчик (junior)', newresume: [1,2,3,4,5,6], id: 4}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 5}, {jobtitle: 'Front-end разработчик (junior)', newresume: [1,2,3,4,5,6], id: 6}, {jobtitle: 'UX/UI дизайнер (junior)', newresume: [1,2,3,4,5,6], id: 7}];
 

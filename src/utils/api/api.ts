@@ -27,7 +27,7 @@ export const login = ({ email, password }: UserType) => {
 };
 
 export const employer = () => {
-  return fetch('https://cors-anywhere.herokuapp.com/http://194.67.113.101/api/employer/', {
+  return fetch('http://194.67.113.101/api/employer/', {
     method: METHOD.GET,
     headers: JSON_HEADERS,
   })

@@ -2,7 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import Toolbar from '@mui/material/Toolbar';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { ProfileMenu } from '../ProfileMenu/ProfileMenu';
@@ -38,18 +37,16 @@ export const MainMenu : React.FC = () => {
     },
   });
   return (
-    <Box position='static' sx={{ display: 'flex'}}>
+    <Box position='relative' sx={{ display: 'flex'}}>
       <CssBaseline />
       <Drawer
         variant='permanent'
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', borderRight: '1px solid white' },
-        }}
+          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#1A1B22', position: 'absolute', border: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}}
       >
-        <Box sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
-          <Toolbar />
+        <Box position='relative' sx={{  overflow: 'auto', display:'flex', flexDirection: 'column', alignItems: 'flex-end'}}>
           {COMPANY_LIST.map((i) => (
             <CompanyButton key={i.id} disableElevation disableRipple  onClick={()=>{setStatusCompany(i.id);}} sx={{backgroundColor: `${activeComoany===i.id ? 'white' : '#797981'}`}}>
               <CompanyCard card={i}/>
@@ -58,7 +55,6 @@ export const MainMenu : React.FC = () => {
         </Box>
         <ProfileMenu/>
       </Drawer>
-
     </Box>
   );
 };

@@ -6,7 +6,8 @@ import { ReactComponent as likeBlue}  from '../../../../images/Like_filled.svg';
 
 export default function LikeButton() {
   const [isLiked, setIsLiked] = useState(false);
-  function handleLikeClick(){
+  function handleLikeClick(e: any){
+    e.stopPropagation();
     setIsLiked(!isLiked);
   }
 

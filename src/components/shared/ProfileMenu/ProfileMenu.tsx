@@ -8,7 +8,7 @@ import {MAIN_MENU_LIST} from '../../../utils/constants';
 
 export const ProfileMenu : React.FC = () => {
   return (
-    <Paper sx={{ width: 'inherit', maxWidth: '100%', position: 'fixed', bottom: '0', backgroundColor: '#1A1B22'}}>
+    <Paper sx={{ width: 'inherit', maxWidth: '100%', position: 'relative', backgroundColor: '#1A1B22'}}>
       <MenuList sx={{ml: '35px', borderRight:'1px solid white'}}>
         {MAIN_MENU_LIST.map((i) =>(
           <MenuItem key={i.id} disableRipple>

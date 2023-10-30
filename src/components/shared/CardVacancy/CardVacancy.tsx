@@ -6,10 +6,12 @@ import { Card } from '@mui/material';
 import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { SvgIcon } from '@mui/material';
-import {FC} from 'react';
+import React, {useState, FC} from 'react';
+import { useNavigate } from 'react-router-dom';
 import {ICardVacancyProps} from './TypesCardVacancy';
 
 export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDelete,  handleRedVacancyOpen}) => {
+  const navigate = useNavigate();
   const ClassCard = styled(Card) ({
     alignItems: 'center',
     padding: '20px',
@@ -32,20 +34,25 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
     },
   });
   const jobtitle = vacancy.jobtitle;
-  function handleOpenModal (data: any){
+  function handleOpenModal (data: any, e: React.MouseEvent<HTMLButtonElement>){
+    e.stopPropagation();
     handleOpenModalDelete(data);
   }
-  function handleRedOpen(jobtitle: any){
+  function handleRedOpen(jobtitle: string, e: React.MouseEvent<HTMLButtonElement>){
+    e.stopPropagation();
     handleRedVacancyOpen(jobtitle);
   }
+  const handleClick = () => {
+    navigate('resumes');
+  };
   return (
-    <ClassCard >
+    <ClassCard onClick={handleClick}>
       <Typography sx={{width: '708px', overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis'}} variant='h5' component='div'>{vacancy.jobtitle}</Typography>
       <Box>
-        <SvgIconClass onClick={()=>handleRedOpen(jobtitle)} disableRipple>
+        <SvgIconClass onClick={(e)=>handleRedOpen(jobtitle, e)} disableRipple>
           <SvgIcon component={pencil} ></SvgIcon>
         </SvgIconClass>
-        <SvgIconClass disableRipple onClick={()=>handleOpenModal(jobtitle)}>
+        <SvgIconClass disableRipple onClick={(e)=>handleOpenModal(jobtitle, e)}>
           <SvgIcon component={trash}></SvgIcon>
         </SvgIconClass>
       </Box>
