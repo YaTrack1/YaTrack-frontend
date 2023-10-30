@@ -25,11 +25,3 @@ export const login = ({ email, password }: UserType) => {
   })
     .then(res => checkResponse<UserType>(res));
 };
-
-export const employer = () => {
-  return fetch('http://194.67.113.101/api/employer/', {
-    method: METHOD.GET,
-    headers: JSON_HEADERS,
-  })
-    .then(res => checkResponse<UserType>(res));
-};

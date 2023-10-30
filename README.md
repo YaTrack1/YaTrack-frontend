@@ -1,14 +1,14 @@
 # YaTrack-frontend
-## Stack:
 
-- Html5
-- module SCSS
-- React
-- Redux Toolkit
-- TypeScript
-- React-hook-form
-- YUP
-- MUI
+## GH Pages 
+
+
+## Team
+Frontend developers:
+
+Yulia Menacho-Pagés (Telegram: @yuliamenachopages, Github: YuliaMenachoPages)
+Yulia Duk (Telegram: @YuliaD1002, Github: YuliaDuk)
+Konstantin Bartosh (Telegram: @k_bartosh, Github: KonstaBartosh )
 
 ## Available Scripts
 
@@ -35,16 +35,25 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ```
-npm run sb
-```
-
-Launches Storybook.
-
-```
 npm run commit
 ```
 
 Generates a commit message using Commitizen.
+
+## Stack:
+
+- Html5
+- module SCSS
+- React
+- Redux Toolkit
+- TypeScript
+- React-hook-form
+- YUP
+- MUI
+
+## Media-queries
+
+Website is designed for High-res laptop or desktop only and has fixed width 1440px.
 
 ## Contributing
 

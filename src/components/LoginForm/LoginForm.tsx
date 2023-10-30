@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './SchemaLogin';
 import { TFormValues } from './TypesLogin';
-import { employer } from '../../utils/api/api';
 import styles from './LoginForm.scss';
 import { useDispatch } from 'react-redux';
 import { setIsLoggedIn } from '../../store/Auth';
