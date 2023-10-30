@@ -44,7 +44,7 @@ export const CardVacancy: FC<ICardVacancyProps> = ({
   }
   function handleRedOpen(
     jobtitle: string,
-    e: React.MouseEvent<HTMLButtonElement>
+    e: React.MouseEvent<HTMLButtonElement>,
   ) {
     e.stopPropagation();
     handleRedVacancyOpen(jobtitle);

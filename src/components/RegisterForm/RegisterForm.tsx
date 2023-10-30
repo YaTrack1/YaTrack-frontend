@@ -28,7 +28,7 @@ export const RegisterForm: React.FC = () => {
     dispatch(
       setIsLoggedIn({
         isLoggedIn: true,
-      })
+      }),
     );
   };
   return (

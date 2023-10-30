@@ -29,7 +29,7 @@ export const LoginForm: React.FC = () => {
     dispatch(
       setIsLoggedIn({
         isLoggedIn: true,
-      })
+      }),
     );
   };
 

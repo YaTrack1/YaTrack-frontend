@@ -79,7 +79,7 @@ export const Diagram = ({ kind }: IDiagram) => {
         >
           <h3
             className={[styles['total'], styles[`total_kind_${kind}`]].join(
-              ' '
+              ' ',
             )}
           >
             {total}%

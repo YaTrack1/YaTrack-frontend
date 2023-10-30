@@ -1,4 +1,4 @@
-/*! For license information please see main.7fd1811d.js.LICENSE.txt */
+/*! For license information please see main.b6c1e0c9.js.LICENSE.txt */
 !(function () {
   var e = {
       8199: function (e, t, n) {
@@ -23280,7 +23280,7 @@
             });
           return (0, Zt.jsxs)(qt, {
             position: 'relative',
-            sx: { display: 'flex' },
+            sx: { display: 'flex', minHeight: '90vh' },
             children: [
               (0, Zt.jsx)(To, {}),
               (0, Zt.jsxs)(Eo, {
@@ -43596,4 +43596,4 @@
       );
     })();
 })();
-//# sourceMappingURL=main.7fd1811d.js.map
+//# sourceMappingURL=main.b6c1e0c9.js.map

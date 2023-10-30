@@ -16,7 +16,7 @@ export const ProfileMenu: React.FC = () => {
     dispatch(
       setIsLoggedIn({
         isLoggedIn: false,
-      })
+      }),
     );
   };
   return (

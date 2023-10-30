@@ -225,8 +225,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
                               value={
                                 value
                                   ? specializationOptions.find((option) => {
-                                      return value === option;
-                                    }) ?? null
+                                    return value === option;
+                                  }) ?? null
                                   : null
                               }
                               onChange={(event: any, newValue) => {
@@ -461,8 +461,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
                               value={
                                 value
                                   ? workSchedule.find((option) => {
-                                      return value === option;
-                                    }) ?? null
+                                    return value === option;
+                                  }) ?? null
                                   : null
                               }
                               onChange={(event: any, newValue) => {
@@ -516,8 +516,8 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
                               value={
                                 value
                                   ? busyList.find((option) => {
-                                      return value === option;
-                                    }) ?? null
+                                    return value === option;
+                                  }) ?? null
                                   : null
                               }
                               onChange={(event: any, newValue) => {
@@ -583,7 +583,7 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
                                 onChange(
                                   newValue.length <= 3
                                     ? newValue
-                                    : [newValue[0], newValue[1], value[2]]
+                                    : [newValue[0], newValue[1], value[2]],
                                 );
                               }}
                               size='small'
@@ -640,15 +640,15 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({
                                   newValue.length <= 8
                                     ? newValue
                                     : [
-                                        newValue[0],
-                                        newValue[1],
-                                        newValue[2],
-                                        newValue[3],
-                                        newValue[4],
-                                        newValue[5],
-                                        newValue[6],
-                                        value[7],
-                                      ]
+                                      newValue[0],
+                                      newValue[1],
+                                      newValue[2],
+                                      newValue[3],
+                                      newValue[4],
+                                      newValue[5],
+                                      newValue[6],
+                                      value[7],
+                                    ],
                                 );
                               }}
                               size='small'

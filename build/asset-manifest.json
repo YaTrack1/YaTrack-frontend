@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.503a4619.css",
-    "main.js": "/static/js/main.7fd1811d.js",
+    "main.css": "/static/css/main.be389cbd.css",
+    "main.js": "/static/js/main.b6c1e0c9.js",
     "static/media/candidate_photo_sample.png": "/static/media/candidate_photo_sample.6ad7f94be2762e87e2fb.png",
     "static/media/YS_Text-Medium.ttf": "/static/media/YS_Text-Medium.2d47de47defd5b598825.ttf",
     "static/media/YS_Text-Regular.ttf": "/static/media/YS_Text-Regular.14023e8db570f7ed0882.ttf",
@@ -25,8 +25,11 @@
     "static/media/arrow_up.svg": "/static/media/arrow_up.2b14d1a9058d61316fe5.svg",
     "static/media/logo.svg": "/static/media/logo.681e1520a68eb073dc2273512a564e54.svg",
     "index.html": "/index.html",
-    "main.503a4619.css.map": "/static/css/main.503a4619.css.map",
-    "main.7fd1811d.js.map": "/static/js/main.7fd1811d.js.map"
+    "main.be389cbd.css.map": "/static/css/main.be389cbd.css.map",
+    "main.b6c1e0c9.js.map": "/static/js/main.b6c1e0c9.js.map"
   },
-  "entrypoints": ["static/css/main.503a4619.css", "static/js/main.7fd1811d.js"]
+  "entrypoints": [
+    "static/css/main.be389cbd.css",
+    "static/js/main.b6c1e0c9.js"
+  ]
 }
