@@ -46,13 +46,12 @@ export const CreateVacancyFormSteps: FC<ICreateVacancyFormSteps> = ({open, onClo
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitFirstStep = (data: Object) => {
     setStep(2);
-    console.log(data);
   };
   const onSubmitSecondStep =(data: Object)=>{
     submitNewVacancy(data);
     setStep(1);
-    console.log(data);
   };
+
   const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
       '& fieldset': {

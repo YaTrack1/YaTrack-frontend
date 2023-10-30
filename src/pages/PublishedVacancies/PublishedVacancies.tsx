@@ -73,6 +73,7 @@ export const PublishedVacancies: React.FC = () => {
   const handleCloseModalRedVacancy = () => setOpenRedForm(false);
   const [openRedForm, setOpenRedForm] = useState(false);
   const [vacancies, setVacanciesList] = useState(LIST_VACANCIES);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [vacancyForRed, setVacancyForRed] = useState({});
   function handleDeleteVacancy(titleModal: string){
     const newlist =  vacancies.filter((i)=>i.jobtitle!==titleModal);
@@ -81,13 +82,11 @@ export const PublishedVacancies: React.FC = () => {
   }
   function handleRedVacancyOpen(data: any){
     vacancies.filter((i)=>i.jobtitle===data);
-    console.log(vacancies.filter((i)=>i.jobtitle===data));
     setOpenRedForm(true);
   }
   function  submitNewVacancy(data: any){
     const newvac = {jobtitle: data.jobtitle, newresume: [1,2,3,4,5,6], id:10};
     vacancies.unshift(newvac);
-    console.log(vacancies);
     setVacanciesList(vacancies);
     setOpenModalCreateVacancy(false);
   }
