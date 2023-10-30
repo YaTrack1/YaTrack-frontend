@@ -69,6 +69,7 @@ const SvgIconClass = styled(IconButton) ({
 export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, vacancyForRed}) => {
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitRedForm = (data: Object)=>{
+    // eslint-disable-next-line no-console
     console.log(data);
   };
 

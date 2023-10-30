@@ -6,7 +6,7 @@ import { Card } from '@mui/material';
 import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { SvgIcon } from '@mui/material';
-import React, {useState, FC} from 'react';
+import React, {FC} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {ICardVacancyProps} from './TypesCardVacancy';
 

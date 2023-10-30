@@ -20,7 +20,6 @@ export const FiltredVacancies: FC<IFiltredVacanciesProps> = ({vacanciesList, act
       subMenuActive.splice(index,1);
       setSubMenuActive(subMenuActive);
     }
-    console.log(subMenuActive);
   }
   useEffect(()=>{
     setSubMenuActive(['']);
