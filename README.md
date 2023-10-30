@@ -1,6 +1,6 @@
 # YaTrack-frontend
 
-## GH Pages 
+## Website 
 https://develop--inspiring-crisp-9ef44d.netlify.app/
 
 ## Team
