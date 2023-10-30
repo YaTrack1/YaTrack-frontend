@@ -1,32 +1,15 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import {  Typography, TextField, IconButton, SvgIcon, Box, InputLabel,Autocomplete, Grid, Paper } from '@mui/material';
 import { ModalForForm } from '../UI/ModalForForm/ModalForForm';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import {ReactComponent as closeicon} from '../../../images/close.svg';
 import { CustomizedButton} from '../UI/CustomizedButton/CustomizedButton';
-interface ISignFormVacancyCreator {
-  jobtitle: string;
-  specialization: String;
-  city?: string;
-  jobdescription?: string;
-  conditions?: string;
-  selectionssteps?: string;
-  schedule?: string;
-  busy?: string;
-  hardSkillListImport?: any;
-  hardSkillListAdd?:any;
-}
+import {ISignFormVacancyCreator} from './TypesChangeVacancyForm';
+import {ICreateVacancyFormSteps} from './TypesChangeVacancyForm';
+import {WORK_SCHEDULE, BUSY_LIST, HARD_SKILL_LIST_IMPORTANT, HARD_LIST_SKILL_ADDITIONAL} from '../../../utils/constants';
 
-interface ICreateVacancyFormSteps {
-	// isOpened: boolean;
-	// setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
-  open: boolean;
-  onClose?: any;
-  vacancyForRed: any;
-  submitNewVacancy?: any;
-}
 const CssTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
@@ -63,7 +46,6 @@ const CustomInputLabels = styled(InputLabel)({
   color: '#1A1B22',
 });
 const Item = styled(Paper)(({ theme }) => ({
-  // с этими стилями надо разобраться в конце концов
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -83,10 +65,7 @@ const SvgIconClass = styled(IconButton) ({
     filter: 'sepia(1) hue-rotate(170deg) saturate(100)',
   },
 });
-const workSchedule = ['Удаленная работа',' Частичная занятость', 'Гибкий график','Сменный график'];
-const busyList =['Полная','Частичная', 'Стажировка', 'Волонтёрство'];
-const hardSkillListImport =['UX-исследования', 'Прототипирование', 'Анимация', 'Типографика', 'UI-kit'];
-const hardSkillListAdd=['lkj', ';lkjh', ';lkh', 'lkjhe', ';lkjhgfe', 'd', 'dd', 'ddddd', 'dsa'];
+
 export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, vacancyForRed}) => {
   const {handleSubmit, control} = useForm<ISignFormVacancyCreator>();
   const onSubmitRedForm = (data: Object)=>{
@@ -265,7 +244,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                         <CssAutocomplete
                           sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
                           fullWidth
-                          value={value ? workSchedule.find((option)=>{
+                          value={value ? WORK_SCHEDULE.find((option: string)=>{
                             return value === option;
                           }) ?? null
                             : null}
@@ -276,7 +255,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                           selectOnFocus
                           disablePortal
                           id='schedule'
-                          options={workSchedule}
+                          options={WORK_SCHEDULE}
                           renderInput={(params) => <TextField placeholder='Например, «Удаленная работа»' {...params} inputRef={ref}/>}
                         />
                         <span style={{color: 'red', height: '16px', textAlign: 'left', width: '100%', display: 'block', fontSize: '11px'}}>{error ? error.message : null}</span>
@@ -296,7 +275,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                     return (
                       <>
                         <CssAutocomplete
-                          value={value ? busyList.find((option)=>{
+                          value={value ? BUSY_LIST.find((option: string)=>{
                             return value === option;
                           }) ?? null
                             : null}
@@ -307,7 +286,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                           selectOnFocus
                           disablePortal
                           id='busy'
-                          options={busyList}
+                          options={BUSY_LIST}
                           fullWidth
                           sx={{backgroundColor: `${value ?'white':'#FFF9D3'}` }}
                           renderInput={(params) => <TextField placeholder='Например, «Полная»' {...params} inputRef={ref}/>}
@@ -329,7 +308,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                     return (
                       <>
                         <Autocomplete
-                          options={hardSkillListImport}
+                          options={HARD_SKILL_LIST_IMPORTANT}
                           multiple
                           getOptionLabel={(option) => option}
                           value={value || []}
@@ -360,7 +339,7 @@ export const ChangeVacancyForm: FC<ICreateVacancyFormSteps> = ({open, onClose, v
                     return (
                       <>
                         <Autocomplete
-                          options={hardSkillListAdd}
+                          options={HARD_LIST_SKILL_ADDITIONAL}
                           multiple
                           getOptionLabel={(option) => option}
                           value={value || []}

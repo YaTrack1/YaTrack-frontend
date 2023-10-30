@@ -1,15 +1,12 @@
-import { Box, Checkbox } from '@mui/material';
+import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
 import { AlertModalPopup } from '../UI/AlertModalPopup/AlertModalPopup';
 import { Card } from '../Card/Card';
 import {useState, FC, useEffect} from 'react';
 import{ FiltredSubMenu} from '../FiltredSubMenu/FiltredSubMenu';
-export interface IFiltredVacanciesProps {
-	vacanciesList: any;
- activeMenu: any;
-}
+import {IFiltredVacanciesProps} from './TypesFiltredVacancies';
+
 export const FiltredVacancies: FC<IFiltredVacanciesProps> = ({vacanciesList, activeMenu}) => {
   const [subMenuActive, setSubMenuActive] = useState(['']);
   function handleFiltredSubBtnClick(data: string){

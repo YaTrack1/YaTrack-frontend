@@ -12,18 +12,18 @@ import styles from './App.module.scss';
 function App() {
   return (
     <StyledEngineProvider injectFirst>
-        <div className={styles.app}>
-          <Header />
-          <Routes>
-            <Route path='/signin' element={<LoginPage />}/>
-            <Route path='/signup' element={<RegisterPage />}/>
-            <Route path='/' element={<Navigate to='/employer'/>}/>
-            <Route path='/employer/' element={<PublishedVacancies />}/>
-            <Route path='/employer/resumes' element={<MainPage />}/>
-            <Route path='/employer/resumes/id' element={<ResumeOneCard />}/>
-            <Route path='*' element={<NotFoundNotice />}/>
-          </Routes>
-        </div>
+      <div className={styles.app}>
+        <Header />
+        <Routes>
+          <Route path='/signin' element={<LoginPage />}/>
+          <Route path='/signup' element={<RegisterPage />}/>
+          <Route path='/' element={<Navigate to='/employer'/>}/>
+          <Route path='/employer/' element={<PublishedVacancies />}/>
+          <Route path='/employer/resumes' element={<MainPage />}/>
+          <Route path='/employer/resumes/id' element={<ResumeOneCard />}/>
+          <Route path='*' element={<NotFoundNotice />}/>
+        </Routes>
+      </div>
     </StyledEngineProvider>
   );
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button, { ButtonProps } from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
 import { Stack } from '@mui/system';
 

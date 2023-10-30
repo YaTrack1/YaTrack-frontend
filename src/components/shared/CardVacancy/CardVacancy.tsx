@@ -1,23 +1,17 @@
 import {ReactComponent as pencil} from '../../../images/pencil.svg';
 import {ReactComponent as trash} from '../../../images/close.svg';
 import { styled } from '@mui/material/styles';
-import { Box, Button } from '@mui/material';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import { Box } from '@mui/material';
 import { Card } from '@mui/material';
 import { Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { SvgIcon } from '@mui/material';
 import React, {useState, FC} from 'react';
 import { useNavigate } from 'react-router-dom';
+import {ICardVacancyProps} from './TypesCardVacancy';
 
-export interface ICardVacancyProps {
-	vacancy: any;
-  handleOpenModalDelete: any;
-  handleRedVacancyOpen: any;
-}
 export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDelete,  handleRedVacancyOpen}) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const ClassCard = styled(Card) ({
     alignItems: 'center',
     padding: '20px',
@@ -49,8 +43,8 @@ export const CardVacancy: FC<ICardVacancyProps> = ({vacancy, handleOpenModalDele
     handleRedVacancyOpen(jobtitle);
   }
   const handleClick = () => {
-  navigate('resumes')
-  }
+    navigate('resumes');
+  };
   return (
     <ClassCard onClick={handleClick}>
       <Typography sx={{width: '708px', overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis'}} variant='h5' component='div'>{vacancy.jobtitle}</Typography>

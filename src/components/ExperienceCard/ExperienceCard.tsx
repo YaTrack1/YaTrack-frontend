@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import styles from './ExperienceCard.module.scss';
-
-interface ExperienceCardProps {
-  title: string;
-  period: string;
-  experince: string;
-  duties: string;
-}
+import {ExperienceCardProps} from './TypesExperienceCard';
 
 export const ExperienceCard = ({
   title,

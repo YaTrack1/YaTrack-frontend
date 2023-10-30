@@ -1,13 +1,8 @@
 import * as React from 'react';
-import { FC, ReactNode } from 'react';
-import {  Modal, Box, Typography } from '@mui/material';
+import { FC } from 'react';
+import { Modal, Box } from '@mui/material';
+import { IVacancyForm } from './TypesModalForForm';
 
-interface IVacancyForm {
-	children: ReactNode;
-  open: boolean;
-  onClose: any;
-  step?: number;
-}
 const Boxstyle = {
   position: 'absolute',
   top: '0',
