@@ -37,7 +37,7 @@ export const MainMenu : React.FC = () => {
     },
   });
   return (
-    <Box position='relative' sx={{ display: 'flex'}}>
+    <Box position='relative' sx={{ display: 'flex' , minHeight: '90vh'}}>
       <CssBaseline />
       <Drawer
         variant='permanent'
