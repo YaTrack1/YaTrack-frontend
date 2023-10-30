@@ -1,6 +1,5 @@
 {
   "name": "yatrack",
-  "homepage": "https://yatrack1.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,7 +39,8 @@
     "format": "prettier . --write",
     "prepare": "husky install",
     "commit": "lint-staged && cz",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
