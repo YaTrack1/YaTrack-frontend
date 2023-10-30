@@ -1,6 +1,6 @@
 import styles from '../ResumeOneCard.module.scss';
 import React from 'react';
-import { EducationData, EducationProps } from './TypesEducation';
+import { EducationProps } from './TypesEducation';
 
 export const Education = ({ data }: EducationProps) => {
   const { mainEdu, additionalEdu } = data;
