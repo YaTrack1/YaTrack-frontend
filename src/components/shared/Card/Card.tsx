@@ -16,6 +16,7 @@ const activity = 'Была(а) 1 час назад';
 
 export const Card = () => {
   const [ isVisited, setIsVisited ] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [ isCandidateInterest, setIsCandidateInterest ] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();

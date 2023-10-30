@@ -1,7 +1,7 @@
 import {SectionWrapper} from '../../../components/shared/SectionWrapper/SectionWrapper';
 import styles from '../ResumeOneCard.module.scss';
 import React from 'react';
-import { Button, Tooltip, styled } from '@mui/material';
+import { Button, Tooltip } from '@mui/material';
 
 export const Skills = () => {
   const skillList = [{skill: 'Figma', status: 20}, {skill: 'CJM', status: 80}, {skill: 'Глубинное интервью', status: 70}, {skill: 'Adobe Photoshop', status: 20}, {skill: 'User Stories', status: 70}, {skill: 'A/B-тестирование', status: 20}];
