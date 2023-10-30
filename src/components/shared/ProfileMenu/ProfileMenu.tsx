@@ -18,31 +18,31 @@ export const ProfileMenu : React.FC = () => {
         isLoggedIn: false,
       }),
     );
-  }
+  };
   return (
     <Paper sx={{ width: 'inherit', maxWidth: '100%', position: 'relative', backgroundColor: '#1A1B22'}}>
       <MenuList sx={{ml: '35px', borderRight:'1px solid white'}}>
-          <MenuItem disableRipple>
-            <ListItemText >
-              <Typography sx={{color: 'white'}}>
+        <MenuItem disableRipple>
+          <ListItemText >
+            <Typography sx={{color: 'white'}}>
                 Личный кабинет
-              </Typography>
-            </ListItemText>
-          </MenuItem>
-          <MenuItem disableRipple>
-        <ListItemText >
-          <Typography sx={{color: 'white'}}>
+            </Typography>
+          </ListItemText>
+        </MenuItem>
+        <MenuItem disableRipple>
+          <ListItemText >
+            <Typography sx={{color: 'white'}}>
             Настройки
-          </Typography>
-        </ListItemText>
-      </MenuItem>
-      <MenuItem disableRipple onClick={handleClick}>
-        <ListItemText >
-          <Typography sx={{color: 'white'}}>
+            </Typography>
+          </ListItemText>
+        </MenuItem>
+        <MenuItem disableRipple onClick={handleClick}>
+          <ListItemText >
+            <Typography sx={{color: 'white'}}>
             Выход
-          </Typography>
-        </ListItemText>
-      </MenuItem>
+            </Typography>
+          </ListItemText>
+        </MenuItem>
       </MenuList>
     </Paper>
   );
