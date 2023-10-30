@@ -4,10 +4,14 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './SchemaLogin';
 import { TFormValues } from './TypesLogin';
-import { employer } from '../../utils/api/api';
 import styles from './LoginForm.scss';
+import { useDispatch } from 'react-redux';
+import { setIsLoggedIn } from '../../store/Auth';
+
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const form = useForm<TFormValues>({
     defaultValues: {
@@ -19,17 +23,14 @@ export const LoginForm: React.FC = () => {
   });
   const { register, handleSubmit, formState } = form;
   const { errors, isDirty, isValid } = formState;
-  // const onSubmit = (data: TFormValues) => {
-  // navigate('/employer/home');
-  //   console.log(data);
-  // };
 
   const onSubmit = () => {
     navigate('/employer');
-    employer()
-      .then((res) => {
-        console.log(res);
-      });
+    dispatch(
+      setIsLoggedIn({
+        isLoggedIn: true,
+      }),
+    );
   };
 
   return (

@@ -1,7 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-export default configureStore({
-  reducer: {},
+import authReducer from './Auth';
 
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+export default configureStore({
+  reducer: {
+    auth: authReducer,
+  },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(
+
+    ),
 });
