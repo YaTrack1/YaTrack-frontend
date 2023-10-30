@@ -3,7 +3,7 @@ import { Header } from './components/Header/Header';
 import { MainPage } from './pages/MainPage/MainPage';
 import { NotFoundNotice } from './components/NotFoundNotice/NotFoundNotice';
 import { PublishedVacancies } from './pages/PublishedVacancies/PublishedVacancies';
-import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material';
+import { StyledEngineProvider } from '@mui/material';
 import { ResumeOneCard } from './pages/ResumeOneCard/ResumeOneCard';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
