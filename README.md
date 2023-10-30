@@ -1,13 +1,15 @@
 # YaTrack-frontend
 
 ## GH Pages 
-
+https://develop--inspiring-crisp-9ef44d.netlify.app/employer
 
 ## Team
 Frontend developers:
 
 Yulia Menacho-Pagés (Telegram: @yuliamenachopages, Github: YuliaMenachoPages)
+
 Yulia Duk (Telegram: @YuliaD1002, Github: YuliaDuk)
+
 Konstantin Bartosh (Telegram: @k_bartosh, Github: KonstaBartosh )
 
 ## Available Scripts
