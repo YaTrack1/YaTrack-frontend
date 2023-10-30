@@ -1,7 +1,7 @@
 # YaTrack-frontend
 
 ## GH Pages 
-https://develop--inspiring-crisp-9ef44d.netlify.app/employer
+https://develop--inspiring-crisp-9ef44d.netlify.app/
 
 ## Team
 Frontend developers:
