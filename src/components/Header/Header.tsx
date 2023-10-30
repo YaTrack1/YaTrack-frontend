@@ -7,12 +7,13 @@ import IconButton from '@mui/material/IconButton';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import SvgIcon from '@mui/material/SvgIcon';
 import  { ReactComponent as logo}  from '../../images/logo.svg';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const Header: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const navigate = useNavigate();
+  // @ts-ignore
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const handleClick = () => {
     navigate ('/employer');
   };

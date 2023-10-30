@@ -5,9 +5,12 @@ import { TFormValues } from './TypesRegister';
 import { schema } from './SchemaRegister';
 import { useNavigate } from 'react-router-dom';
 import styles from './RegisterForm.scss';
+import { setIsLoggedIn } from '../../store/Auth';
+import { useDispatch } from 'react-redux';
 
 export const RegisterForm: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const form = useForm<TFormValues>({
     defaultValues: {
@@ -22,7 +25,11 @@ export const RegisterForm: React.FC = () => {
   const { errors, isDirty, isValid } = formState;
   const onSubmit = (data: TFormValues) => {
     navigate('/employer');
-    console.log(data);
+    dispatch(
+      setIsLoggedIn({
+        isLoggedIn: true,
+      }),
+    );
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
